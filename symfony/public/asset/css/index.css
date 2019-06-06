@@ -1,5 +1,5 @@
 .carousel-item {
-    height: 75vh;
+    height: 90vh;
     min-height: 350px;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -8,3 +8,63 @@
     background-size: cover;
     transition: transform 2s ease, opacity 2s ease-out!important;
 }
+
+#footer {
+    padding: 7em 0;
+    display: block;
+    width: 100%;
+    background: #303030; }
+    #footer h2 {
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 1px;
+      font-weight: 300;
+      margin-bottom: 2em; }
+    #footer p:last-child {
+      margin-bottom: 0; }
+    #footer p.colorlib-social-icons a:hover, #footer p.colorlib-social-icons a:focus {
+      text-decoration: none !important; }
+    #footer p.colorlib-social-icons i {
+      font-size: 24px;
+      color: #FF6107; }
+    #footer p .block {
+      color: #969696;
+      font-size: 14px; }
+    #footer .subscribe .form-control {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -ms-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none;
+      border: none;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      font-size: 16px;
+      background: transparent;
+      font-weight: 400;
+      margin-bottom: 5px; }
+      #footer .subscribe .form-control:focus, #footer .subscribe .form-control:active {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: 2px solid rgba(255, 97, 7, 0.8); }
+    #footer .subscribe .btn-custom {
+      width: 100%;
+      padding: 14px 0;
+      font-size: 16px;
+      border: 2px solid #FF6107;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      border-radius: 0; }
+    #footer .instagram .insta-img {
+      display: inline-block;
+      width: 50%;
+      padding: 0 !important;
+      height: 120px;
+      margin-right: -5px;
+      margin-bottom: -8px; }
+      @media screen and (max-width: 768px) {
+        #footer .instagram .insta-img {
+          height: 200px; } }
+  
+  .js .animate-box {
+    opacity: 0; }
