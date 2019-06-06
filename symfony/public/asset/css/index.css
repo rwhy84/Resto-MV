@@ -8,3 +8,7 @@
     background-size: cover;
     transition: transform 2s ease, opacity 2s ease-out!important;
 }
+
+.nav-item {
+    padding: 0px 20px;
+}
