@@ -28,7 +28,7 @@ class AccueilController extends AbstractController
             $entityManager->persist($newsletter);
             $entityManager->flush();
 
-            return $this->redirectToRoute('accueil_index');
+            return $this->redirectToRoute('accueil');
         }
 
         return $this->render('accueil/index.html.twig', [

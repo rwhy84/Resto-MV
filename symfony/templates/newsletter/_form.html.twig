@@ -1,6 +1,5 @@
-<p class="text_newsletter">Inscrivez vous à la newsletter</p>
 
-{{ form_start(form) class }}
+{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button type="button" class="btn btn-success">Success</button>
+    <button class="btn">{{ button_label|default('OK') }}</button>
 {{ form_end(form) }}
