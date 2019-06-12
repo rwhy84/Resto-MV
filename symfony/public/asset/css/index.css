@@ -309,3 +309,15 @@ header .container {
 .barreSeparation {
     border: 0.5px solid white;
 }
+
+label.required {
+    display: none;
+}
+
+#newsletter {
+    text-align: center;
+}
+
+.text_newsletter {
+    text-align: center;
+}
