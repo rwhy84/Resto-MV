@@ -6,22 +6,24 @@
 }
 
 .single-portfolio {
-	height: 400px;
-	width: 30%;
+	height: 580px;
+	width: 33.33%;
 	position: relative;
 	float: left;
 	display: block;
     background-position: center center;
-    margin : 5px;
+    padding: 5px;
     
 }
 
 .single-portfolio.sm-wide {
-	width: 25%;
+	width: 22.22%;
 }
+
 
 .single-portfolio:hover .portfolio-info {
 	opacity: 1;
+
 }
 
 .portfolio-info {
@@ -49,8 +51,7 @@
 	-webkit-transform: scale(1.12);
 	    -ms-transform: scale(1.12);
 	        transform: scale(1.12);
-	-webkit-filter: blur(20px);
-	        filter: blur(20px);
+	  -webkit-filter: brightness(50%);
 	background-position: center center;
 }
 
