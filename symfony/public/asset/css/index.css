@@ -2,13 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-}
-
 #footer {
-    padding: 7em 0;
+    padding: 3em 0;
     display: block;
     width: 100%;
     background: #303030;
+    color: white;
 }
 
 #footer h2 {
@@ -167,7 +166,6 @@ img {
 header {
     position: relative;
     background-color: black;
-    height: 100vh;
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
@@ -193,7 +191,7 @@ header .container {
     z-index: 2;
 }
 
-.overlay {
+.overlay:not(.titrePage) {
     position: absolute;
     top: 0;
     left: 0;
@@ -288,4 +286,26 @@ header .container {
 
 #about {
     margin: 50px 0px;
+}
+
+.headerCave {
+    height: 80vh;
+}
+
+.titrePage {
+    position: absolute;
+    z-index: 990;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.barreSeparation {
+    border: 0.5px solid white;
 }
