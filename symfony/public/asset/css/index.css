@@ -1,15 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap');
-.carousel-inner {
-    height: 80vh!important;
-    min-height: 350px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    transition: transform 2s ease, opacity 2s ease-out!important;
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 }
 
 #footer {
@@ -135,8 +127,6 @@ ul li a {
     font-size: 1.2em;
 }
 
-
-
 .fas {
     color: white!important;
     font-size: 1.2rem;
@@ -156,8 +146,8 @@ ul li a {
 .title_header {
     font-family: Tangerine, sans-serif;
     color: white;
-    font-size: 4em;
-    font-weight: 300;
+    font-size: 8em;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -175,50 +165,127 @@ img {
 /* TEST */
 
 header {
-  position: relative;
-  background-color: black;
-  height: 100vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
 }
 
 video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100vh;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 header .container {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
 }
 
-@media (pointer: coarse) and (hover: none) {
-  header {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-  }
-  header video {
-    display: none;
-  }
+.colorlib-intro {
+    padding: 2.5em 0;
+    clear: both;
+    background: #302939;
+}
+
+.colorlib-intro .intro {
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    .colorlib-intro .intro {
+        margin-bottom: 30px;
+    }
+}
+
+.colorlib-intro .intro .icon i {
+    font-size: 20px;
+    color: white;
+}
+
+.colorlib-intro .intro p, .colorlib-intro .intro span {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.colorlib-intro .intro p a, .colorlib-intro .intro span a {
+    color: white;
+}
+
+.colorlib-intro .intro h2 {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.about-desc {
+    padding-right: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+    .about-desc {
+        padding-right: 0;
+    }
+}
+
+.about-img {
+    height: 450px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.about-img-2 {
+    margin-top: 50px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.intro-heading h2 {
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.4;
+    position: relative;
+    color: #404044;
+    font-family: "Lora", Georgia, serif;
+    margin: 0 0 30px 0;
+}
+
+.text-intro {
+    margin-bottom: 1.5em;
+    font-weight: 400;
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.8;
+    font-size: 15px;
+    font-weight: 400;
+    color: #7d7d7d;
+}
+
+#about {
+    margin: 50px 0px;
 }
