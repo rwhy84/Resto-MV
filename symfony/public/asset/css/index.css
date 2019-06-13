@@ -23,7 +23,7 @@
 }
 
 #footer p.colorlib-social-icons a:hover, #footer p.colorlib-social-icons a:focus {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 #footer p.colorlib-social-icons i {
@@ -331,4 +331,9 @@ label.required {
     border-radius: 10px;
     outline: 0;
     padding: 8px 18px;
+}
+
+.subscribe {
+    display: block;
+    margin: 0 auto;
 }
