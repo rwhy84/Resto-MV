@@ -2,23 +2,27 @@
 
 namespace App\Form;
 
-use App\Entity\Newsletter;
+use App\Entity\CaveVin;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NewsletterType extends AbstractType
+class CaveVinType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email');
+            ->add('image')
+            ->add('titre')
+            ->add('prix')
+            ->add('description')
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Newsletter::class,
+            'data_class' => CaveVin::class,
         ]);
     }
 }

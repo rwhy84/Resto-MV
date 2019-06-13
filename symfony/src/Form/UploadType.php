@@ -2,23 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\Newsletter;
+use App\Entity\Upload;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NewsletterType extends AbstractType
+class UploadType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email');
+            ->add('image')
+            ->add('titre')
+            ->add('description')
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Newsletter::class,
+            'data_class' => Upload::class,
         ]);
     }
 }
