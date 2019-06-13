@@ -82,10 +82,6 @@
     }
 }
 
-.js .animate-box {
-    opacity: 0;
-}
-
 .nav-item {
     padding: 0px 20px;
 }
@@ -111,6 +107,7 @@
     text-align: center;
     font-family: Lora, sans-serif;
     color: white;
+    opacity: 0.8;
 }
 
 .navbar {
@@ -287,6 +284,7 @@ header .container {
 
 #about {
     margin: 50px 0px;
+    height: 100vh;
 }
 
 .headerCave {
