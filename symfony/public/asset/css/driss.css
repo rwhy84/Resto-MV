@@ -31,6 +31,7 @@
 
 .single-portfolio:hover .portfolio-info {
 	opacity: 1;
+	text-decoration: none;
 
 }
 
@@ -125,6 +126,7 @@
 	
 	.portfolio-info {
 		opacity: 1;
+		
 	
 	}
 
