@@ -1,12 +1,11 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Hello AdminParametreController!{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" media="screen and (max-width: 991px)" href="{{ asset('asset/css/parametresAdmin-medium.css') }}">
+<link rel="stylesheet" media="screen and (min-width: 992px)" href="{{ asset('asset/css/parametresAdmin-large.css') }}">{% endblock %}
+
+{% block title %}Parametres{% endblock %}
 
 {% block body %}
-
-<section>
-
-    <section id="sectionHight">
 
         <!--  <form>
              CAROUSEL DES MOIS -->
@@ -46,8 +45,7 @@
         <!-- <input type="hidden" name="identifiantFormulaire"> 
 
         </form> -->
-
-    </section>
-</section>
+<!-- Chargement du code Javascript de la page -->
+<script src="../asset/js/parametresAdmin.js"></script>
 
 {% endblock %}
