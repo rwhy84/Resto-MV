@@ -1,0 +1,332 @@
+/* STYLES TEMPLATES HEADER & FOOTER PAGES FRONT + PAGES BACK */
+
+body {
+    margin: 0;
+    background-color: black;
+}
+
+header {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;    
+    color: white; 
+    background-image: url("../img/imagesAdmin/bgblueLight.jpg");
+    background-size: cover;
+}
+
+header h1 {
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgb(1, 170, 192);
+}
+
+.topContainer {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.topContainer a {
+    color: white;
+}
+
+.menuContainer {
+    width: 100%;
+    height: 15%;
+}
+
+.menuList {
+    width: 95%;
+    height: 100%;
+    margin-left: 2.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-inline-start: 0; 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid black;  
+    box-shadow:  0 1px 4px rgb(0, 0, 0), 0 -1px 4px rgb(0, 0, 0), 0 10px 10px 0 black; 
+}
+
+.menuList .spaceMenu {
+    display: none;
+}
+
+.menuList .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14.2%;
+    height: 100%;
+    margin-left: 1px;
+    list-style-type: none;
+    background: linear-gradient(rgb(39, 39, 39) 60%, rgb(26, 26, 26), black 98%);
+}
+
+.menuList .link:hover {
+    box-shadow: 0 5px 4px rgb(1, 170, 192), 0 -1px 4px rgb(1, 170, 192);
+}
+
+.fas, .far {
+    font-size: 1.8rem;   
+    color: rgb(1, 170, 192); 
+}
+
+.fas:hover, .far:hover {
+    color: rgb(1, 170, 192);    
+    font-size: 2.2rem;
+}
+
+.menuList .linkFirst {
+    border-top-left-radius: 5px;
+    margin-left: 0 !important;
+}
+
+.menuList .linkLast {
+    border-top-right-radius: 5px;
+}
+
+.menuList .link a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration : none;
+    color: white;
+    text-transform: uppercase;    
+}
+
+.activeLink {
+    background: rgb(1, 170, 192) !important;
+    border-bottom: 1px solid rgb(1, 170, 192) !important;
+   /* border: 2px solid rgb(1, 170, 192);
+    border-image: 
+    linear-gradient(
+      to bottom, 
+      rgba(0, 0, 0, 0),
+      rgba(1, 170, 192, 0.750),
+      rgba(0, 0, 0, 0)
+    ) 1 100%;*/
+}
+
+.activeLink:hover {
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.activeLink a .fas, .activeLink a .far {    
+    color: white;
+}
+
+.activeLink a .fas:hover, .activeLink a .far:hover { 
+    text-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 1.8rem !important;
+}
+
+.viewerCont {
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(rgba(0, 0, 0, 0), black); 
+}
+
+.pageViewer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(39, 39, 39);
+    width: 95%;
+    height: 100%;
+    margin-left: 2.5%;
+    box-shadow: 5px 0px 8px rgb(0, 0, 0), -5px 0px 8px rgb(0, 0, 0);
+}
+
+.pageViewer a {
+    color: rgb(1, 170, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding-bottom: 1%;
+    text-decoration: none;
+}
+
+.pageViewer .fas {
+    color: rgb(1, 170, 192);
+    margin-right: 3%;
+    font-size: 1.6rem !important;
+}
+
+.pageViewer .fas:hover {
+    font-size: 1.6rem !important;
+}
+
+.pageViewer a:hover {
+    border-bottom: 2px solid rgb(1, 170, 192);
+}
+
+.pageViewer h2 {
+    font-size: 1.5rem;
+}
+
+.middleCont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#picContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+    height: 100%;
+}
+
+#leftPic, #rightPic {
+    display: none;
+    width: 30%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+#leftPic {
+    background-image: url("../img/imagesAdmin/deco.png");
+    transform:scaleX(-1);
+    background-size: cover;
+    margin-left: 3%;
+}
+
+#rightPic {
+    background-image: url("../img/imagesAdmin/deco.png");
+    background-size: cover;
+    margin-right: 3%;
+}
+
+.mask {
+    display: none;
+}
+
+section {
+    width: 95%;
+    min-height: 20%;
+    margin-left: 2.5%;
+    background-color: rgb(39, 39, 39);
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#sectionHight {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(39, 39, 39);
+    padding: 3%;
+    padding-top: 3%;
+    box-shadow: 5px 0px 8px rgb(0, 0, 0), -5px 0px 8px rgb(0, 0, 0);
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    background-image: url("../img/imagesAdmin/bgblueInvert.jpg");
+    background-size: cover;
+    box-shadow: 5px 0px 8px rgb(0, 0, 0), -5px 0px 8px rgb(0, 0, 0);
+    color: white;
+}
+
+.bgFooter {
+    height: 50%;
+    width: 100%;
+
+}
+
+.linearGFooter {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black, rgba(54, 54, 54, 0));
+}
+
+.bottomSection {
+    width: 95%;
+    height: 100%;
+    margin-left: 2.5%;
+    background-color: rgba(39, 39, 39, 0.7);
+    padding-top: 2%;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 5px 0px 8px rgb(0, 0, 0), -5px 0px 8px rgb(0, 0, 0);
+}
+
+/* Breakpoint XS */
+@media (max-width: 575px)
+{
+    .hidden-xs-down, .hidden-sm-down, .hidden-md-down, .hidden-lg-down, .hidden-xl-down, 
+    .hidden-xs-up, 
+    .hidden-unless-sm, .hidden-unless-md, .hidden-unless-lg, .hidden-unless-xl
+    {
+        display: none !important;
+    }
+
+}
+
+/* Breakpoint SM */
+@media (min-width: 576px) and (max-width: 767px)
+{
+    .hidden-sm-down, .hidden-md-down, .hidden-lg-down, .hidden-xl-down, 
+    .hidden-xs-up, .hidden-sm-up, 
+    .hidden-unless-xs, .hidden-unless-md, .hidden-unless-lg, .hidden-unless-xl
+    {
+        display: none !important;
+    } 
+}
+
+/* Breakpoint MD */
+@media (min-width: 768px) and (max-width: 991px)
+{
+    .hidden-md-down, .hidden-lg-down, .hidden-xl-down, 
+    .hidden-xs-up, .hidden-sm-up, .hidden-md-up, 
+    .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-lg, .hidden-unless-xl
+    {
+        display: none !important;
+    } 
+}
+
+/* Breakpoint LG */
+@media (min-width: 992px) and (max-width: 1199px)
+{
+    .hidden-lg-down, .hidden-xl-down, 
+    .hidden-xs-up, .hidden-sm-up, .hidden-md-up, .hidden-lg-up, 
+    .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-md, .hidden-unless-xl
+    {
+        display: none !important;
+    } 
+}
+
+/* Breakpoint XL */
+@media (min-width: 1200px)
+{
+    .hidden-xl-down, 
+    .hidden-xs-up, .hidden-sm-up, .hidden-md-up, .hidden-lg-up, .hidden-xl-up, 
+    .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-md, .hidden-unless-lg
+    {
+        display: none !important;
+    } 
+}
+
+.hidden {
+    display: none;
+}
