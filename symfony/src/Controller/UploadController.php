@@ -38,6 +38,11 @@ class UploadController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($upload);
             $entityManager->flush();
+            $file = $upload->getName();
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            $upload->setName($fileName);
+
 
             return $this->redirectToRoute('upload_index');
         }
@@ -85,7 +90,7 @@ class UploadController extends AbstractController
      */
     public function delete(Request $request, Upload $upload): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$upload->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $upload->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($upload);
             $entityManager->flush();
