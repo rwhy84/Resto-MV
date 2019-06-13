@@ -85,7 +85,7 @@ class UploadController extends AbstractController
      */
     public function delete(Request $request, Upload $upload): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$upload->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $upload->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($upload);
             $entityManager->flush();
