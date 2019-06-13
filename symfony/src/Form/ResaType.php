@@ -2,23 +2,30 @@
 
 namespace App\Form;
 
-use App\Entity\Newsletter;
+use App\Entity\Resa;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NewsletterType extends AbstractType
+class ResaType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email');
+            ->add('date')
+            ->add('heure')
+            ->add('nbclient')
+            ->add('nom')
+            ->add('tel')
+            ->add('email')
+            ->add('message')
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Newsletter::class,
+            'data_class' => Resa::class,
         ]);
     }
 }
