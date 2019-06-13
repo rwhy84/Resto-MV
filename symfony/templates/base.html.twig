@@ -92,11 +92,7 @@
     <!-- Grid row-->
     <hr class="barreSeparation">
     <p class="text_newsletter">Inscrivez vous à la newsletter</p>
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('OK') }}</button>
-{{ form_end(form) }}
-    
+    {{ include('newsletter/_form.html.twig') }}
 
     <!-- Grid row-->
     <div class="row pb-3">

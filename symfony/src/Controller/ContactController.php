@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Newsletter;
 use App\Form\NewsletterType;
+use App\Entity\ContactClient;
+use App\Form\ContactClientType;
 
 class ContactController extends AbstractController
 {
@@ -18,7 +20,11 @@ class ContactController extends AbstractController
     {
 
         $newsletter = new Newsletter();
+        $contact = new ContactClient();
+
         $form = $this->createForm(NewsletterType::class, $newsletter);
+        $form = $this->createForm(ContactClientType::class, $contact);
+        $form->handleRequest($request);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -28,12 +34,19 @@ class ContactController extends AbstractController
             $entityManager->persist($newsletter);
             $entityManager->flush();
 
-            return $this->redirectToRoute('galerie_index');
+            return $this->redirectToRoute('contact');
+        } elseif ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('contact');
         }
 
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'ContactController',
-            'contact' => $newsletter,
+            'contact' => $newsletter, $contact,
+            'form' => $form->createView(),
             'form' => $form->createView(),
         ]);
     }

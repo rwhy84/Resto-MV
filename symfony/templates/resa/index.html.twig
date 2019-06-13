@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Resa index{% endblock %}
+
+{% block body %}
+    <h1>Resa index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Nbclient</th>
+                <th>Nom</th>
+                <th>Tel</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for resa in resas %}
+            <tr>
+                <td>{{ resa.id }}</td>
+                <td>{{ resa.date }}</td>
+                <td>{{ resa.heure }}</td>
+                <td>{{ resa.nbclient }}</td>
+                <td>{{ resa.nom }}</td>
+                <td>{{ resa.tel }}</td>
+                <td>{{ resa.email }}</td>
+                <td>{{ resa.message }}</td>
+                <td>
+                    <a href="{{ path('resa_show', {'id': resa.id}) }}">show</a>
+                    <a href="{{ path('resa_edit', {'id': resa.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('resa_new') }}">Create new</a>
+{% endblock %}
