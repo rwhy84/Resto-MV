@@ -19,7 +19,7 @@ class ContactClient
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $non;
+    private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -46,14 +46,14 @@ class ContactClient
         return $this->id;
     }
 
-    public function getNon(): ?string
+    public function getNom(): ?string
     {
-        return $this->non;
+        return $this->nom;
     }
 
-    public function setNon(string $non): self
+    public function setNom(string $nom): self
     {
-        $this->non = $non;
+        $this->nom = $nom;
 
         return $this;
     }

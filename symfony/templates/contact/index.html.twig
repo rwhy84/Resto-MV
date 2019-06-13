@@ -17,51 +17,12 @@
 </div>
 </header>
 <body>
-<form name="inscription" method="post" action="traitement.php">
-          <div class="contact">
-       <div class="contactform">    
-    <h1>Formulaire de contact</h1>
-    
- 
-       <fieldset>
-       
-
-       <legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
-<br>
-
-<br>
-<select size="1">
-  <option value="Madame">Madame</option>
-  <option value="Monsieur">Monsieur</option>
-</select>
-<br>
-       <label for="nom">Nom</label>
-       <input type="text" name="nom" id="nom" placeholder="Votre nom" required />
-<br>
-       <label for="prenom">Prénom</label>
-       <input type="text" name="prenom" id="prenom" placeholder="Votre prenom" required />
-<br>
-       <label for="email">E-mail</label>
-       <input type="email" name="email" id="email" placeholder="Votre e-mail" required />
-<br>
-       <label for="email">Numéro de téléphone</label>
-       <input type="phone" name="phone" id="phone" placeholder="Votre telephone" required />
-       
-   
-   <p>Message</p>
-<label for="message"></label>
-<textarea id="message" cols="55" rows="9" name="message" placeholder="Laissez-nous un message"></textarea>
-<br>
-<br>
-<input type="reset" value="Effacer" /> 
-
-<legend><h2>Valider la saisie<h2></legend> <!-- Titre du fieldset -->
-    <input type="submit" value="Envoyer"/>
-
-
-       </fieldset>
-</body>
+<form class="form_contact">
+    {{ include('contact_client/_form.html.twig') }}
+</form>
 <div class="iframe">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.023030651155!2d5.369939615486046!3d43.29283937913526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9c0c776228c51%3A0x7e6a39baa40aceae!2s21+Place+aux+Huiles%2C+13001+Marseille!5e0!3m2!1sfr!2sfr!4v1560414265270!5m2!1sfr!2sfr" allowfullscreen></iframe>
+</div>
+</body>
 {% endblock %}
 
