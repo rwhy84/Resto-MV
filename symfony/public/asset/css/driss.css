@@ -1,3 +1,6 @@
+.row{
+	margin:auto;
+}
 .portfolio-warp {
 	position: relative;
 	display: block;
@@ -13,11 +16,16 @@
 	display: block;
     background-position: center center;
     padding: 5px;
+    -webkit-filter: grayscale(1);
     
 }
 
 .single-portfolio.sm-wide {
 	width: 22.22%;
+}
+
+.single-portfolio:hover  {	
+	-webkit-filter: grayscale(0);
 }
 
 
@@ -50,8 +58,8 @@
 	top: -5%;
 	-webkit-transform: scale(1.12);
 	    -ms-transform: scale(1.12);
-	        transform: scale(1.12);
-	  -webkit-filter: brightness(50%);
+			transform: scale(1.12);
+			-webkit-filter: brightness(50%);
 	background-position: center center;
 }
 
@@ -87,4 +95,46 @@
 
 .portfolio-filter li.mixitup-control-active {
 	color: #111;
+}
+
+@media only screen and (max-width: 1024px) {
+
+	.single-portfolio {
+		height: 320px;
+		width: 50%; 
+		-webkit-filter: grayscale(0); 
+	}
+	
+	.single-portfolio.sm-wide {
+		width: 50%;
+	}
+	
+	.portfolio-info h5 {
+		margin-bottom: 3px;
+		letter-spacing: 0.5px;
+	}
+	
+	.portfolio-info {
+	width: calc(100% - 110px);
+		height: calc(100% - 110px);
+		left: 55px;
+		top: 55px;
+		text-align: center;
+		padding-top: 90px;
+	}
+	
+	.portfolio-info {
+		opacity: 1;
+	
+	}
+
+}
+@media only screen and (max-width: 850px) {
+.single-portfolio {
+	width: 100%;  
+}
+
+.single-portfolio.sm-wide {
+		width: 100%;
+	}
 }
