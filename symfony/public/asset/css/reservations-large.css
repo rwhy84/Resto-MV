@@ -75,10 +75,6 @@ section {
     width: 14%;
 }
 
-#medium {
-    display: none;
-}
-
 .dateContainer {
     width: 13.5%;
     display: flex;
