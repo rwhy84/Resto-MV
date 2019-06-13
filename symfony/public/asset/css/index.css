@@ -169,6 +169,7 @@ header {
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
+    background-color: black!important;
 }
 
 video {
