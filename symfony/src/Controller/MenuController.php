@@ -59,12 +59,12 @@ class MenuController extends AbstractController
                 $fileName = "$nomSansExtension.$extension";
 
                 $fichierUploade->move(
-                    $this->getParameter('upload_directory'),   // PARAM1: DOSSIER CIBLE 
+                    $this->getParameter('upload_directory') . "/menu",   // PARAM1: DOSSIER CIBLE 
                     $fileName
                 );                                                 // PARAM2: NOM DU FICHIER CIBLE
 
                 // POUR FINIR, IL FAUT STOCKER LE CHEMIN EN BASE DE DONNEES
-                $menu->setImage("assets/upload/$fileName");
+                $menu->setImage("asset/img/menu/$fileName");
             }
 
             $entityManager = $this->getDoctrine()->getManager();

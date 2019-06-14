@@ -59,12 +59,12 @@ class UploadController extends AbstractController
                 $fileName = "$nomSansExtension.$extension";
 
                 $fichierUploade->move(
-                    $this->getParameter('upload_directory'),   // PARAM1: DOSSIER CIBLE 
+                    $this->getParameter('upload_directory') . '/galerie',   // PARAM1: DOSSIER CIBLE 
                     $fileName
                 );                                                 // PARAM2: NOM DU FICHIER CIBLE
 
                 // POUR FINIR, IL FAUT STOCKER LE CHEMIN EN BASE DE DONNEES
-                $upload->setImage("asset/img/upload/$fileName");
+                $upload->setImage("asset/img/galerie/$fileName");
             }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($upload);

@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Newsletter;
 use App\Form\NewsletterType;
+use App\Repository\MenuRepository;
+
 
 
 class CarteController extends AbstractController
@@ -15,7 +17,7 @@ class CarteController extends AbstractController
     /**
      * @Route("/carte", name="carte")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, MenuRepository $menuRepository): Response
     {
 
         $newsletter = new Newsletter();
@@ -35,6 +37,8 @@ class CarteController extends AbstractController
             'controller_name' => 'CarteController',
             'contact' => $newsletter,
             'form' => $form->createView(),
+            'menus' => $menuRepository->findBy([], ["id" => "DESC"]),
+
         ]);
     }
 }
