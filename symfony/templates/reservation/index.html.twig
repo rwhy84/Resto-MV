@@ -86,7 +86,20 @@
 
                         <div id="calendar" class="hidden">
 
-                <div class="daysHeader">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="pause">
+            <div class="carousel-inner">
+
+                <div class="topControls">
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+<div class="calHeadSlider">
+
+                    <h3></h3>
+
+                    <div class="daysHeader">
 
                     <ul>
                         <li>Lun.</li>
@@ -100,9 +113,28 @@
 
                 </div>
 
-                <div id="currentMonth"></div>
+                </div>
 
-            </div>  
+
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+
+                <div class="carousel-item active currentMonthActive" id="currentMonth">
+
+                </div>
+
+                <div class="carousel-item" id="nextMonth">
+
+                </div>
+
+            </div>
+
+        </div>               
+                  
 
             <div id="rightInputsContainer">  
 
