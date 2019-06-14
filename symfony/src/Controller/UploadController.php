@@ -35,12 +35,44 @@ class UploadController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $fichierUploade = $upload->getImageUpload();
+
+            // COOL POUR LE DEBUG
+            dump($fichierUploade);
+            if ($fichierUploade != null) {
+                // IL FAUT DEPLACER LE FICHIER DE LA QUARANTAINE VERS LE DOSSIER FINAL
+                $fileName = $fichierUploade->getClientOriginalName();
+
+                $fileName = strtolower($fileName);
+                // ICI IL FAUT FILTRER LE NOM DU FICHIER QU'ON VA CREER
+                // https://www.php.net/manual/fr/function.preg-replace.php
+                // PATHINFO_FILENAME 
+                $nomSansExtension   = pathinfo($fileName, PATHINFO_FILENAME);
+                $extension          = pathinfo($fileName, PATHINFO_EXTENSION);
+
+                $nomSansExtension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $nomSansExtension);
+                $nomSansExtension = trim($nomSansExtension);
+
+                $extension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $extension);
+                $extension = trim($extension);
+
+                $fileName = "$nomSansExtension.$extension";
+
+                $fichierUploade->move(
+                    $this->getParameter('upload_directory'),   // PARAM1: DOSSIER CIBLE 
+                    $fileName
+                );                                                 // PARAM2: NOM DU FICHIER CIBLE
+
+                // POUR FINIR, IL FAUT STOCKER LE CHEMIN EN BASE DE DONNEES
+                $upload->setImage("asset/img/upload/$fileName");
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($upload);
             $entityManager->flush();
-
-            return $this->redirectToRoute('upload_index');
         }
+
+
+
 
         return $this->render('upload/new.html.twig', [
             'upload' => $upload,
