@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CaveVinRepository")
@@ -15,6 +16,11 @@ class CaveVin
      * @ORM\Column(type="integer")
      */
     private $id;
+    // BRICOLAGE: ON CREE UNE PROPRIETE POUR GERER L'UPLOAD DE FICHIER
+    /**
+     * @Assert\Image()
+     */
+    private $imageUpload;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -36,6 +42,14 @@ class CaveVin
      */
     private $description;
 
+    public function __construct()
+    {
+        dump($this);
+        $this->imageUpload       = null;
+        $this->image              = "";
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +59,10 @@ class CaveVin
     {
         return $this->image;
     }
+    public function getImageUpload()
+    {
+        return $this->imageUpload;
+    }
 
     public function setImage(string $image): self
     {
@@ -52,6 +70,13 @@ class CaveVin
 
         return $this;
     }
+    // OBLIGATOIRE POUR LE TRAITEMENT DU FORMULAIRE
+    public function setImageUpload($imageUpload): self
+    {
+        $this->imageUpload = $imageUpload;
+        return $this;
+    }
+
 
     public function getTitre(): ?string
     {

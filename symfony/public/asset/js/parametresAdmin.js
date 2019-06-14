@@ -19,6 +19,14 @@ $(document).ready(function () {
         return dayNameBack[dateBack.getDay()] + dayNumBack + monthsBack[dateBack.getMonth()] + currentYearBack;
     }
 
+    function monthOnly(dateBack) {
+
+        var monthsBack = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet',
+            'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+
+        return monthsBack[dateBack.getMonth()];
+    }
+
     // Si on veut la date du jour : frenchDate(new Date(y, m, d));
 
     // Définition d'une date de départ fixe(le 1 Janvier 2019)
@@ -49,7 +57,7 @@ $(document).ready(function () {
     var currentMonthSelector = $("#currentMonth"); // SLIDE DU MOIS ACTUEL
     var nextMonthSelector = $('#nextMonth'); // SLIDE DU MOIS SUIVANT
 
-    var createDateCard = function (card, id, date) {
+    var createDateCard = function (card, id, date, mois) {
 
         dateCard = `
         <div class="dayParam">
@@ -64,9 +72,9 @@ $(document).ready(function () {
 
             <div class="firstLabelCont">
 
-                <h5 class="openLabel defaultActive" id="openLabelMidi`+ id + `">OUVERT</h5>
+                <h5 class="openLabel defaultActive" id="openLabelMidi`+ mois + id + `">OUVERT</h5>
 
-                <h5 class="closeLabel" id="closeLabelMidi`+ id + `">FERMÉ</h5>
+                <h5 class="closeLabel" id="closeLabelMidi`+ mois + id + `">FERMÉ</h5>
 
             </div>
         </div>
@@ -77,7 +85,7 @@ $(document).ready(function () {
 
             <div class="buttonContainer">
                 <div class="railClose" id="railCloseMidi`+ id + `"></div>
-                <button class="btn buttonParam btnOpen" id="buttonMidi`+ id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeMidi` + id + `"></i></button>
+                <button class="btn buttonParam btnOpen" id="buttonMidi`+ id + `" data-miDay="Midi` + mois + id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeMidi` + id + `"></i></button>
                 <div class="railOpen" id="railOpenMidi`+ id + `"></div>
             </div>
 
@@ -91,9 +99,9 @@ $(document).ready(function () {
 
             <div class="labelCont">
 
-                <h5 class="openLabel defaultActive" id="openLabelSoir`+ id + `">OUVERT</h5>
+                <h5 class="openLabel defaultActive" id="openLabelSoir`+ mois + id + `">OUVERT</h5>
 
-                <h5 class="closeLabel" id="closeLabelSoir`+ id + `">FERMÉ</h5>
+                <h5 class="closeLabel" id="closeLabelSoir`+ mois + id + `">FERMÉ</h5>
 
             </div>
         </div>
@@ -104,7 +112,7 @@ $(document).ready(function () {
 
             <div class="buttonContainer">
                 <div class="railClose" id="railCloseSoir`+ id + `"></div>
-                <button class="btn buttonParam btnOpen" id="buttonSoir`+ id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeSoir` + id + `"></i></button>
+                <button class="btn buttonParam btnOpen" id="buttonSoir`+ id + `"data-miDay="Soir` + mois + id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeSoir` + id + `"></i></button>
                 <div class="railOpen" id="railOpenSoir`+ id + `"></div>
             </div>
 
@@ -119,14 +127,14 @@ $(document).ready(function () {
     //CREATION DES CARTES DU MOIS ACTUEL
     for (i = 1; i < nbDaysInCurrentMonth + 1; i++) {
 
-        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)));
+        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), monthOnly(new Date(y, m, i)));
 
     }
 
     //CREATION DES CARTES DU MOIS SUIVANT
     for (i = 1; i < nbDaysInNextMonth + 1; i++) {
 
-        createDateCard(nextMonthSelector, i, frenchDate(new Date(y, m + 1, i)));
+        createDateCard(nextMonthSelector, i, frenchDate(new Date(y, m + 1, i)), monthOnly(new Date(y, m + 1, i)));
 
     }
 
@@ -168,15 +176,22 @@ $(document).ready(function () {
 
     $('.buttonParam').click(function () {
 
+        var miDay = $(this).attr('data-miDay');
+        console.log(miDay);
+
         var nbRailOpen = $(this).next('.railOpen');
 
         var nbRailClose = $(this).prev('.railClose');
 
         var icon = $(this).children('.iconBtn');
 
-        var nbLabelClose = $(this).parent(".generalParam").prev().children('.closeLabel');
+        var nbLabelClose = $(this).closest(".generalParam");/*.children('.closeLabel');*/
 
-        var nbLabelOpen = $(this).parent(".generalParam").prev().children('.openLabel');
+        console.log(nbLabelClose);
+
+        var nbLabelOpen = $(this).closest(".generalParam");/*.children('.openLabel');*/
+
+        console.log(nbLabelOpen);
 
         if ($(this).hasClass('btnOpen')) {
 
@@ -194,8 +209,8 @@ $(document).ready(function () {
             $(icon).removeClass('defaultActive blueIcon').addClass('orangeIcon');
 
             //MODIFICATION DES CLASSES POUR CHANGER LA COULEUR DES LABELS
-            $(nbLabelClose).removeClass('inactive blueLabel').addClass('orangeLabel');
-            $(nbLabelOpen).removeClass('defaultActive blueLabel').addClass('inactive');
+            $('#closeLabel' + miDay).removeClass('inactive blueLabel').addClass('orangeLabel');
+            $('#openLabel' + miDay).removeClass('defaultActive blueLabel').addClass('inactive');
 
         } else {
 
@@ -213,8 +228,8 @@ $(document).ready(function () {
             $(icon).removeClass('defaultActive orangeIcon').addClass('blueIcon');
 
             //MODIFICATION DES CLASSES POUR CHANGER LA COULEUR DES LABELS
-            $(nbLabelClose).removeClass('orangeLabel').addClass('inactive');
-            $(nbLabelOpen).removeClass('defaultActive inactive').addClass('blueLabel');
+            $('#closeLabel' + miDay).removeClass('orangeLabel').addClass('inactive');
+            $('#openLabel' + miDay).removeClass('defaultActive inactive').addClass('blueLabel');
 
         }
 
