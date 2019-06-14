@@ -10,8 +10,8 @@ body {
 
 main {
     background-color: white;
-    background-image: URL("../img/resto.jpg");
-    background-size: contain;
+    background-image: URL("../img/salleb.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -21,7 +21,7 @@ main {
 .mainChild {
     width: 100%;
     height: 100%;  
-    background: linear-gradient(to top, rgb(255, 255, 255) 5%, rgba(255, 255, 255, 0)50%, rgb(255, 255, 255) 95%);
+    /*background: linear-gradient(to top, rgb(255, 255, 255) 5%, rgba(255, 255, 255, 0)50%, rgb(255, 255, 255) 95%);*/
 }
 
 .overlayResa {
@@ -32,7 +32,7 @@ main {
     width: 100%;
     height: 100%;
     background: #303030;
-    opacity: .8;
+    opacity: .7;
 }
 
 section {
@@ -264,7 +264,7 @@ form {
 .globalInputsCont {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 60%;
@@ -273,11 +273,21 @@ form {
 .form-resa {
     /*box-shadow: 1px 0 4px rgba(0, 0, 0, 0.9), -1px 0 4px rgba(0, 0, 0, 0.9);*/
     width: 100%;
-    height: 20%;
+    height: 30%;
     background: rgba(255, 255, 255, 0.03);
     border: 2px solid rgba(255, 255, 255, 0.2);
     color: rgba(255, 255, 255, 0.7);
+    
 }
+
+textarea {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    margin:6% 0;
+    width: 100%;
+}
+
 
 .form-resa:focus {
     border: 2px solid orange;
@@ -355,9 +365,7 @@ label {
     display: none !important;
 }
 
-.redBg {
-    background-color: red;
-}
+
 
 
 

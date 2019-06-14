@@ -34,13 +34,14 @@ class ContactController extends AbstractController
             $entityManager->persist($newsletter);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact');
+            //return $this->redirectToRoute('contact');
         } elseif ($form1->isSubmitted() && $form1->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            dump($contact);
             $entityManager->persist($contact);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact');
+            //return $this->redirectToRoute('contact');
         }
 
         return $this->render('contact/index.html.twig', [
