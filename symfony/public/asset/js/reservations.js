@@ -154,7 +154,7 @@ $(document).ready(function () {
 
         var dateSelect = $(this).children().attr('id');
 
-        console.log(dateSelect);
+        $("#calendar").addClass('hiddenSmall');
 
         $('#date').val(dateSelect); // On ajoute la date cliquée dans l'input
         /*$('#dateRecap').addClass("validRecap");
