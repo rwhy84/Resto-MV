@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/menu")
+ * @Route("admin/menu")
  */
 class MenuController extends AbstractController
 {
@@ -34,12 +34,44 @@ class MenuController extends AbstractController
         $form = $this->createForm(MenuType::class, $menu);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $fichierUploade = $menu->getImageUpload();
+
+            if ($fichierUploade != null) {
+                // IL FAUT DEPLACER LE FICHIER DE LA QUARANTAINE VERS LE DOSSIER FINAL
+                $fileName = $fichierUploade->getClientOriginalName();
+
+                $fileName = strtolower($fileName);
+                // ICI IL FAUT FILTRER LE NOM DU FICHIER QU'ON VA CREER
+                // https://www.php.net/manual/fr/function.preg-replace.php
+                // PATHINFO_FILENAME 
+                $nomSansExtension   = pathinfo($fileName, PATHINFO_FILENAME);
+                $extension          = pathinfo($fileName, PATHINFO_EXTENSION);
+
+                $nomSansExtension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $nomSansExtension);
+                $nomSansExtension = trim($nomSansExtension);
+
+                $extension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $extension);
+                $extension = trim($extension);
+
+                $fileName = "$nomSansExtension.$extension";
+
+                $fichierUploade->move(
+                    $this->getParameter('upload_directory'),   // PARAM1: DOSSIER CIBLE 
+                    $fileName
+                );                                                 // PARAM2: NOM DU FICHIER CIBLE
+
+                // POUR FINIR, IL FAUT STOCKER LE CHEMIN EN BASE DE DONNEES
+                $menu->setImage("assets/upload/$fileName");
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($menu);
             $entityManager->flush();
 
-            return $this->redirectToRoute('menu_index');
+            // return $this->redirectToRoute('menu_index');
         }
 
         return $this->render('menu/new.html.twig', [
@@ -85,7 +117,7 @@ class MenuController extends AbstractController
      */
     public function delete(Request $request, Menu $menu): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$menu->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $menu->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($menu);
             $entityManager->flush();

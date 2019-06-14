@@ -3,12 +3,20 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MenuRepository")
  */
 class Menu
 {
+
+    /**
+     * @Assert\Image()
+     */
+    private $imageUpload;
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -35,6 +43,14 @@ class Menu
      * @ORM\Column(type="string", length=255)
      */
     private $description;
+
+    public function __construct()
+    {
+        dump($this);
+
+        $this->imageUpload      = null;
+        $this->image       = "";
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +102,20 @@ class Menu
     {
         $this->description = $description;
 
+        return $this;
+    }
+
+
+    // OBLIGATOIRE POUR LE TRAITEMENT DU FORMULAIRE
+    public function getImageUpload()
+    {
+        return $this->imageUpload;
+    }
+
+    // OBLIGATOIRE POUR LE TRAITEMENT DU FORMULAIRE
+    public function setImageUpload($imageUpload): self
+    {
+        $this->imageUpload = $imageUpload;
         return $this;
     }
 }
