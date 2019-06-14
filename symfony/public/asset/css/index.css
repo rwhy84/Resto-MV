@@ -283,7 +283,7 @@ header .container {
 }
 
 #about {
-    margin: 50px 0px;
+    padding: 50px 0px 50px 0px;
     height: 100vh;
 }
 
@@ -360,4 +360,14 @@ label.required {
 .subscribe {
     display: block;
     margin: 0 auto;
+}
+
+
+
+.menu-dish li {
+
+    list-style: none;
+    display: block;
+    position: relative;
+    padding: 10px;
 }
