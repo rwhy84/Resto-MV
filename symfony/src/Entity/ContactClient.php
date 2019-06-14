@@ -42,6 +42,14 @@ class ContactClient
      */
     private $message;
 
+    public function __construct ()
+    {
+        $this->nom = "";
+        $this->prenom = "";
+        $this->email = "";
+
+    }
+
     public function getId(): ?int
     {
         return $this->id;
