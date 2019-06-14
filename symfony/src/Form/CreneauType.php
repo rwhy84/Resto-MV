@@ -2,26 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\Upload;
+use App\Entity\Creneau;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-
-class UploadType extends AbstractType
+class CreneauType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('imageUpload')
-            ->add('titre')
-            ->add('description');
+            ->add('datecreneau')
+            ->add('midi')
+            ->add('soir')
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Upload::class,
+            'data_class' => Creneau::class,
         ]);
     }
 }
