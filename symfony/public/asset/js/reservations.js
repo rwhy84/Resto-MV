@@ -46,9 +46,11 @@ $(document).ready(function () {
     //Nombre de jours mois actuel et mois suivant
     var nbDaysInCurrentMonth = getNbJoursMois(m, y);
     var nbDaysInNextMonth = getNbJoursMois(m + 1, y);
+    var nbDaysInPreviousMonth = getNbJoursMois(m - 1, y);
 
     console.log(nbDaysInCurrentMonth);
     console.log(nbDaysInNextMonth);
+    console.log(nbDaysInPreviousMonth);
 
     /* CRÉATION DES CARTES DE DATES DANS LES SLIDER */
 
