@@ -7,16 +7,23 @@ $(document).ready(function () {
         m = dateFront.getMonth(),
         y = dateFront.getFullYear();
 
-    // Création d'une fonction de conversion des dates en format FR jour / date / mois / année
+    // Création d'une fonction de conversion de la date au format FR (numéro du mois)
     function frenchDate(dateFront) {
+
+        var dayNumBack = dateFront.getDate();
+
+        return dayNumBack;
+    }
+
+    // Création d'une fonction de conversion des dates en format FR jour / date / mois
+    function frenchDayAndMonth(dateFront) {
 
         var monthsBack = [' Janvier ', ' Février ', ' Mars ', ' Avril ', ' Mai ', ' Juin ', ' Juillet ',
             ' Août ', ' Septembre ', ' Octobre ', ' Novembre ', ' Décembre '];
         var dayNameBack = ['Dimanche ', 'Lundi ', 'Mardi ', 'Mercredi ', 'Jeudi ', 'Vendredi ', 'Samedi '];
         var dayNumBack = dateFront.getDate();
-        var currentYearBack = dateFront.getFullYear();
 
-        return dayNumBack;
+        return dayNameBack[dateFront.getDay()] + dayNumBack + monthsBack[dateFront.getMonth()];
     }
 
     // Si on veut la date du jour : frenchDate(new Date(y, m, d));
@@ -49,11 +56,11 @@ $(document).ready(function () {
     var currentMonthSelector = $("#currentMonth"); // SLIDE DU MOIS ACTUEL
     var nextMonthSelector = $('#nextMonth'); // SLIDE DU MOIS SUIVANT
 
-    var createDateCard = function (card, id, date, day) {
+    var createDateCard = function (card, id, date, day, idTitle) {
 
         dateCard = `
                 <a href="#" class="dateContainer ` + day + `" id="date` + id + `">
-                    <h5>`+ date + `</h5>
+                    <h5 id="` + idTitle + `">` + date + `</h5>
                 </a>`;
 
         $(card).append(dateCard);
@@ -71,7 +78,7 @@ $(document).ready(function () {
     //CREATION DES CARTES DU MOIS ACTUEL
     for (i = 1; i < nbDaysInCurrentMonth + 1; i++) {
 
-        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m, i)));
+        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m, i)), frenchDayAndMonth(new Date(y, m, i)));
 
     }
 
@@ -135,11 +142,26 @@ $(document).ready(function () {
         }
     }
 
+    $('#date').click(function () {
+
+        $("#calendar").removeClass('hidden');
+    })
+
+
     $('.dateContainer').click(function () {
 
-        $("#calendar").addClass('hidden');
+        event.preventDefault();
 
-        $("#selectHour").removeClass("hidden");
+        var dateSelect = $(this).children().attr('id');
+
+        console.log(dateSelect);
+
+        $('#date').val(dateSelect); // On ajoute la date cliquée dans l'input
+        /*$('#dateRecap').addClass("validRecap");
+
+      $("#calendar").addClass('hidden');*/ // On masque le calendar
+
+        /*$("#selectHour, #formResa").removeClass("hidden");*/
 
         if (($(this).hasClass('Lundi')) || ($(this).hasClass('Mardi')) || ($(this).hasClass('Mercredi')) || ($(this).hasClass('Jeudi'))) {
 
@@ -147,15 +169,21 @@ $(document).ready(function () {
 
         } else if (($(this).hasClass('Vendredi')) || ($(this).hasClass('Samedi'))) {
 
-
         } else if ($(this).hasClass('Dimanche')) {
 
-            $("#diner, #dinerTitle").addClass('hidden');
+            $("#diner").addClass('hidden');
 
         }
     })
 
-    $('.optionHour').click(function () {
+    /*$('#heureRepas').change(function () {
+
+        event.preventDefault();
+
+        var heureRecap = $(this).val();
+
+        $('#heureRecap').append(heureRecap); // On ajoute l'heure choisie dans le menu récap
+        $('#heureRecap').addClass("validRecap");
 
         $("#selectHour").addClass('hidden');
 
@@ -163,13 +191,20 @@ $(document).ready(function () {
 
     })
 
-    $('.optionEaters').click(function () {
+    $('#eatersSelect').change(function () {
+
+        event.preventDefault();
+
+        var eatersRecap = $(this).val();
+
+        $('#nbClientsRecap').append(eatersRecap);
+        $('#nbClientsRecap').addClass("validRecap");
 
         $("#moreEaters").addClass('hidden');
 
         $('.publicInputs').removeClass('hidden');
 
-    })
+    })*/
 
 
 
