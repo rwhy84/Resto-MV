@@ -142,20 +142,26 @@ $(document).ready(function () {
         }
     }
 
+    $('#date').click(function () {
+
+        $("#calendar").removeClass('hidden');
+    })
 
 
     $('.dateContainer').click(function () {
 
         event.preventDefault();
 
-        var dateRecap = $(this).children().attr('id');
+        var dateSelect = $(this).children().attr('id');
 
-        $('#dateRecap').append(dateRecap); // On ajoute la date cliquée dans le menu récap
-        $('#dateRecap').addClass("validRecap");
+        console.log(dateSelect);
 
-        $("#calendar").addClass('hidden'); // On masque le calendar
+        $('#date').val(dateSelect); // On ajoute la date cliquée dans l'input
+        /*$('#dateRecap').addClass("validRecap");
 
-        $("#selectHour, #formResa").removeClass("hidden");
+      $("#calendar").addClass('hidden');*/ // On masque le calendar
+
+        /*$("#selectHour, #formResa").removeClass("hidden");*/
 
         if (($(this).hasClass('Lundi')) || ($(this).hasClass('Mardi')) || ($(this).hasClass('Mercredi')) || ($(this).hasClass('Jeudi'))) {
 
@@ -165,13 +171,12 @@ $(document).ready(function () {
 
         } else if ($(this).hasClass('Dimanche')) {
 
-            $("#diner, #dinerTitle, .dinerHoursCont").addClass('hidden');
-            $('.midiHoursCont').addClass('fullHeight');
+            $("#diner").addClass('hidden');
 
         }
     })
 
-    $('#midi, #diner').change(function () {
+    /*$('#heureRepas').change(function () {
 
         event.preventDefault();
 
@@ -199,7 +204,7 @@ $(document).ready(function () {
 
         $('.publicInputs').removeClass('hidden');
 
-    })
+    })*/
 
 
 
