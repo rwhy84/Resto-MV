@@ -82,6 +82,47 @@ $(document).ready(function () {
 
     }
 
+    //CREATION DES CARTES DU MOIS SUIVANT
+    for (i = 1; i < nbDaysInNextMonth + 1; i++) {
+
+        createDateCard(nextMonthSelector, i, frenchDate(new Date(y, m + 1, i)), dayIndex(new Date(y, m, i + 1)), frenchDayAndMonth(new Date(y, m, i)));
+
+    }
+
+    /* FIN CRÉATION DES CARTES DE DATES */
+
+    /* CRÉATION DU TITRE DU SLIDER (NOM DU MOIS) */
+
+    var whatMonth = new Date()
+    var tab_month = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+    var next_month = new Array("Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre", "Janvier");
+    console.log(tab_month[whatMonth.getMonth()]);
+    console.log(next_month[whatMonth.getMonth()]);
+
+    //MOIS ACTUEL PAR DEFAUT SUR LE PREMIER SLIDE
+    $('.calHeadSlider').children('h3').text(tab_month[whatMonth.getMonth()]);
+
+    //CHANGEMENT ENTRE MOIS ACTUEL ET MOIS SUIVANT AU CLIC
+    $('.carousel-control-prev, .carousel-control-next').click(function () {
+
+        if ($("#currentMonth").hasClass("currentMonthActive")) {
+
+            $('.calHeadSlider').children('h3').text(next_month[whatMonth.getMonth()]);
+            $("#currentMonth").removeClass("currentMonthActive").addClass('hidden');
+            $('#nextMonth').addClass('nextMonthActive').removeClass('hidden');
+
+        } else {
+
+            $('.calHeadSlider').children('h3').text(tab_month[whatMonth.getMonth()]);
+            $('#currentMonth').addClass("currentMonthActive").removeClass('hidden');
+            $('#nextMonth').removeClass('nextMonthActive').addClass('hidden');
+
+        }
+
+    })
+
+    /* FIN TITRE SLIDER */
+
     var emptyDate = `
                     <a href="#" class="disabledLink"></a>
     `;
@@ -91,6 +132,11 @@ $(document).ready(function () {
     var firstDay = dateCalendar.getDay();
 
     console.log("firstDay: ", firstDay);
+
+    var dateCalendar = new Date(y, m + 1, 1);
+    var firstDayNextMonth = dateCalendar.getDay();
+
+    console.log("firstDayNextMonth: ", firstDayNextMonth);
 
     // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois et du nombre de jours dans le mois
 
@@ -104,7 +150,7 @@ $(document).ready(function () {
             $(currentMonthSelector).append(emptyDate);
         }
     } else if (firstDay === 1) {
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < 0; i++) {
             $(currentMonthSelector).append(emptyDate);
         }
     } else if (firstDay === 2) {
@@ -139,6 +185,53 @@ $(document).ready(function () {
         for (i = 0; i < 5; i++) {
             $(currentMonthSelector).prepend(emptyDate);
 
+        }
+    }
+
+    // SI MOIS DE 31 JOURS
+
+    if (firstDayNextMonth === 0) {
+        for (i = 0; i < 6; i++) {
+            $(nextMonthSelector).prepend(emptyDate);
+        }
+        for (i = 0; i < 6; i++) {
+            $(nextMonthSelector).append(emptyDate);
+        }
+    } else if (firstDayNextMonth === 1) {
+        for (i = 0; i < 4; i++) {
+            $(nextMonthSelector).append(emptyDate);
+        }
+    } else if (firstDayNextMonth === 2) {
+        for (i = 0; i < 1; i++) {
+            $(nextMonthSelector).prepend(emptyDate);
+        }
+        for (i = 0; i < 3; i++) {
+            $(nextMonthSelector).append(emptyDate);
+        }
+    } else if (firstDayNextMonth === 3) {
+        for (i = 0; i < 2; i++) {
+            $(nextMonthSelector).prepend(emptyDate);
+        }
+        for (i = 0; i < 2; i++) {
+            $(nextMonthSelector).append(emptyDate);
+        }
+    } else if (firstDayNextMonth === 4) {
+        for (i = 0; i < 3; i++) {
+            $(nextMonthSelector).prepend(emptyDate);
+        }
+        for (i = 0; i < 1; i++) {
+            $(nextMonthSelector).append(emptyDate);
+        }
+    } else if (firstDayNextMonth === 5) {
+        for (i = 0; i < 4; i++) {
+            $(nextMonthSelector).prepend(emptyDate);
+        }
+    } else if (firstDayNextMonth === 6) {
+        for (i = 0; i < 5; i++) {
+            $(nextMonthSelector).prepend(emptyDate);
+        }
+        for (i = 0; i < 5; i++) {
+            $(nextMonthSelector).append(emptyDate);
         }
     }
 
