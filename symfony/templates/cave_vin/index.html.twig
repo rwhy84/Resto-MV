@@ -1,6 +1,7 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
-{% block title %}CaveVin index{% endblock %}
+{% block title %}CaveVin index
+{% endblock %}
 
 {% block body %}
     <h1>CaveVin index</h1>
@@ -17,23 +18,23 @@
             </tr>
         </thead>
         <tbody>
-        {% for cave_vin in cave_vins %}
-            <tr>
-                <td>{{ cave_vin.id }}</td>
-                <td>{{ cave_vin.image }}</td>
-                <td>{{ cave_vin.titre }}</td>
-                <td>{{ cave_vin.prix }}</td>
-                <td>{{ cave_vin.description }}</td>
-                <td>
-                    <a href="{{ path('cave_vin_show', {'id': cave_vin.id}) }}">show</a>
-                    <a href="{{ path('cave_vin_edit', {'id': cave_vin.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
+            {% for cave_vin in cave_vins %}
+                <tr>
+                    <td>{{ cave_vin.id }}</td>
+                    <td>{{ cave_vin.image }}</td>
+                    <td>{{ cave_vin.titre }}</td>
+                    <td>{{ cave_vin.prix }}</td>
+                    <td>{{ cave_vin.description }}</td>
+                    <td>
+                        <a href="{{ path('cave_vin_show', {'id': cave_vin.id}) }}">show</a>
+                        <a href="{{ path('cave_vin_edit', {'id': cave_vin.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 

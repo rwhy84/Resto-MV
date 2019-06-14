@@ -1,42 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CaveController!{% endblock %}
+{% block title %}Hello CaveController!
+{% endblock %}
 
 {% block body %}
 
-<div class="headerCave carousel-inner">
-<img class="d-block w-100" src="asset/img/cave.jpg" alt="Cave a Vin">
-<div class="overlay"></div>
-<div class="titrePage">
-    <div class="d-flex h-100 text-center align-items-center">
-      <div class="w-100 text-white">
-        <h1 class="display-3 title_header">Notre Cave</h1>
-      </div>
+    <div class="headerCave carousel-inner">
+        <img alt="Cave a Vin" class="d-block w-100" src="asset/img/cave.jpg">
+        <div class="overlay"></div>
+        <div class="titrePage">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-3 title_header">Notre Cave</h1>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </header>
 
-<div class="container-fluid" >
-	<div class="row" style="width: 50%">
-		<div class="col-md-12">
-			<div class="row">
-				<div class="col-md-4 text-center">Test
-				</div>
-				<div class="col-md-4">
-					<div class="row">
-						<div class="col-md-12 text-center">Test
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 text-center">Test
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center">Test
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-{% endblock %}
+<div class="container-fluid">
+    <div class="row" style="width: 50%">
+        {%for cave_vin in bouteilles %}
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4 text-center"><img src="{{asset(cave_vin.image) }}" alt="{{ cave_vin.titre }}">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12 text-center">{{ cave_vin.titre }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">{{ cave_vin.description }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">{{ cave_vin.prix }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>{% endblock %}

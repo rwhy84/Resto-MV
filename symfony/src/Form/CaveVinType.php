@@ -12,11 +12,10 @@ class CaveVinType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('image')
+            ->add('imageUpload')
             ->add('titre')
             ->add('prix')
-            ->add('description')
-        ;
+            ->add('description');
     }
 
     public function configureOptions(OptionsResolver $resolver)
