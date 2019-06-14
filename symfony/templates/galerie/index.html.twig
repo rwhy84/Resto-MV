@@ -23,106 +23,19 @@
 <div class="container-fluid row">
 		<div class="portfolio-warp">
 			<!-- single item -->
-			<div class="mix single-portfolio set-bg photo" data-setbg="asset/img/galerie/img-1.jpg">
-                <img src="asset/img/galerie/img-1.jpg" alt="img-1">
-				<a href="asset/img/galerie/img-1.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="asset/img/galerie/img-1.jpg">
-					<img src="asset/img/galerie/img-1.jpg" alt="img-1"></div>
+			            {% for upload in uploads %}
+			<div class="mix single-portfolio set-bg photo" data-setbg="{{ upload.image }}">
+                <img src="{{ upload.image }}" alt="img-1">
+				<a href="{{ upload.image }}" class="portfolio-info" data-fancybox>
+					<div class="pfbg set-bg" data-setbg="{{ upload.image }}">
+					<img src="{{ upload.image }}" alt="img-1"></div>
 					
-					<h5>J EN EST MARRE </h5>
-					<p>espece de singe</p>
+					<h5>{{ upload.titre }}</h5>
+					<p>{{ upload.description }}</p>
 				</a>
 			</div>
-			<!-- single item -->
-			<div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/2.jpg">
-            <img src="asset/img/galerie/img-2.jpg" alt="img-2">
-				<a href="asset/img/galerie/img-2.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="img/portfolio/2.jpg">
-					<img src="asset/img/galerie/img-2.jpg" alt="img-1"></div>
-					<h5>Summer in the desert</h5>
-					<p>Landscape Photography</p>
-				</a>
-			</div>
-			<!-- single item -->
-			<div class="mix single-portfolio set-bg land" data-setbg="img/portfolio/3.jpg">
-            <img src="asset/img/galerie/img-3.jpg" alt="img-3">
-				<a href="asset/img/galerie/img-3.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="img/portfolio/3.jpg">
-					<img src="asset/img/galerie/img-3.jpg" alt="img-1"></div>
-					<h5>Summer in the desert</h5>
-					<p>Landscape Photography</p>
-				</a>
-			</div>
-			<!-- single item -->
-			<div class="mix single-portfolio sm-wide set-bg port" data-setbg="img/portfolio/4.jpg">
-            <img src="asset/img/galerie/img-4.jpg" alt="img-4">
-				<a href="asset/img/galerie/img-4.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="img/portfolio/4.jpg">
-					<img src="asset/img/galerie/img-4.jpg" alt="img-1"></div>
-					<h5>Summer in the desert</h5>
-					<p>Landscape Photography</p>
-				</a>
-			</div>
-			<!-- single item -->
-			<div class="mix single-portfolio sm-wide set-bg photo" data-setbg="img/portfolio/5.jpg">
-            <img src="asset/img/galerie/img-5.jpg" alt="img-2">
-				<a href="asset/img/galerie/img-5.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="img/portfolio/5.jpg">
-					<img src="asset/img/galerie/img-5.jpg" alt="img-1"></div>
-					<h5>Summer in the desert</h5>
-					<p>Landscape Photography</p>
-				</a>
-			</div>
-			<!-- single item -->
-			<div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/6.jpg">
-            <img src="asset/img/galerie/img-6.jpg" alt="img-2">
-				<a href="asset/img/galerie/img-6.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="img/portfolio/6.jpg">
-					<img src="asset/img/galerie/img-6.jpg" alt="img-1"></div>
-					<h5>Summer in the desert</h5>
-					<p>Landscape Photography</p>
-				</a>
-			</div>
-			<!-- single item -->
-			<div class="mix single-portfolio sm-wide set-bg land" data-setbg="img/portfolio/7.jpg">
-            <img src="asset/img/galerie/img-7.jpg" alt="img-2">
-				<a href="asset/img/galerie/img-7.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="img/portfolio/7.jpg">
-					<img src="asset/img/galerie/img-7.jpg" alt="img-1"></div>
-					<h5>Summer in the desert</h5>
-					<p>Landscape Photography</p>
-				</a>
-			</div>
-			<!-- single item -->
-			<div class="mix single-portfolio set-bg port" data-setbg="img/portfolio/8.jpg">
-            <img src="asset/img/galerie/img-8.jpg" alt="img-2">
-				<a href="asset/img/galerie/img-8.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="img/portfolio/8.jpg">
-					<img src="asset/img/galerie/img-8.jpg" alt="img-1"></div>
-					<h5>Summer in the desert</h5>
-					<p>Landscape Photography</p>
-				</a>
-			</div>
-			<!-- single item -->
-			<div class="mix single-portfolio set-bg photo" data-setbg="img/portfolio/9.jpg">
-            <img src="asset/img/galerie/img-9.jpg" alt="img-2">
-				<a href="asset/img/galerie/img-9.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="img/portfolio/9.jpg">
-					<img src="asset/img/galerie/img-9.jpg" alt="img-1"></div>
-					<h5>Summer in the desert</h5>
-					<p>Landscape Photography</p>
-				</a>
-			</div>
-			<!-- single item -->
-			<div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/10.jpg">
-            <img src="asset/img/galerie/img-10.jpg" alt="img-2">
-				<a href="asset/img/galerie/img-10.jpg" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="img/portfolio/10.jpg">
-					<img src="asset/img/galerie/img-10.jpg" alt="img-1"></div>
-					<h5>Summer in the desert</h5>
-					<p>Landscape Photography</p>
-				</a>
-			</div>
+            {% endfor %}
+			
 		</div>
 		</div>
 	</section>
