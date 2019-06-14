@@ -48,7 +48,7 @@ class ContactController extends AbstractController
             'controller_name' => 'ContactController',
             'contact' => $newsletter, $contact,
             'form' => $form->createView(),
-            'form' => $form1->createView(),
+            'form1' => $form1->createView(),
         ]);
     }
 }
