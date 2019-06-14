@@ -4,24 +4,24 @@ html {
 
 body {
     width: 100%;
-    height: 100%;
-    /*background-color: grey;*/  
+    height: 100%; 
 }
 
 main {
-    background-color: white;
-    background-image: URL("../img/resto.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #303030;
     width: 100%;
     height: 80%;
+    padding-top: 5%;
 }
 
 .mainChild {
     width: 100%;
     height: 100%;  
-    background: linear-gradient(to top, rgb(255, 255, 255) 5%, rgba(255, 255, 255, 0)50%, rgb(255, 255, 255) 95%);
+    background-color: #303030;
+    background-image: URL("../img/reservations/salleMV.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;    
 }
 
 .overlayResa {
@@ -32,12 +32,18 @@ main {
     width: 100%;
     height: 100%;
     background: #303030;
-    opacity: .8;
+    opacity: .8;    
+}
+
+.linearG {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#303030, rgba(255, 255, 255, 0), #303030);
 }
 
 section {
     width: 50%;
-    height: 70%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -51,11 +57,16 @@ section {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /*box-shadow: 2px 0 4px rgba(0, 0, 0, 0.9), -2px 0 4px rgba(0, 0, 0, 0.9);*/
 }
 
-#currentMonth {    
-    height: 75%;
+.calHeadSlider h3 {
+    color: rgba(255, 255, 255, 0.7); 
+    text-align: center;
+}
+
+#currentMonth, #nextMonth { 
+    display: none;   
+    height: 79%;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -67,13 +78,10 @@ section {
 
 .daysHeader {
     width: 100%;
-    height: 15%;
+    height: 10%;
     color: rgba(255, 255, 255, 0.7); 
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 1%;
-    /*background-color: rgb(29, 29, 29);
-    border-radius: 10px 10px 0 0;
-    background: linear-gradient(to bottom, rgb(48, 48, 48) 10%, rgb(29, 29, 29)50%, rgb(20, 20, 20)90%);*/
 }
 
 .daysHeader ul {
@@ -130,129 +138,6 @@ section {
     border: 2px solid rgba(255, 255, 255, 0.2);
     color: rgba(255, 255, 255, 0.7); 
 }
-/*
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
-    width: 100%;
-}
-
-#selectHour {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-.fullHeight {
-    margin-bottom: 35% !important;
-}
-
-#selectHour h4 {
-    text-align: center;
-}
-
-.selectHoursCont {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-    height: 40%;
-}
-
-#selectHour h4 {
-    color: white;
-}
-
-#moreEaters {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 80%;
-}
-
-#moreEaters h4 {
-    color: white;
-}
-
-#eatersCont {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 70%;
-}
-
-#recapResa {
-    width: 80%;
-    height: 10%;
-    background-color: grey;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 30px;
-    background: linear-gradient(to bottom, rgb(48, 48, 48) 10%, rgb(29, 29, 29)50%, rgb(20, 20, 20)90%);   
-}
-
-#recapResa a {
-    width: 33%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-}
-
-#recapResa a i {
-    color: white;
-    font-size: 1.5rem;
-    margin-right: 5px;
-}
-
-#heureRecap {
-    border-left: 1px solid rgb(0, 0, 0);
-    border-right: 1px solid rgb(0, 0, 0);    
-}
-
-#dateRecap {
-    border-radius: 30px 0 0 30px;
-}
-
-#nbClientsRecap {
-    border-radius: 0 30px 30px 0;
-}
-
-.validRecap {
-    background: linear-gradient(to bottom, rgb(0, 216, 0) 10%, rgb(0, 156, 0) 50%, rgb(0, 56, 0) 90%);
-}
-
-.publicInputs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.publicInputs p {
-    color: white;
-}*/
-
-
-
-
-
 
 .flexForm {
     display: flex;
@@ -271,7 +156,6 @@ form {
 }
 
 .form-resa {
-    /*box-shadow: 1px 0 4px rgba(0, 0, 0, 0.9), -1px 0 4px rgba(0, 0, 0, 0.9);*/
     width: 100%;
     height: 20%;
     background: rgba(255, 255, 255, 0.03);
@@ -346,13 +230,38 @@ label {
     background: rgb(255, 97, 7);
 }
 
-
-
-
-
-
 .hidden {
     display: none !important;
+}
+
+
+.hiddenSmall {
+    
+}
+
+.topControls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    position: relative;
+    top: 0.4%;
+    height: 100%;
+}
+
+#carouselResaControls, .carousel-inner {
+    height: 100%;
+    width: 100%;
+}
+
+.passed {
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .redBg {
