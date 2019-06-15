@@ -135,8 +135,9 @@ $(document).ready(function () {
     // On récupère l'index du jour de la semaine de la première date du mois et la date du dernier jour
     var dateCalendar = new Date(y, m, 1);
     var firstDay = dateCalendar.getDay();
-
     var lastDay = dateCalendar.getDate();
+
+    console.log("firstDay", firstDay)
 
     // Idem pour mois +1
     var dateCalendarNextMonth = new Date(y, m + 1, 1);
@@ -187,14 +188,12 @@ $(document).ready(function () {
 
     // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois
 
-
     var dateVide;
-    var callback;
 
-    function insertEmptyBefore(selector, jour, element, callback, ) {
+    function insertEmptyBefore(selector, jour, element) {
 
-        var dateCalendar = new Date(y, m, d);
-        jour = dateCalendar.getDay();
+        //var dateCalendar = new Date(y, m, 1);
+        //jour = date.getDay();
 
         if (jour === 1) {
 
@@ -222,7 +221,8 @@ $(document).ready(function () {
     insertEmptyBefore(currentMonthSelector, firstDay, emptyDate);
     insertEmptyBefore(nextMonthSelector, firstDayNextMonth, emptyDate);
 
-    console.log("callback", dateVide);
+    console.log("dateVide", dateVide);
+    console.log("firstDayNextMont: ", firstDayNextMonth);
 
     function insertEmptyAfter(nbDays, selector, dateVide, element) {
 
@@ -246,9 +246,9 @@ $(document).ready(function () {
             totalCases = 35;
         }
 
-        console.log("prevDays", dateVide);
+        var soust = nbDays - dateVide;
 
-        for (i = 0; i < totalCases - (dateVide + nbDays); i++) {
+        for (i = 0; i < totalCases - soust; i++) {
 
             $(selector).append(element);
 
@@ -257,7 +257,8 @@ $(document).ready(function () {
     }
 
     insertEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, dateVide, emptyDate);
-    //insertEmptyAfter(nextMonthSelector, firstDayNextMonth, emptyDate);
+    insertEmptyAfter(nbDaysInNextMonth, nextMonthSelector, dateVide, emptyDate);
+    console.log("dateVidelast: ", dateVide);
 
     /*function insertEmptyAfter(nbDays, previousDays, month, selector, element) {
     
@@ -291,12 +292,6 @@ $(document).ready(function () {
     
         }
     }*/
-
-    console.log("now", nbDaysInCurrentMonth);
-    console.log("dateVide", dateVide);
-
-    insertEmptyAfter(nbDaysInCurrentMonth, dateVide, new Date(y, m, d), currentMonthSelector, emptyDate);
-    insertEmptyAfter(nbDaysInNextMonth, dateVide, new Date(y, m + 1, d), nextMonthSelector, emptyDate);
 
     // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois et du nombre de jours dans le mois
 
