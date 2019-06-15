@@ -45,6 +45,7 @@ $(document).ready(function () {
 
     //Nombre de jours mois actuel et mois suivant
     var nbDaysInCurrentMonth = getNbJoursMois(m, y);
+    console.log("nbcurrent", nbDaysInCurrentMonth);
     var nbDaysInNextMonth = getNbJoursMois(m + 1, y);
     var nbDaysInPreviousMonth = getNbJoursMois(m - 1, y);
 
@@ -246,9 +247,9 @@ $(document).ready(function () {
             totalCases = 35;
         }
 
-        var soust = nbDays - dateVide;
+        var soust = nbDays + dateVide;
 
-        for (i = 0; i < totalCases - soust; i++) {
+        for (i = 0; i = (totalCases - soust); i++) {
 
             $(selector).append(element);
 
@@ -259,136 +260,6 @@ $(document).ready(function () {
     insertEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, dateVide, emptyDate);
     insertEmptyAfter(nbDaysInNextMonth, nextMonthSelector, dateVide, emptyDate);
     console.log("dateVidelast: ", dateVide);
-
-    /*function insertEmptyAfter(nbDays, previousDays, month, selector, element) {
-    
-        month = new Date(y, m, d);
-    
-        // MOIS DE 31 JOURS
-        if ((nbDays === 31) && (previousDays <= 4)) {
-            totalCases = 35;
-        } else if ((nbDays === 31) && (previousDays > 4)) {
-            totalCases = 42;
-            // MOIS DE 30 JOURS
-        } else if ((nbDays === 30) && (previousDays <= 5)) {
-            totalCases = 35;
-        } else if ((nbDays === 30) && (previousDays > 5)) {
-            totalCases = 42;
-            // MOIS DE 29 JOURS
-        } else if (nbDays === 29) {
-            totalCases = 35;
-            // MOIS DE 28 JOURS
-        } else if ((nbDays === 28) && (previousDays === 0)) {
-            totalCases = 28;
-        } else {
-            totalCases = 35;
-        }
-    
-        console.log("prevDays", previousDays);
-    
-        for (i = 0; i < totalCases - (previousDays + nbDays); i++) {
-    
-            $(selector).append(element);
-    
-        }
-    }*/
-
-    // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois et du nombre de jours dans le mois
-
-    /*if (nbDaysInCurrentMonth === 30) { // IMPORTANT: SI 30 JOURS
-        if (firstDay === 0) {
-            for (i = 0; i < 6; i++) {
-                $(currentMonthSelector).prepend(emptyDate);
-                // $(disabledSelector).text(dayIndex(new Date(y, m - 1, d - i)))
-     
-            }
-            for (i = 0; i < 6; i++) {
-                $(currentMonthSelector).append(emptyDate);
-            }
-        } else if (firstDay === 1) {
-            for (i = 0; i < 0; i++) {
-                $(currentMonthSelector).append(emptyDate);
-            }
-        } else if (firstDay === 2) {
-            for (i = 0; i < 1; i++) {
-                $(currentMonthSelector).prepend(emptyDate);
-            }
-            for (i = 0; i < 4; i++) {
-                $(currentMonthSelector).append(emptyDate);
-            }
-        } else if (firstDay === 3) {
-            for (i = 0; i < 2; i++) {
-                $(currentMonthSelector).prepend(emptyDate);
-            }
-            for (i = 0; i < 3; i++) {
-                $(currentMonthSelector).append(emptyDate);
-            }
-        } else if (firstDay === 4) {
-            for (i = 0; i < 3; i++) {
-                $(currentMonthSelector).prepend(emptyDate);
-            }
-            for (i = 0; i < 2; i++) {
-                $(currentMonthSelector).append(emptyDate);
-            }
-        } else if (firstDay === 5) {
-            for (i = 0; i < 4; i++) {
-                $(currentMonthSelector).prepend(emptyDate);
-            }
-            for (i = 0; i < 1; i++) {
-                $(currentMonthSelector).append(emptyDate);
-            }
-        } else if (firstDay === 6) {
-            for (i = 0; i < 5; i++) {
-                $(currentMonthSelector).prepend(emptyDate);
-            }
-        }
-    } else if (nbDaysInCurrentMonth === 31) {  // SI MOIS DE 31 JOURS       
-     
-        if (firstDayNextMonth === 0) {
-            for (i = 0; i < 6; i++) {
-                $(nextMonthSelector).prepend(emptyDate);
-            }
-            for (i = 0; i < 6; i++) {
-                $(nextMonthSelector).append(emptyDate);
-            }
-        } else if (firstDayNextMonth === 1) {
-            for (i = 0; i < 4; i++) {
-                $(nextMonthSelector).append(emptyDate);
-            }
-        } else if (firstDayNextMonth === 2) {
-            for (i = 0; i < 1; i++) {
-                $(nextMonthSelector).prepend(emptyDate);
-            }
-            for (i = 0; i < 3; i++) {
-                $(nextMonthSelector).append(emptyDate);
-            }
-        } else if (firstDayNextMonth === 3) {
-            for (i = 0; i < 2; i++) {
-                $(nextMonthSelector).prepend(emptyDate);
-            }
-            for (i = 0; i < 2; i++) {
-                $(nextMonthSelector).append(emptyDate);
-            }
-        } else if (firstDayNextMonth === 4) {
-            for (i = 0; i < 3; i++) {
-                $(nextMonthSelector).prepend(emptyDate);
-            }
-            for (i = 0; i < 1; i++) {
-                $(nextMonthSelector).append(emptyDate);
-            }
-        } else if (firstDayNextMonth === 5) {
-            for (i = 0; i < 4; i++) {
-                $(nextMonthSelector).prepend(emptyDate);
-            }
-        } else if (firstDayNextMonth === 6) {
-            for (i = 0; i < 5; i++) {
-                $(nextMonthSelector).prepend(emptyDate);
-            }
-            for (i = 0; i < 5; i++) {
-                $(nextMonthSelector).append(emptyDate);
-            }
-        }
-    }*/
 
     $('#date').click(function () {
 
