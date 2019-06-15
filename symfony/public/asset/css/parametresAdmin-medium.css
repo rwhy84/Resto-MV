@@ -103,7 +103,6 @@ input:focus {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
     width: 100%;
     height: 20%;
     margin-bottom: 2%;
@@ -115,7 +114,6 @@ input:focus {
 
 .spaceBlock {
     width: 40%;
-    height: 100%;
 }
 
 .dateContainer {
@@ -133,6 +131,7 @@ input:focus {
 .dateContainer h5 {
     font-size: 1rem;
     color: white;
+    text-align: center;
 }
 
 .labelCont, .firstLabelCont {
@@ -384,7 +383,7 @@ input:focus {
 
 @keyframes animateIconBlue {
     0% {
-        color: rgb(255, 94, 0);
+        
         }
     100% {        
         color: rgb(1, 170, 192);
@@ -393,7 +392,7 @@ input:focus {
 
 @keyframes animateIconOrange {
     0% {
-        color: rgb(1, 170, 192);   
+          
         }
     100% {            
         color: rgb(255, 94, 0);
@@ -404,4 +403,67 @@ input:focus {
 
 .hidden {
     display: none;
+}
+
+#mystery {
+    width: 30%;
+    height: 20%;
+    background-color: rgb(255, 45, 80);
+    border-radius: 30px;
+    color: white;
+    border: none;    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.newThemeColor {
+    background-color: rgb(252, 109, 133) !important;
+}
+
+.themeMainColor {
+    background-color: white;
+}
+
+.themeTransparrency {
+    background-color: rgba(255, 45, 80, 0.7) !important;
+}
+
+.pinkBG {
+    background-color: rgb(255, 45, 80) !important;
+}
+
+.pinkColor {
+    color: rgb(255, 45, 80) !important;
+}
+
+.whiteColor {
+    color: white !important;
+}
+
+.cardBgSurprise {
+    background-color: rgb(255, 45, 80);
+    background-image: url("../img/imagesAdmin/arcEnCiel.png");
+    background-size: cover;
+}
+
+.footerBgSurprise {
+    background-color: white;
+    background-image: url("../img/imagesAdmin/themefooter.png");
+    background-size: cover;
+    box-shadow: none;
+}
+
+.headerBgSurprise {
+background-color: white;
+background-image: url("../img/imagesAdmin/unicorn.png");
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center center;
+box-shadow: none;
+}
+
+.resetLinear {
+    background: none; 
 }

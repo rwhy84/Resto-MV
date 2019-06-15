@@ -14,9 +14,8 @@ $(document).ready(function () {
             ' Août ', ' Septembre ', ' Octobre ', ' Novembre ', ' Décembre '];
         var dayNameBack = ['Dimanche ', 'Lundi ', 'Mardi ', 'Mercredi ', 'Jeudi ', 'Vendredi ', 'Samedi '];
         var dayNumBack = dateBack.getDate();
-        var currentYearBack = dateBack.getFullYear();
 
-        return dayNameBack[dateBack.getDay()] + dayNumBack + monthsBack[dateBack.getMonth()] + currentYearBack;
+        return dayNameBack[dateBack.getDay()] + dayNumBack + monthsBack[dateBack.getMonth()];
     }
 
     function monthOnly(dateBack) {
@@ -237,5 +236,29 @@ $(document).ready(function () {
 
     /* FIN ANIMATIONS BOUTONS GLISSANTS */
 
+    /* THEME MYSTERE */
+
+    $('#mystery').click(function () {
+
+        $('.dayParam').addClass("cardBgSurprise");
+
+        $('section').addClass("newThemeColor");
+
+        $('main').addClass('themeMainColor');
+
+        $('.bottomSection, .pageViewer').addClass('themeTransparrency');
+
+        var menuNewTheme = $('.link').children();
+        $(menuNewTheme).addClass('pinkBG');
+
+        $(menuNewTheme).children().addClass('whiteColor');
+
+        $('footer').addClass('footerBgSurprise');
+
+        $('.linearGFooter, .viewerCont').addClass('resetLinear');
+
+        $('header').addClass('headerBgSurprise');
+
+    })
 
 })

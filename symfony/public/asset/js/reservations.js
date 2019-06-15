@@ -48,10 +48,6 @@ $(document).ready(function () {
     var nbDaysInNextMonth = getNbJoursMois(m + 1, y);
     var nbDaysInPreviousMonth = getNbJoursMois(m - 1, y);
 
-    console.log(nbDaysInCurrentMonth);
-    console.log(nbDaysInNextMonth);
-    console.log(nbDaysInPreviousMonth);
-
     /* CRÉATION DES CARTES DE DATES DANS LES SLIDER */
 
     var dateCard = "";
@@ -91,6 +87,12 @@ $(document).ready(function () {
 
     }
 
+    for (i = nbDaysInPreviousMonth; i < nbDaysInPreviousMonth; i++) {
+
+        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m - 1, i)), frenchDayAndMonth(new Date(y, m, i)));
+
+    }
+
     /* FIN CRÉATION DES CARTES DE DATES */
 
     /* CRÉATION DU TITRE DU SLIDER (NOM DU MOIS) */
@@ -125,20 +127,24 @@ $(document).ready(function () {
 
     /* FIN TITRE SLIDER */
 
+    // Création d'une case vide
     var emptyDate = `
-                    <a href="#" class="disabledLink" onclick="return false"></a>
+                    <a href="#" class="disabledLink" onclick="return false"><h5></h5></a>
     `;
 
-    // On récupère l'index du jour de la semaine de la première date du mois
+    // On récupère l'index du jour de la semaine de la première date du mois et la date du dernier jour
     var dateCalendar = new Date(y, m, 1);
     var firstDay = dateCalendar.getDay();
 
-    console.log("firstDay: ", firstDay);
+    var lastDay = dateCalendar.getDate();
 
+    // Idem pour mois +1
     var dateCalendarNextMonth = new Date(y, m + 1, 1);
     var firstDayNextMonth = dateCalendarNextMonth.getDay();
 
-    console.log("firstDayNextMonth: ", firstDayNextMonth);
+    // Et la derniere date du mois -1
+    var dateCalendarPreviousMonth = new Date(y, m - 1, nbDaysInPreviousMonth);
+    var lastDatePreviousMonth = dateCalendarPreviousMonth.getDate();
 
     // Création d'une fonction pour compter les jours passés et désactiver les dates sur le calendrier
 
@@ -169,7 +175,7 @@ $(document).ready(function () {
 
     var disableDate = diff.day;
 
-    console.log(disableDate);
+    // Désactivation des dates passées dans le calendrier
 
     for (i = 0; i < disableDate + 1; i++) {
 
@@ -177,13 +183,129 @@ $(document).ready(function () {
 
     }
 
+    var emptyDate = `<a href="#" class="disabledLink" onclick="return false"><h5 class="previousDateDisabled"></h5></a>`;
+
+    // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois
+
+
+    var dateVide;
+    var callback;
+
+    function insertEmptyBefore(selector, jour, element, callback, ) {
+
+        var dateCalendar = new Date(y, m, d);
+        jour = dateCalendar.getDay();
+
+        if (jour === 1) {
+
+            dateVide = 0;
+
+        } else if (jour === 0) {
+
+            dateVide = 6;
+
+        } else {
+
+            for (i = 0; i < jour; i++) {
+                dateVide = i;
+            }
+        }
+
+        for (i = 0; i < dateVide; i++) {
+
+            $(selector).prepend(element);
+
+        }
+
+    }
+
+    insertEmptyBefore(currentMonthSelector, firstDay, emptyDate);
+    insertEmptyBefore(nextMonthSelector, firstDayNextMonth, emptyDate);
+
+    console.log("callback", dateVide);
+
+    function insertEmptyAfter(nbDays, selector, dateVide, element) {
+
+        // MOIS DE 31 JOURS
+        if ((nbDays === 31) && (dateVide <= 4)) {
+            totalCases = 35;
+        } else if ((nbDays === 31) && (dateVide > 4)) {
+            totalCases = 42;
+            // MOIS DE 30 JOURS
+        } else if ((nbDays === 30) && (dateVide <= 5)) {
+            totalCases = 35;
+        } else if ((nbDays === 30) && (dateVide > 5)) {
+            totalCases = 42;
+            // MOIS DE 29 JOURS
+        } else if (nbDays === 29) {
+            totalCases = 35;
+            // MOIS DE 28 JOURS
+        } else if ((nbDays === 28) && (dateVide === 0)) {
+            totalCases = 28;
+        } else {
+            totalCases = 35;
+        }
+
+        console.log("prevDays", dateVide);
+
+        for (i = 0; i < totalCases - (dateVide + nbDays); i++) {
+
+            $(selector).append(element);
+
+        }
+
+    }
+
+    insertEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, dateVide, emptyDate);
+    //insertEmptyAfter(nextMonthSelector, firstDayNextMonth, emptyDate);
+
+    /*function insertEmptyAfter(nbDays, previousDays, month, selector, element) {
+    
+        month = new Date(y, m, d);
+    
+        // MOIS DE 31 JOURS
+        if ((nbDays === 31) && (previousDays <= 4)) {
+            totalCases = 35;
+        } else if ((nbDays === 31) && (previousDays > 4)) {
+            totalCases = 42;
+            // MOIS DE 30 JOURS
+        } else if ((nbDays === 30) && (previousDays <= 5)) {
+            totalCases = 35;
+        } else if ((nbDays === 30) && (previousDays > 5)) {
+            totalCases = 42;
+            // MOIS DE 29 JOURS
+        } else if (nbDays === 29) {
+            totalCases = 35;
+            // MOIS DE 28 JOURS
+        } else if ((nbDays === 28) && (previousDays === 0)) {
+            totalCases = 28;
+        } else {
+            totalCases = 35;
+        }
+    
+        console.log("prevDays", previousDays);
+    
+        for (i = 0; i < totalCases - (previousDays + nbDays); i++) {
+    
+            $(selector).append(element);
+    
+        }
+    }*/
+
+    console.log("now", nbDaysInCurrentMonth);
+    console.log("dateVide", dateVide);
+
+    insertEmptyAfter(nbDaysInCurrentMonth, dateVide, new Date(y, m, d), currentMonthSelector, emptyDate);
+    insertEmptyAfter(nbDaysInNextMonth, dateVide, new Date(y, m + 1, d), nextMonthSelector, emptyDate);
 
     // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois et du nombre de jours dans le mois
 
-    if (nbDaysInCurrentMonth === 30) { // IMPORTANT: SI 30 JOURS
+    /*if (nbDaysInCurrentMonth === 30) { // IMPORTANT: SI 30 JOURS
         if (firstDay === 0) {
             for (i = 0; i < 6; i++) {
                 $(currentMonthSelector).prepend(emptyDate);
+                // $(disabledSelector).text(dayIndex(new Date(y, m - 1, d - i)))
+     
             }
             for (i = 0; i < 6; i++) {
                 $(currentMonthSelector).append(emptyDate);
@@ -226,7 +348,7 @@ $(document).ready(function () {
             }
         }
     } else if (nbDaysInCurrentMonth === 31) {  // SI MOIS DE 31 JOURS       
-
+     
         if (firstDayNextMonth === 0) {
             for (i = 0; i < 6; i++) {
                 $(nextMonthSelector).prepend(emptyDate);
@@ -271,7 +393,7 @@ $(document).ready(function () {
                 $(nextMonthSelector).append(emptyDate);
             }
         }
-    }
+    }*/
 
     $('#date').click(function () {
 
