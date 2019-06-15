@@ -189,7 +189,7 @@ $(document).ready(function () {
 
     // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois
 
-    var dateVide;
+    var dateVid;
 
     function insertEmptyBefore(selector, jour, element) {
 
@@ -222,32 +222,50 @@ $(document).ready(function () {
     insertEmptyBefore(currentMonthSelector, firstDay, emptyDate);
     insertEmptyBefore(nextMonthSelector, firstDayNextMonth, emptyDate);
 
-    console.log("dateVide", dateVide);
+    console.log("dateVide", dateVid);
     console.log("firstDayNextMont: ", firstDayNextMonth);
 
-    function insertEmptyAfter(nbDays, selector, dateVide, element) {
+    var totalCases;
+
+    function inserCaseEmptyAfter(nbDays, selector, dateVid, element) {
 
         // MOIS DE 31 JOURS
-        if ((nbDays === 31) && (dateVide <= 4)) {
+        if ((nbDays === 31) && (dateVid <= 4)) {
             totalCases = 35;
-        } else if ((nbDays === 31) && (dateVide > 4)) {
+            console.log("totalCases1: ", totalCases)
+            console.log("dateVide1: ", dateVid);
+        } else if ((nbDays === 31) && (dateVid > 4)) {
             totalCases = 42;
+            console.log("totalCases2: ", totalCases)
+            console.log("dateVide2: ", dateVid);
             // MOIS DE 30 JOURS
-        } else if ((nbDays === 30) && (dateVide <= 5)) {
+        } else if ((nbDays === 30) && (dateVid <= 5)) {
             totalCases = 35;
-        } else if ((nbDays === 30) && (dateVide > 5)) {
+            console.log("totalCases3: ", totalCases)
+            console.log("dateVide3: ", dateVid);
+        } else if ((nbDays === 30) && (dateVid > 5)) {
             totalCases = 42;
+            console.log("totalCases4: ", totalCases)
+            console.log("dateVide4: ", dateVid);
             // MOIS DE 29 JOURS
         } else if (nbDays === 29) {
             totalCases = 35;
+            console.log("totalCases5: ", totalCases)
+            console.log("dateVide5: ", dateVid);
             // MOIS DE 28 JOURS
-        } else if ((nbDays === 28) && (dateVide === 0)) {
+        } else if ((nbDays === 28) && (dateVid === 0)) {
             totalCases = 28;
-        } else {
+            console.log("totalCases6: ", totalCases)
+            console.log("dateVide6: ", dateVid);
+        } else if ((nbDays === 28) && (datevid > 0)) {
             totalCases = 35;
+            console.log("totalCases7: ", totalCases)
+            console.log("dateVide7: ", dateVid);
         }
 
-        var soust = nbDays + dateVide;
+        console.log("totalCases: ", totalCases);
+        console.log("nbDays: ", nbDays);
+        var soust = nbDays + dateVid;
 
         for (i = 0; i = (totalCases - soust); i++) {
 
@@ -257,9 +275,12 @@ $(document).ready(function () {
 
     }
 
-    //insertEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, dateVide, emptyDate);
-    //insertEmptyAfter(nbDaysInNextMonth, nextMonthSelector, dateVide, emptyDate);
-    console.log("dateVidelast: ", dateVide);
+    console.log("dateVidelast: ", dateVid);
+
+    inserCaseEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, /*dateVide,*/ emptyDate);
+    inserCaseEmptyAfter(nbDaysInNextMonth, nextMonthSelector, /*dateVide,*/ emptyDate);
+
+    console.log("dateVidelast: ", dateVid);
 
     $('#date').click(function () {
 
@@ -294,48 +315,5 @@ $(document).ready(function () {
 
         }
     })
-
-    /*$('#heureRepas').change(function () {
-
-        event.preventDefault();
-
-        var heureRecap = $(this).val();
-
-        $('#heureRecap').append(heureRecap); // On ajoute l'heure choisie dans le menu récap
-        $('#heureRecap').addClass("validRecap");
-
-        $("#selectHour").addClass('hidden');
-
-        $("#moreEaters").removeClass('hidden');
-
-    })
-
-    $('#eatersSelect').change(function () {
-
-        event.preventDefault();
-
-        var eatersRecap = $(this).val();
-
-        $('#nbClientsRecap').append(eatersRecap);
-        $('#nbClientsRecap').addClass("validRecap");
-
-        $("#moreEaters").addClass('hidden');
-
-        $('.publicInputs').removeClass('hidden');
-
-    })*/
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 })
