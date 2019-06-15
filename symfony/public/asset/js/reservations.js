@@ -257,8 +257,8 @@ $(document).ready(function () {
 
     }
 
-    insertEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, dateVide, emptyDate);
-    insertEmptyAfter(nbDaysInNextMonth, nextMonthSelector, dateVide, emptyDate);
+    //insertEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, dateVide, emptyDate);
+    //insertEmptyAfter(nbDaysInNextMonth, nextMonthSelector, dateVide, emptyDate);
     console.log("dateVidelast: ", dateVide);
 
     $('#date').click(function () {
