@@ -402,22 +402,15 @@ $(document).ready(function () {
 
 
 
-    $(".dateContainer").each(function () {
 
-        var dateContCount = $(".dateContainer");
+    if ($(".dateContainer").hasClass("midi-close")) {
 
-        if (dateContCount)
-            console.log(dateContCount);
-        /*
-         if(hasClass("midi-close")) {
-     }).
- 
-         $("#date25").addClass("forbidden");
-         console.log("true");
- 
-     } else {
-         console.log("false");*/
-    })
+        $(this).addClass("forbidden");
+        console.log("true");
+
+    } else {
+        console.log("false");
+    }
 
 
 })
