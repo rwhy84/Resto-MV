@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\CreneauRepository;
+
 
 /**
  * @Route("/resa")
@@ -19,7 +19,7 @@ class ResaController extends AbstractController
     /**
      * @Route("/", name="resa_index", methods={"GET"})
      */
-    public function index(ResaRepository $resaRepository, CreneauRepository $creneauRepository): Response
+    public function index(ResaRepository $resaRepository): Response
     {
         return $this->render('resa/index.html.twig', [
             'resas' => $resaRepository->findAll(),

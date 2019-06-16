@@ -2,6 +2,19 @@ $(document).ready(function () {
 
     /* CRÉATIONS DES DATES */
 
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
+
     var dateFront = new Date(),
         d = dateFront.getDate(),
         m = dateFront.getMonth(),
@@ -55,10 +68,10 @@ $(document).ready(function () {
     var currentMonthSelector = $("#currentMonth"); // SLIDE DU MOIS ACTUEL
     var nextMonthSelector = $('#nextMonth'); // SLIDE DU MOIS SUIVANT
 
-    var createDateCard = function (card, id, date, day, idTitle) {
+    var createDateCard = function (card, id, format, date, day, idTitle) {
 
         dateCard = `
-                <a href="#" class="dateContainer ` + day + `" id="date` + id + `">
+                <a href="#" class="dateContainer ` + day + `` + format + `" id="date` + id + `" data-date="` + format + `">
                     <h5 id="` + idTitle + `">` + date + `</h5>
                 </a>`;
 
@@ -77,14 +90,14 @@ $(document).ready(function () {
     //CREATION DES CARTES DU MOIS ACTUEL
     for (i = 1; i < nbDaysInCurrentMonth + 1; i++) {
 
-        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m, i)), frenchDayAndMonth(new Date(y, m, i)));
+        createDateCard(currentMonthSelector, i, formatDate(new Date(y, m, i)), frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m, i)), frenchDayAndMonth(new Date(y, m, i)));
 
     }
 
     //CREATION DES CARTES DU MOIS SUIVANT
     for (i = 1; i < nbDaysInNextMonth + 1; i++) {
 
-        createDateCard(nextMonthSelector, i, frenchDate(new Date(y, m + 1, i)), dayIndex(new Date(y, m, i + 1)), frenchDayAndMonth(new Date(y, m, i)));
+        createDateCard(nextMonthSelector, i, formatDate(new Date(y, m, i)), frenchDate(new Date(y, m + 1, i)), dayIndex(new Date(y, m, i + 1)), frenchDayAndMonth(new Date(y, m, i)));
 
     }
 
@@ -93,6 +106,8 @@ $(document).ready(function () {
         createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m - 1, i)), frenchDayAndMonth(new Date(y, m, i)));
 
     }
+
+
 
     /* FIN CRÉATION DES CARTES DE DATES */
 
@@ -186,6 +201,28 @@ $(document).ready(function () {
     }
 
     var emptyDate = `<a href="#" class="disabledLink" onclick="return false"><h5 class="previousDateDisabled"></h5></a>`;
+
+    // On ajoute aux cases de dates des classes correspondant au statut OUVERT / FERME du jour
+
+    var listDateCont = $(".dateContainer");
+
+    var listDateBDD = $('#BDDRECAP').children();
+
+    for (i = 0; i < listDateCont.length; i++) {
+        for (a = 0; a < listDateBDD.length; a++) {
+
+            if ($(listDateCont[i]).attr('data-date') == $(listDateBDD[a]).attr("id")) {
+                //console.log("VRAI: ", i);
+
+                var statut = $(listDateBDD[a]).attr("class");
+
+                $(listDateCont[i]).addClass(statut);
+            } else {
+
+            }
+
+        }
+    }
 
     // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois
 
@@ -322,10 +359,10 @@ $(document).ready(function () {
 
     }
 
-    console.log("dateVidelast: ", dateVid);
+    console.log("dateVidelast: ", dateVide);
 
     inserCaseEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, dateVide, emptyDate, firstDay);
-    inserCaseEmptyAfter(nbDaysInNextMonth, nextMonthSelector, /*dateVide,*/emptyDate, firstDayNextMonth);
+    inserCaseEmptyAfter(nbDaysInNextMonth, nextMonthSelector, /*dateVide*/ emptyDate, firstDayNextMonth);
 
     console.log("firstDayNextMonth: ", firstDayNextMonth);
 
@@ -362,5 +399,25 @@ $(document).ready(function () {
 
         }
     })
+
+
+
+    $(".dateContainer").each(function () {
+
+        var dateContCount = $(".dateContainer");
+
+        if (dateContCount)
+            console.log(dateContCount);
+        /*
+         if(hasClass("midi-close")) {
+     }).
+ 
+         $("#date25").addClass("forbidden");
+         console.log("true");
+ 
+     } else {
+         console.log("false");*/
+    })
+
 
 })

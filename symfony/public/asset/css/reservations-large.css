@@ -264,6 +264,11 @@ label {
     background: rgba(255, 255, 255, 0.4);
 }
 
+.forbidden {
+    cursor: not-allowed !important;
+    background: rgba(255, 255, 255, 0.4) !important;
+}
+
 .redBg {
     background-color: red;
 }

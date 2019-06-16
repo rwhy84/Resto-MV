@@ -203,12 +203,13 @@
 
     </div>
 
+<div id="BDDRECAP" class="hidden">
 {% for creneau in creneaux %}
 
-                <p>{{ creneau.datecreneau }}</p>
-                <p>{{ creneau.midi }}</p>
-                <p>{{ creneau.soir }}</p>
+<a href="#" class="midi-{{ creneau.midi }} soir-{{ creneau.soir }}" id="{{ creneau.datecreneau }}"></a>                 
+                       
 {% endfor %}
+</div>
 
 </main>
 
