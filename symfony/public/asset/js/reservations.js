@@ -216,18 +216,65 @@ $(document).ready(function () {
             $(selector).prepend(element);
 
         }
-
+        return dateVide;
     }
 
     insertEmptyBefore(currentMonthSelector, firstDay, emptyDate);
     insertEmptyBefore(nextMonthSelector, firstDayNextMonth, emptyDate);
 
-    console.log("dateVide", dateVid);
+    console.log("dateVide", dateVide);
     console.log("firstDayNextMont: ", firstDayNextMonth);
 
     var totalCases;
 
-    function inserCaseEmptyAfter(nbDays, selector, dateVid, element) {
+    function compterDatesVides(date, jour) {
+
+        var dateEnd;
+
+        var dateCalendar = new Date(y, m, d);
+        var date = dateCalendar.getDay();
+
+        if (jour === 1) {
+
+            date = 0;
+
+        } else if (jour === 0) {
+
+            date = 6;
+
+        } else {
+
+            for (i = 0; i < jour; i++) {
+                date = i;
+            }
+        }
+        return dateEnd;
+    }
+
+    var firstMonth = new Date(y, m + 1, 1);
+    dateEnd = compterDatesVides(firstMonth, firstDayNextMonth);
+
+    console.log("functionDateVides: ", dateVide);
+
+
+    function inserCaseEmptyAfter(nbDays, selector, dateVid, element, jour) {
+
+        console.log("dateVide", dateVide);
+
+        if (jour === 1) {
+
+            dateVid = 0;
+
+        } else if (jour === 0) {
+
+            dateVid = 6;
+
+        } else {
+
+            for (i = 0; i < jour; i++) {
+                dateVid = i;
+            }
+        }
 
         // MOIS DE 31 JOURS
         if ((nbDays === 31) && (dateVid <= 4)) {
@@ -277,10 +324,10 @@ $(document).ready(function () {
 
     console.log("dateVidelast: ", dateVid);
 
-    inserCaseEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, /*dateVide,*/ emptyDate);
-    inserCaseEmptyAfter(nbDaysInNextMonth, nextMonthSelector, /*dateVide,*/ emptyDate);
+    inserCaseEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, dateVide, emptyDate, firstDay);
+    inserCaseEmptyAfter(nbDaysInNextMonth, nextMonthSelector, /*dateVide,*/emptyDate, firstDayNextMonth);
 
-    console.log("dateVidelast: ", dateVid);
+    console.log("firstDayNextMonth: ", firstDayNextMonth);
 
     $('#date').click(function () {
 

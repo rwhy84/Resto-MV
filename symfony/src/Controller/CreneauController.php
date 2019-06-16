@@ -21,7 +21,7 @@ class CreneauController extends AbstractController
     public function index(CreneauRepository $creneauRepository): Response
     {
         return $this->render('creneau/index.html.twig', [
-            'creneaus' => $creneauRepository->findAll(),
+            'creneaux' => $creneauRepository->findAll(),
         ]);
     }
 

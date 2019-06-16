@@ -215,6 +215,7 @@ label {
 }
 
 #submit {
+    width: 60%;
     border-radius: 30px;
     background-color: #FF6107;
     color: white;
