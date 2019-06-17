@@ -28,5 +28,7 @@ tbody {
     align-items: center;
 }
 
-
+.table td, .table th {
+    color: white;
+}
 
