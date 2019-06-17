@@ -283,74 +283,53 @@ $(document).ready(function () {
     }
 
     var nbDatesVidesM = compterDatesVides(firstDay);
-    console.log("nbDatesVidesM", nbDatesVidesM);
 
     var nbDatesVidesMNext = compterDatesVides(firstDayNextMonth);
-    console.log("nbDatesVidesMNext", nbDatesVidesMNext);
 
-    /*
-    
-        function inserCaseEmptyAfter(nbDays, selector, element, dateVide) {
-    
-            // MOIS DE 31 JOURS
-            if ((nbDays === 31) && (dateVide <= 4)) {
+    function inserCaseEmptyAfter(nbDays, selector, element, dateVide) {
+
+        // MOIS DE 31 JOURS
+        if (nbDays === 31) {
+            if (dateVide <= 4) {
                 totalCases = 35;
-                console.log("checkpoint 1: ", totalCases);
-            } else if ((nbDays === 31) && (dateVide > 4)) {
+            } else if (dateVide > 4) {
                 totalCases = 42;
-                console.log("checkpoint 2: ", totalCases);
             }
-    
-    
-            // MOIS DE 30 JOURS
-            if ((nbDays === 30) && (dateVide <= 5)) {
+
+            // MOIS DE 30 JOURS        
+        } else if (nbDays === 30) {
+            if (dateVide <= 5) {
                 totalCases = 35;
-                console.log("checkpoint 3: ", totalCases);
-    
-            } else if ((nbDays === 30) && (dateVide > 5)) {
+
+            } else if (dateVide > 5) {
                 totalCases = 42;
-                console.log("checkpoint 4: ", totalCases);
             }
-    
+
             // MOIS DE 29 JOURS
-            if (nbDays === 29) {
-                totalCases = 35;
-                console.log("checkpoint 5: ", totalCases);
-            }
-    
-            // MOIS DE 28 JOURS
-            if ((nbDays === 28) && (dateVide === 0)) {
+        } else if (nbDays === 29) {
+            totalCases = 35;
+
+            // MOIS DE 28 JOURS  
+        } else if (nbDays === 28) {
+            if (dateVide === 0) {
                 totalCases = 28;
-                console.log("checkpoint 6: ", totalCases);
-    
-            } else if ((nbDays === 28) && (datevide > 0)) {
+            } else if (datevide > 0) {
                 totalCases = 35;
-                console.log("checkpoint 7: ", totalCases);
             }
-    
-            var soust = nbDays + dateVide;
-    
-            for (i = 0; i = (totalCases - soust); i++) {
-    
-                $(selector).append(element);
-    
-            }
-    
         }
-    
-        inserCaseEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, emptyDate, nbDatesVidesM);
-        inserCaseEmptyAfter(nbDaysInNextMonth, nextMonthSelector, emptyDate, nbDatesVidesMNext);
-    */
-    console.log("firstDay: ", firstDay);
-    console.log("firstDayNextMonth: ", firstDayNextMonth);
-    console.log("nbDaysInCurrentMonth: ", nbDaysInCurrentMonth);
-    console.log("nbDaysInNextMonth: ", nbDaysInNextMonth);
-    console.log("emptyDate: ", emptyDate);
-    console.log("nbDatesVidesM: ")
 
+        var soust = nbDays + dateVide;
 
+        var limit = totalCases - soust;
 
+        for (i = 0; i < limit; i++) {
 
+            $(selector).append(element);
+        }
+    }
+
+    inserCaseEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, emptyDate, nbDatesVidesM);
+    inserCaseEmptyAfter(nbDaysInNextMonth, nextMonthSelector, emptyDate, nbDatesVidesMNext);
 
     $('#date').click(function () {
 
