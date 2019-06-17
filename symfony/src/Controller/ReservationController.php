@@ -10,7 +10,6 @@ use App\Entity\Newsletter;
 use App\Form\NewsletterType;
 use App\Repository\CreneauRepository;
 
-
 class ReservationController extends AbstractController
 {
     /**
@@ -37,7 +36,7 @@ class ReservationController extends AbstractController
             'controller_name' => 'ReservationController',
             'contact' => $newsletter,
             'form' => $form->createView(),
-            'creneaux' => $creneauRepository->findBy([], ["id" => "DESC"]),
+            'creneaux' => $creneauRepository->findAll([], ["id"=>"ASC"]),
         ]);
     }
 }

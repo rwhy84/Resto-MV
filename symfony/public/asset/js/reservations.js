@@ -2,6 +2,19 @@ $(document).ready(function () {
 
     /* CRÉATIONS DES DATES */
 
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
+
     var dateFront = new Date(),
         d = dateFront.getDate(),
         m = dateFront.getMonth(),
@@ -55,10 +68,10 @@ $(document).ready(function () {
     var currentMonthSelector = $("#currentMonth"); // SLIDE DU MOIS ACTUEL
     var nextMonthSelector = $('#nextMonth'); // SLIDE DU MOIS SUIVANT
 
-    var createDateCard = function (card, id, date, day, idTitle) {
+    var createDateCard = function (card, id, format, date, day, idTitle) {
 
         dateCard = `
-                <a href="#" class="dateContainer ` + day + `" id="date` + id + `">
+                <a href="#" class="dateContainer ` + day + `` + format + `" id="date` + id + `" data-date="` + format + `">
                     <h5 id="` + idTitle + `">` + date + `</h5>
                 </a>`;
 
@@ -77,22 +90,24 @@ $(document).ready(function () {
     //CREATION DES CARTES DU MOIS ACTUEL
     for (i = 1; i < nbDaysInCurrentMonth + 1; i++) {
 
-        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m, i)), frenchDayAndMonth(new Date(y, m, i)));
+        createDateCard(currentMonthSelector, i, formatDate(new Date(y, m, i)), frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m, i)), frenchDayAndMonth(new Date(y, m, i)));
 
     }
 
     //CREATION DES CARTES DU MOIS SUIVANT
     for (i = 1; i < nbDaysInNextMonth + 1; i++) {
 
-        createDateCard(nextMonthSelector, i, frenchDate(new Date(y, m + 1, i)), dayIndex(new Date(y, m, i + 1)), frenchDayAndMonth(new Date(y, m, i)));
+        createDateCard(nextMonthSelector, i, formatDate(new Date(y, m + 1, i)), frenchDate(new Date(y, m + 1, i)), dayIndex(new Date(y, m + 1, i)), frenchDayAndMonth(new Date(y, m + 1, i)));
 
     }
+    /*
+        for (i = nbDaysInPreviousMonth; i < nbDaysInPreviousMonth; i++) {
+    
+            createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m - 1, i)), frenchDayAndMonth(new Date(y, m, i)));
+    
+        }
+    */
 
-    for (i = nbDaysInPreviousMonth; i < nbDaysInPreviousMonth; i++) {
-
-        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), dayIndex(new Date(y, m - 1, i)), frenchDayAndMonth(new Date(y, m, i)));
-
-    }
 
     /* FIN CRÉATION DES CARTES DE DATES */
 
@@ -182,14 +197,35 @@ $(document).ready(function () {
     for (i = 0; i < disableDate + 1; i++) {
 
         $('#date' + i).addClass('passed');
+        $('#date' + i).attr('onclick', "return false");
 
     }
 
     var emptyDate = `<a href="#" class="disabledLink" onclick="return false"><h5 class="previousDateDisabled"></h5></a>`;
 
-    // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois
+    // On ajoute aux cases de dates des classes correspondant au statut OUVERT / FERME du jour
 
-    var dateVid;
+    var listDateCont = $(".dateContainer");
+
+    var listDateBDD = $('#BDDRECAP').children();
+
+    for (i = 0; i < listDateCont.length; i++) {
+        for (a = 0; a < listDateBDD.length; a++) {
+
+            if ($(listDateCont[i]).attr('data-date') == $(listDateBDD[a]).attr("id")) {
+                //console.log("VRAI: ", i);
+
+                var statut = $(listDateBDD[a]).attr("class");
+
+                $(listDateCont[i]).addClass(statut);
+            } else {
+
+            }
+
+        }
+    }
+
+    // Création des cases vides au début et à la fin du calendar en fonction du premier jour du mois
 
     function insertEmptyBefore(selector, jour, element) {
 
@@ -227,12 +263,7 @@ $(document).ready(function () {
 
     var totalCases;
 
-    function compterDatesVides(date, jour) {
-
-        var dateEnd;
-
-        var dateCalendar = new Date(y, m, d);
-        var date = dateCalendar.getDay();
+    function compterDatesVides(jour) {
 
         if (jour === 1) {
 
@@ -248,90 +279,61 @@ $(document).ready(function () {
                 date = i;
             }
         }
-        return dateEnd;
+        return date;
     }
 
-    var firstMonth = new Date(y, m + 1, 1);
-    dateEnd = compterDatesVides(firstMonth, firstDayNextMonth);
+    var nbDatesVidesM = compterDatesVides(firstDay);
 
-    console.log("functionDateVides: ", dateVide);
+    var nbDatesVidesMNext = compterDatesVides(firstDayNextMonth);
 
-
-    function inserCaseEmptyAfter(nbDays, selector, dateVid, element, jour) {
-
-        console.log("dateVide", dateVide);
-
-        if (jour === 1) {
-
-            dateVid = 0;
-
-        } else if (jour === 0) {
-
-            dateVid = 6;
-
-        } else {
-
-            for (i = 0; i < jour; i++) {
-                dateVid = i;
-            }
-        }
+    function inserCaseEmptyAfter(nbDays, selector, element, dateVide) {
 
         // MOIS DE 31 JOURS
-        if ((nbDays === 31) && (dateVid <= 4)) {
-            totalCases = 35;
-            console.log("totalCases1: ", totalCases)
-            console.log("dateVide1: ", dateVid);
-        } else if ((nbDays === 31) && (dateVid > 4)) {
-            totalCases = 42;
-            console.log("totalCases2: ", totalCases)
-            console.log("dateVide2: ", dateVid);
-            // MOIS DE 30 JOURS
-        } else if ((nbDays === 30) && (dateVid <= 5)) {
-            totalCases = 35;
-            console.log("totalCases3: ", totalCases)
-            console.log("dateVide3: ", dateVid);
-        } else if ((nbDays === 30) && (dateVid > 5)) {
-            totalCases = 42;
-            console.log("totalCases4: ", totalCases)
-            console.log("dateVide4: ", dateVid);
+        if (nbDays === 31) {
+            if (dateVide <= 4) {
+                totalCases = 35;
+            } else if (dateVide > 4) {
+                totalCases = 42;
+            }
+
+            // MOIS DE 30 JOURS        
+        } else if (nbDays === 30) {
+            if (dateVide <= 5) {
+                totalCases = 35;
+
+            } else if (dateVide > 5) {
+                totalCases = 42;
+            }
+
             // MOIS DE 29 JOURS
         } else if (nbDays === 29) {
             totalCases = 35;
-            console.log("totalCases5: ", totalCases)
-            console.log("dateVide5: ", dateVid);
-            // MOIS DE 28 JOURS
-        } else if ((nbDays === 28) && (dateVid === 0)) {
-            totalCases = 28;
-            console.log("totalCases6: ", totalCases)
-            console.log("dateVide6: ", dateVid);
-        } else if ((nbDays === 28) && (datevid > 0)) {
-            totalCases = 35;
-            console.log("totalCases7: ", totalCases)
-            console.log("dateVide7: ", dateVid);
+
+            // MOIS DE 28 JOURS  
+        } else if (nbDays === 28) {
+            if (dateVide === 0) {
+                totalCases = 28;
+            } else if (datevide > 0) {
+                totalCases = 35;
+            }
         }
 
-        console.log("totalCases: ", totalCases);
-        console.log("nbDays: ", nbDays);
-        var soust = nbDays + dateVid;
+        var soust = nbDays + dateVide;
 
-        for (i = 0; i = (totalCases - soust); i++) {
+        var limit = totalCases - soust;
+
+        for (i = 0; i < limit; i++) {
 
             $(selector).append(element);
-
         }
-
     }
 
-    console.log("dateVidelast: ", dateVid);
-
-    inserCaseEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, dateVide, emptyDate, firstDay);
-    inserCaseEmptyAfter(nbDaysInNextMonth, nextMonthSelector, /*dateVide,*/emptyDate, firstDayNextMonth);
-
-    console.log("firstDayNextMonth: ", firstDayNextMonth);
+    inserCaseEmptyAfter(nbDaysInCurrentMonth, currentMonthSelector, emptyDate, nbDatesVidesM);
+    inserCaseEmptyAfter(nbDaysInNextMonth, nextMonthSelector, emptyDate, nbDatesVidesMNext);
 
     $('#date').click(function () {
 
-        $("#calendar").removeClass('hidden');
+        $("#calendar").removeClass('hidden hiddenSmall').addClass("transitionCal");
     })
 
 
@@ -341,14 +343,14 @@ $(document).ready(function () {
 
         var dateSelect = $(this).children().attr('id');
 
-        $("#calendar").addClass('hiddenSmall');
+        //$("#calendar").addClass('hiddenSmall');
 
-        if ($(this).hasClass('passed')) {
+        if (($(this).hasClass('passed')) || ($(this).hasClass('forbidden'))) {
 
         } else {
             $('#date').val(dateSelect);
+            $("#calendar").addClass('hiddenSmall');
         }
-
 
         if (($(this).hasClass('Lundi')) || ($(this).hasClass('Mardi')) || ($(this).hasClass('Mercredi')) || ($(this).hasClass('Jeudi'))) {
 
@@ -359,8 +361,20 @@ $(document).ready(function () {
         } else if ($(this).hasClass('Dimanche')) {
 
             $("#diner").addClass('hidden');
-
         }
     })
+
+    // On désactive les dates qui ont les classes "midi-close" et"soir-close"
+
+    for (i = 0; i < listDateCont.length; i++) {
+        if ($(listDateCont[i]).hasClass("midi-close" && "soir-close")) {
+            $(listDateCont[i]).addClass("forbidden");
+        } else {
+
+        }
+    }
+
+
+
 
 })
