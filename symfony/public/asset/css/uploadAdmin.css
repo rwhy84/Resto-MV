@@ -1,0 +1,32 @@
+h1 {
+    color: white;
+}
+
+th {
+    color: #01AAC0;
+    text-transform: uppercase;
+}
+
+tbody {
+    color: white;
+}
+
+#sectionHight {
+    color: white !important;
+}
+
+#mystery {
+    width: 30%;
+    height: 20%;
+    background-color: rgb(255, 45, 80);
+    border-radius: 30px;
+    color: white;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
