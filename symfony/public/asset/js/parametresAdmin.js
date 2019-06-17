@@ -2,6 +2,18 @@ $(document).ready(function () {
 
     /* CRÉATIONS DES DATES */
 
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
     var dateBack = new Date(),
         d = dateBack.getDate(),
         m = dateBack.getMonth(),
@@ -56,10 +68,10 @@ $(document).ready(function () {
     var currentMonthSelector = $("#currentMonth"); // SLIDE DU MOIS ACTUEL
     var nextMonthSelector = $('#nextMonth'); // SLIDE DU MOIS SUIVANT
 
-    var createDateCard = function (card, id, date, mois) {
+    var createDateCard = function (card, id, date, mois, idDate) {
 
         dateCard = `
-        <div class="dayParam">
+        <div class="dayParam" id="`+ idDate + `">
 
         <div class="firstRow">
 
@@ -84,10 +96,10 @@ $(document).ready(function () {
 
             <div class="buttonContainer">
                 <div class="railClose" id="railCloseMidi`+ id + `"></div>
-                <button class="btn buttonParam btnOpen" id="buttonMidi`+ id + `" data-miDay="Midi` + mois + id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeMidi` + id + `"></i></button>
+                <button class="btn btnmidi buttonParam btnOpen" id="buttonMidi`+ id + `" data-miDay="Midi` + mois + id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeMidi` + id + `"></i></button>
                 <div class="railOpen" id="railOpenMidi`+ id + `"></div>
+                <input type="text" name="` + idDate + `" class="midiInput hidden" id="inputMidi-` + idDate + `">
             </div>
-
 
         </div>
 
@@ -111,10 +123,10 @@ $(document).ready(function () {
 
             <div class="buttonContainer">
                 <div class="railClose" id="railCloseSoir`+ id + `"></div>
-                <button class="btn buttonParam btnOpen" id="buttonSoir`+ id + `"data-miDay="Soir` + mois + id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeSoir` + id + `"></i></button>
+                <button class="btn btnsoir buttonParam btnOpen" id="buttonSoir`+ id + `"data-miDay="Soir` + mois + id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeSoir` + id + `"></i></button>               
                 <div class="railOpen" id="railOpenSoir`+ id + `"></div>
+                <input type="text" name="` + idDate + `" class="soirInput hidden" id="inputSoir-` + idDate + `">
             </div>
-
 
         </div>
     </div>`;
@@ -126,14 +138,14 @@ $(document).ready(function () {
     //CREATION DES CARTES DU MOIS ACTUEL
     for (i = 1; i < nbDaysInCurrentMonth + 1; i++) {
 
-        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), monthOnly(new Date(y, m, i)));
+        createDateCard(currentMonthSelector, i, frenchDate(new Date(y, m, i)), monthOnly(new Date(y, m, i)), formatDate(new Date(y, m, i)));
 
     }
 
     //CREATION DES CARTES DU MOIS SUIVANT
     for (i = 1; i < nbDaysInNextMonth + 1; i++) {
 
-        createDateCard(nextMonthSelector, i, frenchDate(new Date(y, m + 1, i)), monthOnly(new Date(y, m + 1, i)));
+        createDateCard(nextMonthSelector, i, frenchDate(new Date(y, m + 1, i)), monthOnly(new Date(y, m + 1, i)), formatDate(new Date(y, m + 1, i)));
 
     }
 
@@ -197,8 +209,11 @@ $(document).ready(function () {
             //MODIFICATION DES CLASSES POUR DECLENCHER L'ANIMATION DU BOUTON COULISSANT
             $(this).removeClass('btnOpen').addClass("btnClose");
 
-            // ATTRIBUTION AUTOMATIQUE D'UNE VALEUR AUX INPUT MASQUÉS EN FONCTION DE LA POSITION DES BOUTONS (OUVERT / FERMÉ)
-            // $(this).parent().next("input").val('close');
+            // ATTRIBUTION AUTOMATIQUE D'UNE VALEUR AUX INPUT MASQUÉS EN FONCTION DE LA POSITION DES BOUTONS (OUVERT / FERMÉ)            
+            var inputOpenID = $(this).parent().find("input").attr('id');
+            $('#' + inputOpenID).val("close");
+
+            console.log('inputOpenID', inputOpenID);
 
             //MODIFICATION DES CLASSES POUR DECLENCHER L'ANIMATION DES RAILS
             $(nbRailOpen).removeClass('openStatutRight').addClass('closeStatutRight');
@@ -217,7 +232,8 @@ $(document).ready(function () {
             $(this).removeClass('btnClose').addClass("btnOpen")
 
             // ATTRIBUTION AUTOMATIQUE D'UNE VALEUR AUX INPUT MASQUÉS EN FONCTION DE LA POSITION DES BOUTONS (OUVERT / FERMÉ)
-            //$(this).parent().next("input").val('open');
+            var inputCloseID = $(this).parent().find("input").attr('id');
+            $('#' + inputCloseID).val("close");
 
             //MODIFICATION DES CLASSES POUR DECLENCHER L'ANIMATION DES RAILS
             $(nbRailOpen).removeClass('closeStatutRight').addClass('openStatutRight');
@@ -260,5 +276,51 @@ $(document).ready(function () {
         $('header').addClass('headerBgSurprise');
 
     })
+
+    // Mise a jour automatique de la position des boutons en fonction du contenu de la BDD
+
+    var listDateCont = $(".dayParam");
+
+    var listDateBDD = $('#BDDRECAP').children();
+
+    for (i = 0; i < listDateCont.length; i++) {
+        for (a = 0; a < listDateBDD.length; a++) {
+
+            if ($(listDateCont[i]).attr('id') == $(listDateBDD[a]).attr("id")) {
+
+                var statutmidi = $(listDateBDD[a]).attr("data-midi");
+                var statutsoir = $(listDateBDD[a]).attr("data-soir");
+
+                var btnmidi = $(listDateCont[i]).find(".btnmidi");
+                var btnsoir = $(listDateCont[i]).find(".btnsoir");
+
+                // En fonction du contenu de la base, on simule le clic sur le bouton pour le passer dans la position correspondante
+                if ($(btnmidi).hasClass("btnOpen")) {
+                    if (statutmidi == "close") {
+                        $(btnmidi).addClass('closeBDD').trigger('click');
+                    } else {
+                    }
+                } else if ($(btnmidi).hasClass("btnClose")) {
+                    if (statutmidi == "open") {
+                        $(btnmidi).addClass("openBDD").trigger('click');
+                    } else {
+                    }
+                } else if ($(btnsoir).hasClass("btnOpen")) {
+                    if (statutsoir == "close") {
+                        $(btnsoir).addClass('closeBDD').trigger('click');
+                    } else {
+                    }
+                } else if ($(btnsoir).hasClass('btnClose')) {
+                    if (statutsoir == "open") {
+                        $(btnsoir).addClass('openBDD').trigger('click');
+                    }
+                }
+            } else {
+
+            }
+
+
+        }
+    }
 
 })

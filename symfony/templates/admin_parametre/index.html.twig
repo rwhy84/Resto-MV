@@ -10,7 +10,7 @@
         <!--  <form>
              CAROUSEL DES MOIS -->
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="pause">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="pause" data-interval="false">
             <div class="carousel-inner">
 
                 <div class="topControls">
@@ -43,7 +43,7 @@
         <div class="hidden" id="BDDRECAP">
     {% for creneau in creneaux %}
 
-        <a href="#" class="midi-{{ creneau.midi }} soir-{{ creneau.soir }}" id="{{ creneau.datecreneau }}"></a>
+        <a href="#" data-midi="{{ creneau.midi }}" data-soir="{{ creneau.soir }}" id="{{ creneau.datecreneau }}"></a>
 
     {% endfor %}
 </div>
