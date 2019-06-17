@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
- * @Route("/resa")
+ * @Route("admin/resa")
  */
 class ResaController extends AbstractController
 {
@@ -87,7 +87,7 @@ class ResaController extends AbstractController
      */
     public function delete(Request $request, Resa $resa): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$resa->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $resa->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($resa);
             $entityManager->flush();

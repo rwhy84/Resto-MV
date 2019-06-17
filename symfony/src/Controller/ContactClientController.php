@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/contact/client")
+ * @Route("admin/contact/client")
  */
 class ContactClientController extends AbstractController
 {
@@ -85,7 +85,7 @@ class ContactClientController extends AbstractController
      */
     public function delete(Request $request, ContactClient $contactClient): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$contactClient->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $contactClient->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($contactClient);
             $entityManager->flush();

@@ -1,22 +1,41 @@
+# config/packages/security.yaml
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    ## ON VA PROTEGER CERTAINES ZONES DE NOTRE SITE
+    access_control:
+        # TOUTES LES PAGES DONT L'URL COMMENCE PAR admin SERONT RESERVEES AUX User
+        # QUI ONT LE ROLE ROLE_ADMIN
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/membre, roles: [ ROLE_MEMBRE, ROLE_ADMIN ] }
+    ## CONNEXION ENTRE LE FIREWALL ET NOTRE ENTITE User
     providers:
-        in_memory: { memory: ~ }
+        mon_login:
+            entity:
+                class: App\Entity\User
+                property: username
     firewalls:
+        main:
+            security: true
+            pattern: ^/
+            anonymous: ~
+            provider: mon_login
+            form_login:
+                # ON DONNE LE NOM DE LA ROUTE QUI PROPOSE LE FORMULAIRE DE LOGIN
+                # login DANS NOTRE PROJET
+                login_path: login
+                check_path: login
+                # SI LA PERSONNE SE CONNECTE 
+                # ALORS ON LA REDIRIGE VERS LA PAGE INITIALE
+                use_referer: true
+                csrf_token_generator: security.csrf.token_manager
+            logout:
+                # ON DONNE LE NOM DE LA ROUTE QUI GERE LE LOGOUT
+                # ET LA ROUTE DE REDIRECTION UNE FOIS LE LOGOUT EFFECTUE
+                path:   logout
+                target: login
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
-            anonymous: true
-
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
-
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
-
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
-    access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+    ## ON UTILISER L'ALGO BCRYPT POUR HASHER LE MOT DE PASSE        
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
