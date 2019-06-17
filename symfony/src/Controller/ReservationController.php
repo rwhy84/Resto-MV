@@ -8,13 +8,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Newsletter;
 use App\Form\NewsletterType;
+use App\Repository\CreneauRepository;
 
 class ReservationController extends AbstractController
 {
     /**
      * @Route("/reservation", name="reservation")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, CreneauRepository $creneauRepository): Response
     {
 
         $newsletter = new Newsletter();
@@ -35,6 +36,7 @@ class ReservationController extends AbstractController
             'controller_name' => 'ReservationController',
             'contact' => $newsletter,
             'form' => $form->createView(),
+            'creneaux' => $creneauRepository->findAll([], ["id"=>"ASC"]),
         ]);
     }
 }

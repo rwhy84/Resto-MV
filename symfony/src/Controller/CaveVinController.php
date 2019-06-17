@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/cave/vin")
+ * @Route("admin/cave/vin")
  */
 class CaveVinController extends AbstractController
 {

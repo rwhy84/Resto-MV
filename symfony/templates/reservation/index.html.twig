@@ -1,169 +1,206 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}<link rel="stylesheet" media="screen and (max-width: 991px)" href="{{ asset('asset/css/reservations-medium.css') }}" type="text/css">
-<link rel="stylesheet" media="screen and (min-width: 992px)" href="{{ asset('asset/css/reservations-large.css') }}" type="text/css">
+{% block stylesheets %}
+    <link rel="stylesheet" media="screen and (max-width: 991px)" href="{{ asset('asset/css/reservations-medium.css') }}" type="text/css">
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="{{ asset('asset/css/reservations-large.css') }}" type="text/css">
 {% endblock %}
 
-{% block title %}Réservations{% endblock %}
+{% block title %}Réservations
+{% endblock %}
 
 {% block body %}
-<div class="headerCave carousel-inner">
-<img class="d-block w-100" src="asset/img/reservation.jpg">
-<div class="overlay"></div>
-<div class="titrePage">
-    <div class="d-flex h-100 text-center align-items-center">
-      <div class="w-100 text-white">
-        <h1 class="display-3 title_header">Réservation</h1>
-      </div>
+    <div class="headerCave carousel-inner">
+        <img class="d-block w-100" src="asset/img/reservation.jpg">
+        <div class="overlay"></div>
+        <div class="titrePage">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-3 title_header">Réservation</h1>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
-</header>
+</div></header><main>
 
-    <main>
+<div class="mainChild">
 
-    <div class="mainChild">
+    <div class="linearG">
 
-<div class="linearG">
-
-    <div class="overlayResa">
+        <div class="overlayResa">
 
 
-        <section>
+            <section>
 
-        <form action="" id="resaForm">
+                <form action="" id="resaForm">
 
-          <p>Les champs marqués d'un <abbr title="(obligatoire)" aria-hidden="true">*</abbr> sont
-                        obligatoires.
+                    <p>
+                        <span>Les champs marqués d'un</span>
+                        <abbr aria-hidden="true" id="abbrTitle" title="(obligatoire)">*</abbr>
+                        <span>obligatoires.</span>
                     </p>
 
-<div class="globalInputsCont">
+                    <div class="globalInputsCont">
 
-                    <div id="leftInputsContainer">
-                
-                            <label for"name">Nom</label><abbr title="(obligatoire)">*</abbr>   
-                                           
-                            <input class="form-resa" type="text" id="name" name="name" placeholder="Nom" required>                                   
-                    
+                        <div id="leftInputsContainer">
+
+                            <label for"name">Nom</label>
+                            <abbr title="(obligatoire)">*</abbr>
+
+                            <input class="form-resa" id="name" name="name" placeholder="Nom *" required type="text">
+
                             <label for"tel">Téléphone</label>
-                                <abbr title="(obligatoire)">*</abbr> 
-                                             
-                            <input class="form-resa" type="tel" id="tel" name="tel" placeholder="N° de téléphone" required>                               
-           
-                         <select class="form-resa" id="heureRepas" required>
-                            <option selected disabled>Heure</option>
-                            <optgroup label="Déjeuner">
-                            <option id="12h00" class="slctMidi" value="12h00">12h00</option>
-                            <option id="12h15" class="slctMidi" value="12h15">12h15</option>
-                            <option id="12h30" class="slctMidi" value="12h30">12h30</option>
-                            <option id="12h45" class="slctMidi" value="12h45">12h45</option>
-                            <option id="13h00" class="slctMidi" value="13h00">13h00</option>
-                            <option id="13h15" class="slctMidi" value="13h15">13h15</option>
-                            <option id="13h30" class="slctMidi" value="13h30">13h30</option>
-                            <option id="13h45" class="slctMidi" value="13h45">13h45</option>
-                            <option id="14h00" class="slctMidi" value="14h00">14h00</option>
-                            <option id="14h15" class="slctMidi" value="14h15">14h15</option>
-                            <option id="14h30" class="slctMidi" value="14h30">14h30</option>
-                            </optgroup>
-                            <optgroup label="Dîner" id="diner">
-                            <option id="20h00" class="slctMidi" value="20h00">20h00</option>
-                            <option id="20h15" class="slctMidi" value="20h15">20h15</option>
-                            <option id="20h30" class="slctMidi" value="20h30">20h30</option>
-                            <option id="20h45" class="slctMidi" value="20h45">20h45</option>
-                            <option id="21h00" class="slctMidi" value="21h00">21h00</option>
-                            <option id="21h15" class="slctMidi" value="21h15">21h15</option>
-                            <option id="21h30" class="slctMidi" value="21h30">21h30</option>
-                            <option id="21h45" class="slctMidi" value="21h45">21h45</option>
-                            <option id="22h00" class="slctMidi" value="22h00">22h00</option>
-                            <option id="22h15" class="slctMidi" value="22h15">22h15</option>
-                            <option id="22h30" class="slctMidi" value="22h30">22h30</option>
-                            <option id="22h45" class="slctMidi" value="22h45">22h45</option>
-                            <option id="23h00" class="slctMidi" value="23h00">23h00</option>
-                            </optgroup>
-                        </select> 
+                            <abbr title="(obligatoire)">*</abbr>
 
-</div>
+                            <input class="form-resa" id="tel" name="tel" placeholder="N° de téléphone *" required type="tel">
 
-                        <div id="calendar" class="hidden">
+                            <select class="form-resa" id="heureRepas" required>
+                                <option disabled selected>Heure *</option>
+                                <optgroup label="Déjeuner">
+                                    <option class="slctMidi" id="12h00" value="12h00">12h00</option>
+                                    <option class="slctMidi" id="12h15" value="12h15">12h15</option>
+                                    <option class="slctMidi" id="12h30" value="12h30">12h30</option>
+                                    <option class="slctMidi" id="12h45" value="12h45">12h45</option>
+                                    <option class="slctMidi" id="13h00" value="13h00">13h00</option>
+                                    <option class="slctMidi" id="13h15" value="13h15">13h15</option>
+                                    <option class="slctMidi" id="13h30" value="13h30">13h30</option>
+                                    <option class="slctMidi" id="13h45" value="13h45">13h45</option>
+                                    <option class="slctMidi" id="14h00" value="14h00">14h00</option>
+                                    <option class="slctMidi" id="14h15" value="14h15">14h15</option>
+                                    <option class="slctMidi" id="14h30" value="14h30">14h30</option>
+                                </optgroup>
+                                <optgroup id="diner" label="Dîner">
+                                    <option class="slctMidi" id="20h00" value="20h00">20h00</option>
+                                    <option class="slctMidi" id="20h15" value="20h15">20h15</option>
+                                    <option class="slctMidi" id="20h30" value="20h30">20h30</option>
+                                    <option class="slctMidi" id="20h45" value="20h45">20h45</option>
+                                    <option class="slctMidi" id="21h00" value="21h00">21h00</option>
+                                    <option class="slctMidi" id="21h15" value="21h15">21h15</option>
+                                    <option class="slctMidi" id="21h30" value="21h30">21h30</option>
+                                    <option class="slctMidi" id="21h45" value="21h45">21h45</option>
+                                    <option class="slctMidi" id="22h00" value="22h00">22h00</option>
+                                    <option class="slctMidi" id="22h15" value="22h15">22h15</option>
+                                    <option class="slctMidi" id="22h30" value="22h30">22h30</option>
+                                    <option class="slctMidi" id="22h45" value="22h45">22h45</option>
+                                    <option class="slctMidi" id="23h00" value="23h00">23h00</option>
+                                </optgroup>
+                            </select>
 
-                <div class="daysHeader">
+                        </div>
 
-                    <ul>
-                        <li>Lun.</li>
-                        <li>Mar.</li>
-                        <li>Mer.</li>
-                        <li>Jeu.</li>
-                        <li>Ven.</li>
-                        <li>Sam.</li>
-                        <li>Dim.</li>
-                    </ul>
+                        <div class="hidden" id="calendar">
+
+                            <div class="carousel slide" data-ride="false" id="carouselResaControls">
+                                <div class="carousel-inner">
+
+                                    <div class="topControls">
+                                        <a class="carousel-control-prev" data-slide="prev" href="#carouselResaControls" role="button">
+                                            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+
+                                        <div class="calHeadSlider">
+
+                                            <h3></h3>
+
+                                        </div>
+
+
+                                        <a class="carousel-control-next" data-slide="next" href="#carouselResaControls" role="button">
+                                            <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+
+                                    </div>
+
+                                    <div class="daysHeader">
+
+                                        <ul>
+                                            <li>Lun.</li>
+                                            <li>Mar.</li>
+                                            <li>Mer.</li>
+                                            <li>Jeu.</li>
+                                            <li>Ven.</li>
+                                            <li>Sam.</li>
+                                            <li>Dim.</li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="carousel-item active currentMonthActive" id="currentMonth"></div>
+
+                                    <div class="carousel-item hidden" id="nextMonth"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="rightInputsContainer">
+
+                            <label for"email">Email</label>
+
+                            <input class="form-resa" id="email" name="email" placeholder="Adresse email" type="email">
+
+                            <input class="form-resa" id="date" name="date" placeholder="Date *" required type="texte">
+
+                            <select class="form-resa" id="eatersSelect" required>
+                                <option disabled selected>Nombre de couverts *</option>
+                                <option class="slctMidi" value="1">1</option>
+                                <option class="slctMidi" value="2">2</option>
+                                <option class="slctMidi" value="3">3</option>
+                                <option class="slctMidi" value="4">4</option>
+                                <option class="slctMidi" value="5">5</option>
+                                <option class="slctMidi" value="6">6</option>
+                                <option class="slctMidi" value="7">7</option>
+                                <option class="slctMidi" value="8">8</option>
+                                <option class="slctMidi" value="9">9</option>
+                                <option class="slctMidi" value="10">10</option>
+                                <option class="slctMidi" value="11">11</option>
+                                <option class="slctMidi" value="12">12</option>
+                                <option class="slctMidi" value="13">13</option>
+                                <option class="slctMidi" value="14">14</option>
+                                <option class="slctMidi" value="15">15</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <label for"remarques">Remarques</label>
+
+                    <textarea class="form-resa" id="remarques" name="remarques" placeholder="Demandes particulières"></textarea>
+
+                    <input class="btn" id="submit" name="submit" type="submit" value="RÉSERVER UNE TABLE">
+
+                </form>
+
+                <div id="recapResa hidden">
+
+                    <a href="#" id="dateRecap">
+                        <i class="far fa-calendar-alt hidden"></i>
+                    </a>
+                    <a href="#" id="heureRecap">
+                        <i class="far fa-clock hidden"></i>
+                    </a>
+                    <a href="#" id="nbClientsRecap">
+                        <i class="fas fa-users hidden"></i>
+                    </a>
 
                 </div>
 
-                <div id="currentMonth"></div>
+            </section>
 
-            </div>  
+        </div>
 
-            <div id="rightInputsContainer">  
-
-            <label for"email">Email</label>
-                    
-                    <input class="form-resa" type="email" name="email" id="email"
-                        placeholder="Adresse email">  
-
-                        <input class="form-resa" type="texte" name="date" id="date"
-                        placeholder="Date" required>            
-
-                         <select class="form-resa" id="eatersSelect" required>
-                         <option selected disabled>Nombre de couverts</option>                           
-                            <option class="slctMidi" value="1">1</option>
-                            <option class="slctMidi" value="2">2</option>
-                            <option class="slctMidi" value="3">3</option>
-                            <option class="slctMidi" value="4">4</option>
-                            <option class="slctMidi" value="5">5</option>
-                            <option class="slctMidi" value="6">6</option>
-                            <option class="slctMidi" value="7">7</option>
-                            <option class="slctMidi" value="8">8</option>
-                            <option class="slctMidi" value="9">9</option>
-                            <option class="slctMidi" value="10">10</option>
-                            <option class="slctMidi" value="11">11</option>
-                            <option class="slctMidi" value="12">12</option>
-                            <option class="slctMidi" value="13">13</option>
-                            <option class="slctMidi" value="14">14</option>
-                            <option class="slctMidi" value="15">15</option>
-                        </select> 
-
-                        </div>                         
-                        
-                    </div>  
-
-                    <label for"remarques">Remarques</label>
-                        
-                    <textarea class="form-resa" id="remarques" name="remarques"
-                        placeholder="Demandes particulières"></textarea> 
-
-                         <input type="submit" name="submit" id="submit" value="RÉSERVER UNE TABLE" class="btn">               
-
-        </form>
-
-            <div id="recapResa hidden">
-
-                <a href="#" id="dateRecap"><i class="far fa-calendar-alt hidden"></i></a>
-                <a href="#" id="heureRecap"><i class="far fa-clock hidden"></i></a>
-                <a href="#" id="nbClientsRecap"><i class="fas fa-users hidden"></i></a>
-
-            </div>            
-            
-        </section> 
+    </div>
 
 </div>
 
+<div class="hidden" id="BDDRECAP">
+    {% for creneau in creneaux %}
+
+        <a href="#" class="midi-{{ creneau.midi }} soir-{{ creneau.soir }}" id="{{ creneau.datecreneau }}"></a>
+
+    {% endfor %}
 </div>
-
-</div>
-
-    </main>
-
-{% endblock %}
-
-{% block javascripts %}<script src="{{ asset('asset/js/reservations.js') }}"></script>{% endblock %}
+</main>
+{% endblock %}{% block scriptThisPage %}<script src="{{ asset('asset/js/reservations.js') }}"></script>{% endblock %}
