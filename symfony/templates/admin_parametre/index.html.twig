@@ -40,6 +40,14 @@
 
         </div>
 
+        <div class="hidden" id="BDDRECAP">
+    {% for creneau in creneaux %}
+
+        <a href="#" class="midi-{{ creneau.midi }} soir-{{ creneau.soir }}" id="{{ creneau.datecreneau }}"></a>
+
+    {% endfor %}
+</div>
+
         <!-- FIN CAROUSEL DES MOIS -->
 
         <!-- <input type="hidden" name="identifiantFormulaire"> 

@@ -27,9 +27,7 @@
         </div>
 
 
-                {% if app.user %}
-        {% if app.user.role == 'ROLE_ADMIN' %}
-            <h4>BIENVENUE ADMIN {{ app.user.username }}</h4>
+            <h4>BIENVENUE ADMIN</h4>
 
             <div class="menuContainer">
 
@@ -52,10 +50,6 @@
                 </ul>
 
             </div>
-        {% else %}
-            <h4>VOUS N'ETES PAS IDENTIFIE</h4>
-        {% endif %}
-    {% endif %}
 
             
 
