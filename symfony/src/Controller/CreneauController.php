@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
  * @Route("admin/creneau")
  */
@@ -21,7 +22,7 @@ class CreneauController extends AbstractController
     public function index(CreneauRepository $creneauRepository): Response
     {
         return $this->render('creneau/index.html.twig', [
-            'creneaus' => $creneauRepository->findAll(),
+            'creneaux' => $creneauRepository->findBy([], ["id" => "DESC"]),
         ]);
     }
 

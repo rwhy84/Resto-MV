@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
  * @Route("admin/resa")
  */
@@ -22,6 +23,7 @@ class ResaController extends AbstractController
     {
         return $this->render('resa/index.html.twig', [
             'resas' => $resaRepository->findAll(),
+            'creneaux' => $creneauRepository->findAll([], ["id"=>"ASC"]),
         ]);
     }
 
