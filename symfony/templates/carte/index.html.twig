@@ -16,10 +16,92 @@
 	</div>
 </div>
 </header>
+<main>
+<div class="colorlib-menu">
+		<div class="container">
+				<div class="colorlib-menu-2">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center ">
+							<span class="icon"></span>
+							<h2>Menu</h2>
+							<p>description du menu</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 animate-box">
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<ul class="nav nav-tabs text-center" role="tablist">
+										<li role="presentation" class="active"><a href="#entrée" aria-controls="entrée" role="tab" data-toggle="tab">Entrée</a></li>
+										<li role="presentation"><a href="#plat" aria-controls="plat" role="tab" data-toggle="tab">Plat</a></li>
+										<li role="presentation"><a href="#dessert" aria-controls="dessert" role="tab" data-toggle="tab">Dessert</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							{% for menu in menus %}
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="entrée">
+									<div class="row">
+										<div class="col-md-6">
+											<ul class="menu-dish">
+							              <li>
+							                <figure class="dish-entry">
+							                	<img class="dish-img" src="{{asset(menu.image) }}" alt="{{ menu.titre }}">
+							                </figure>
+							                <div class="text">
+							                  <span class="price">{{ menu.prix }}€</span>
+							                  <h3>{{ menu.titre }}</h3>
+							                  <p class="cat">{{ menu.description }}</p>
+							                </div>
+							              </li>
+										</div>
+									</div>
+								</div>
 
-<div class="container-fluid">
+								<div role="tabpanel" class="tab-pane" id="plat">
+									<div class="row">
+										<div class="col-md-6">
+											<ul class="menu-dish">
+							              <li>
+							                <figure class="dish-entry">
+							                	<div class="dish-img" style="background-image: url(images/dessert-1.jpg);"></div>
+							                </figure>
+							                <div class="text">
+							                  <span class="price">$25.99</span>
+							                  <h3>Special Cake</h3>
+							                  <p class="cat">Meat / Potatoes / Rice / Tomatoe</p>
+							                </div>
+							              </li>
+										</div>
+									</div>
+								</div>
+
+								<div role="tabpanel" class="tab-pane" id="dessert">
+									<div class="row">
+										<div class="col-md-6">
+											<ul class="menu-dish">
+							              <li>
+							                <figure class="dish-entry">
+							                	<div class="dish-img" style="background-image: url(images/drink-1.jpg);"></div>
+							                </figure>
+							                <div class="text">
+							                  <span class="price">$25.99</span>
+							                  <h3>Cold Lemonade Juice</h3>
+							                  <p class="cat">Meat / Potatoes / Rice / Tomatoe</p>
+							                </div>
+							              </li>
+										</div>
+									</div>
+								</div>		
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+</div>
+{# {<div class="container-fluid">
 	<div class="row" style="width: 50%">
-		{% for menu in menus %}
 		<div class="col-md-12">
 			<div class="row">
 				<div class="col-md-4 text-center"><img src="{{asset(menu.image) }}" alt="{{ menu.titre }}" />
@@ -37,9 +119,6 @@
 				<div class="col-md-4 text-center">{{ menu.prix }}
 				</div>
 			</div>
-		</div>
-		{% endfor %}
-	</div>
-</div>
-
+		</div>#}
+		{% endfor %} 
 {% endblock %}
