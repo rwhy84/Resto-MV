@@ -368,7 +368,7 @@ header .container {
 
 #about {
     padding: 50px 0px 50px 0px;
-    height: 100vh;
+    height: 100%;
 }
 
 .headerCave {
@@ -457,7 +457,6 @@ label.required {
 }
 
 .btn {
-    width: 150px;
     height: 50px;
     background: rgb(133, 85, 46);
     color: white;
@@ -471,8 +470,11 @@ label.required {
 }
 
 .subscribe {
+    border-radius: 30px;
+    background-color: #FF6107;
+    color: white;
     display: block;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
 .menu-dish li {
