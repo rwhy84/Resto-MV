@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/creneau")
+ * @Route("admin/creneau")
  */
 class CreneauController extends AbstractController
 {
@@ -85,7 +85,7 @@ class CreneauController extends AbstractController
      */
     public function delete(Request $request, Creneau $creneau): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$creneau->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $creneau->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($creneau);
             $entityManager->flush();

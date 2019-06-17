@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/cave/vin")
+ * @Route("admin/cave/vin")
  */
 class CaveVinController extends AbstractController
 {
@@ -85,7 +85,7 @@ class CaveVinController extends AbstractController
      */
     public function delete(Request $request, CaveVin $caveVin): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$caveVin->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $caveVin->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($caveVin);
             $entityManager->flush();
