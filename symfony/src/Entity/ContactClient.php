@@ -95,7 +95,7 @@ class ContactClient
         return $this->tel;
     }
 
-    public function setTel(int $tel): self
+    public function setTel(string $tel): self
     {
         $this->tel = $tel;
 
