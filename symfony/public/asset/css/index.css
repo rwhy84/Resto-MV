@@ -461,12 +461,11 @@ label.required {
 }
 
 .btn {
-    height: 50px;
-    background: rgb(133, 85, 46);
+    border-radius: 30px;
+    background-color: #FF6107;
     color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+    display: block;
+    margin: 1rem auto;
 }
 
 .contact_client {
@@ -492,3 +491,4 @@ label.required {
     padding-left: 0px;
     padding-right: 0px;
 }
+
