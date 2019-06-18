@@ -19,15 +19,30 @@ class MenuType extends AbstractType
             ->add('titre')
             ->add('prix')
             ->add('description')
-           ->add('categorie', ChoiceType::class, [
-                'choices' => [
-                'Entrée' => "entrée",
-                 'Plat' => "plat",
-               'Dessert' =>"dessert",
-                  ]],
-                  
-              );
-     }
+            ->add(
+                'categorie',
+                ChoiceType::class,
+                [
+                    'choices' => [
+                        'Entrée' => "entree",
+                        'Plat' => "plat",
+                        'Dessert' => "dessert",
+                    ]
+                ],
+
+            )
+            ->add(
+                'menuspecial',
+                ChoiceType::class,
+                [
+                    'choices' => [
+                        'oui' => true,
+                        'non' => false,
+                    ]
+                ],
+
+            );
+    }
 
     public function configureOptions(OptionsResolver $resolver)
     {
