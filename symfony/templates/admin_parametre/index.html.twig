@@ -1,61 +1,64 @@
 {% extends 'base-admin.html.twig' %}
 
 {% block stylesheets %}<link rel="stylesheet" media="screen and (max-width: 991px)" href="{{ asset('asset/css/parametresAdmin-medium.css') }}">
-<link rel="stylesheet" media="screen and (min-width: 992px)" href="{{ asset('asset/css/parametresAdmin-large.css') }}">{% endblock %}
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="{{ asset('asset/css/parametresAdmin-large.css') }}">
+{% endblock %}
 
-{% block title %}Parametres{% endblock %}
+{% block title %}Parametres
+{% endblock %}
 
 {% block body %}
 
-        <!--  <form>
-             CAROUSEL DES MOIS -->
+    <!--  <form>
+                 CAROUSEL DES MOIS -->
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="pause" data-interval="false">
-            <div class="carousel-inner">
+    <div class="carousel slide" data-interval="false" data-ride="pause" id="carouselExampleControls">
+        <div class="carousel-inner">
 
-                <div class="topControls">
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
+            <div class="topControls">
+                <a class="carousel-control-prev" data-slide="prev" href="#carouselExampleControls" role="button">
+                    <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
 
-                    <h3></h3>
+                <h3></h3>
 
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
-                </div>
-
-                <div class="carousel-item active currentMonthActive" id="currentMonth">
-
-                </div>
-
-                <div class="carousel-item" id="nextMonth">
-
-                </div>
+                <a class="carousel-control-next" data-slide="next" href="#carouselExampleControls" role="button">
+                    <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                    <span class="sr-only">Next</span>
+                </a>
 
             </div>
 
+            <div class="carousel-item active currentMonthActive" id="currentMonth"></div>
+
+            <div class="carousel-item" id="nextMonth"></div>
+
         </div>
 
-        <div class="hidden" id="BDDRECAP">
-    {% for creneau in creneaux %}
+    </div>
 
-        <a href="#" data-midi="{{ creneau.midi }}" data-soir="{{ creneau.soir }}" id="{{ creneau.datecreneau }}"></a>
+    <div class="hidden" id="BDDRECAP">
+        {% for creneau in creneaux %}
 
-    {% endfor %}
-</div>
+            <a href="#" data-midi="{{ creneau.midi }}" data-soir="{{ creneau.soir }}" id="{{ creneau.datecreneau }}"></a>
 
-        <!-- FIN CAROUSEL DES MOIS -->
+        {% endfor %}
+    </div>
 
-        <!-- <input type="hidden" name="identifiantFormulaire"> 
+    <!-- FIN CAROUSEL DES MOIS -->
+
+<!-- <input type="hidden" name="identifiantFormulaire"> 
 
         </form> -->
-<!-- Chargement du code Javascript de la page -->
+    <!-- Chargement du code Javascript de la page -->
 
 {% endblock %}
 
 
-{% block scriptThisPage %}<script src="{{ asset('asset/js/parametresAdmin.js') }}"></script>{% endblock %}
+{% block scriptThisPage %}
+    <script>
+        var routeAjax = "{{ path('ajaxParametres') }}";
+    </script>
+    <script src="{{ asset('asset/js/parametresAdmin.js') }}"></script>
+{% endblock %}
