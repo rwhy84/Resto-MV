@@ -16,30 +16,36 @@
 	</div>
 </div>
 </header>
+<main>
+<div class="colorlib-menu">
+	<div class="container">
 
-<div class="container-fluid">
-	<div class="row" style="width: 50%">
-		{% for menu in menus %}
-		<div class="col-md-12">
-			<div class="row">
-				<div class="col-md-4 text-center"><img src="{{asset(menu.image) }}" alt="{{ menu.titre }}" />
-				</div>
-				<div class="col-md-4">
-					<div class="row">
-						<div class="col-md-12 text-center">{{ menu.titre }}
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 text-center">{{ menu.description }}
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center">{{ menu.prix }}
+		<ul class="nav nav-tabs text-center" role="tablist">
+			<li role="presentation" class="active" id="defaultLink"><a href="#" class="linkMenu" id="entree" role="tab" data-toggle="tab">Entrée</a></li>
+			<li role="presentation"><a href="#" class="linkMenu" id="plat" role="tab" data-toggle="tab">Plat</a></li>
+			<li role="presentation"><a href="#" class="linkMenu" id="dessert" role="tab" data-toggle="tab">Dessert</a></li>
+		</ul>
+							
+		<div class="contrainer ">				
+		{% for menu in menus %}	
+			<div class="{{menu.categorie}} hidden">					
+				<figure class="dish-entry">
+					<a href="{{ menu.image }}"  data-fancybox>
+					<img class="image-menu" src="{{asset(menu.image) }}" alt="{{ menu.titre }}">
+					</a>
+				</figure>
+				<div class="text">
+					<span class="price">{{ menu.prix }}€</span>
+					<h3>{{ menu.titre }}</h3>
+					<p class="cat">{{ menu.description }}</p>
 				</div>
 			</div>
-		</div>
+							             
 		{% endfor %}
+		</div>	
 	</div>
-</div>
+</div>		
 
 {% endblock %}
+
+{% block scriptThisPage %}<script src="{{ asset('asset/js/driss.js') }}"></script>{% endblock %}

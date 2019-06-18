@@ -59,7 +59,7 @@ class UploadController extends AbstractController
                 $fileName = "$nomSansExtension.$extension";
 
                 $fichierUploade->move(
-                    $this->getParameter('upload_directory') . '/galerie',   // PARAM1: DOSSIER CIBLE 
+                    $this->getParameter('upload_directory') . "/galerie",   // PARAM1: DOSSIER CIBLE 
                     $fileName
                 );                                                 // PARAM2: NOM DU FICHIER CIBLE
 

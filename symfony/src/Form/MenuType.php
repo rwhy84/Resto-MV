@@ -6,7 +6,7 @@ use App\Entity\Menu;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class MenuType extends AbstractType
 {
@@ -18,7 +18,30 @@ class MenuType extends AbstractType
             // ->add('image')
             ->add('titre')
             ->add('prix')
-            ->add('description');
+            ->add('description')
+            ->add(
+                'categorie',
+                ChoiceType::class,
+                [
+                    'choices' => [
+                        'Entrée' => "entree",
+                        'Plat' => "plat",
+                        'Dessert' => "dessert",
+                    ]
+                ],
+
+            )
+            ->add(
+                'menuspecial',
+                ChoiceType::class,
+                [
+                    'choices' => [
+                        'oui' => true,
+                        'non' => false,
+                    ]
+                ],
+
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -44,6 +44,16 @@ class Menu
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $categorie;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $menuspecial;
+
     public function __construct()
     {
         dump($this);
@@ -116,6 +126,30 @@ class Menu
     public function setImageUpload($imageUpload): self
     {
         $this->imageUpload = $imageUpload;
+        return $this;
+    }
+
+    public function getCategorie(): ?string
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(string $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getMenuspecial(): ?bool
+    {
+        return $this->menuspecial;
+    }
+
+    public function setMenuspecial(bool $menuspecial): self
+    {
+        $this->menuspecial = $menuspecial;
+
         return $this;
     }
 }
