@@ -4,8 +4,8 @@ security:
     access_control:
         # TOUTES LES PAGES DONT L'URL COMMENCE PAR admin SERONT RESERVEES AUX User
         # QUI ONT LE ROLE ROLE_ADMIN
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/membre, roles: [ ROLE_MEMBRE, ROLE_ADMIN ] }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/membre, roles: [ ROLE_MEMBRE, ROLE_ADMIN ] }
     ## CONNEXION ENTRE LE FIREWALL ET NOTRE ENTITE User
     providers:
         mon_login:
