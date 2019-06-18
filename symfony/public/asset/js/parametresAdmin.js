@@ -323,4 +323,32 @@ $(document).ready(function () {
         }
     }
 
+    // REQUETE AJAX UPDATE
+
+    $(".buttonParam").click(function () {
+
+        var inputID = $(this).parent().find("input").attr('id');
+
+        $.ajax({
+            url: 'creneau/edit.html.twig',
+            type: "POST",
+            data: `` + inputID + `=` + statutCreneau,
+            dataType: "HTML",
+            success: function (code_html, statut) {
+
+            },
+
+            error: function (resultat, statut, erreur) {
+
+            },
+
+            complete: function (resultat, statut) {
+
+            }
+
+        });
+
+    })
+
+
 })
