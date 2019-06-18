@@ -375,6 +375,53 @@ $(document).ready(function () {
     }
 
 
+    var hDate = new Date();
+    var currentHour = hDate.getHours();
+    var currentMinutes = hDate.getMinutes();
 
+    console.log(currentHour);
+    console.log(currentMinutes);
+
+    for (h = 12; h < 14; h++) {
+
+        if ((currentHour >= h) && (currentHour < h + 1)) {
+            if (currentMinutes > 45) {
+                $("#" + h + "h45", "#" + h + "h30", "#" + h + "h15", "#" + h + "h00").addClass("hidden");
+                console.log("sup a 45!")
+            } else if (currentMinutes >= 30) {
+                $("#" + h + "h30", "#" + h + "h15", "#" + h + "h00").addClass("hidden");
+                console.log("sup a 30!")
+            } else if (currentMinutes >= 15) {
+                $("#" + h + "h15", "#" + h + "h00").addClass("hidden");
+                console.log("sup a 15!")
+            } else {
+                $("#" + h + "h00").addClass("hidden");
+                console.log('sup a ', h, '00!');
+            }
+        } else {
+
+        };
+    }
+
+    for (h = 20; h < 23; h++) {
+
+        if ((currentHour >= h) && (currentHour < h + 1)) {
+            if (currentMinutes > 45) {
+                $("#" + h + "h45", "#" + h + "h30", "#" + h + "h15", "#" + h + "h00").addClass("hidden");
+                console.log("sup a 45!")
+            } else if (currentMinutes >= 30) {
+                $("#" + h + "h30", "#" + h + "h15", "#" + h + "h00").addClass("hidden");
+                console.log("sup a 30!")
+            } else if (currentMinutes >= 15) {
+                $("#" + h + "h15", "#" + h + "h00").addClass("hidden");
+                console.log("sup a 15!")
+            } else {
+                $("#" + h + "h00").addClass("hidden");
+                console.log('sup a ', h, '00!');
+            }
+        } else {
+
+        };
+    }
 
 })
