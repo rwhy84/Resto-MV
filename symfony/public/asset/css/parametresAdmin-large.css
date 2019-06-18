@@ -186,7 +186,7 @@ input:focus {
 
 .railClose, .railOpen {
     background: linear-gradient(rgb(41, 41, 41), rgb(17, 17, 17), rgb(41, 41, 41));
-    height: 8%;
+    height: 4px;
     border-radius: 2px;
     box-shadow: 0 1px 4px rgb(49, 49, 49), 0 -1px 4px rgb(49, 49, 49);
 }
