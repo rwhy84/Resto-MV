@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190618093337 extends AbstractMigration
+final class Version20190618190452 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -23,6 +23,7 @@ final class Version20190618093337 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('ALTER TABLE contact_client CHANGE tel tel VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE resa CHANGE tel tel VARCHAR(255) NOT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -31,5 +32,6 @@ final class Version20190618093337 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('ALTER TABLE contact_client CHANGE tel tel INT NOT NULL');
+        $this->addSql('ALTER TABLE resa CHANGE tel tel INT NOT NULL');
     }
 }
