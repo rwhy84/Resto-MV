@@ -488,3 +488,6 @@ label.required {
     padding-right: 0px;
 }
 
+.table thead th {
+    color: white;
+}
