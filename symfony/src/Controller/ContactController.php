@@ -11,12 +11,14 @@ use App\Form\NewsletterType;
 use App\Entity\ContactClient;
 use App\Form\ContactClientType;
 
+
+
 class ContactController extends AbstractController
 {
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, \Swift_Mailer $mailer): Response
     {
 
         $newsletter = new Newsletter();
@@ -40,6 +42,27 @@ class ContactController extends AbstractController
             dump($contact);
             $entityManager->persist($contact);
             $entityManager->flush();
+
+            $bodyMessage = $contact->getNom() . "\n " . $contact->getPrenom() . "\n" . $contact->getTel() . "\n" . $contact->getMessage() . "\n" . "Message envoyé de: " . $contact->getEmail();
+
+            $message = (new \Swift_Message('Contact Restaurant MV'))
+                ->setFrom($contact->getEmail())
+                ->setTo('rbordet84@gmail.com')
+                ->setBody(
+
+                    $bodyMessage,
+
+
+                    'text/plain'
+                );
+
+            $mailer->send($message);
+
+
+
+
+
+
 
             //return $this->redirectToRoute('contact');
         }
