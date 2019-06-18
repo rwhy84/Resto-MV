@@ -33,7 +33,7 @@ class ContactClient
     private $email;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $tel;
 
@@ -42,12 +42,11 @@ class ContactClient
      */
     private $message;
 
-    public function __construct ()
+    public function __construct()
     {
         $this->nom = "";
         $this->prenom = "";
         $this->email = "";
-
     }
 
     public function getId(): ?int
@@ -91,7 +90,7 @@ class ContactClient
         return $this;
     }
 
-    public function getTel(): ?int
+    public function getTel(): ?string
     {
         return $this->tel;
     }
