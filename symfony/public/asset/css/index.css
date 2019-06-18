@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+.navbar-light .navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff');
+}
+
 .snip1189 {
     font-family: 'Lora', Arial, sans-serif;
     text-align: center;
