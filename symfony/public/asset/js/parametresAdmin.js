@@ -43,7 +43,7 @@ $(document).ready(function () {
     // Définition d'une date de départ fixe(le 1 Janvier 2019)
     var beginningDate = frenchDate(new Date(2019, 00, 1));
 
-    console.log(beginningDate);
+    //console.log(beginningDate);
 
     //Création d'une fonction calculant le nombre de jours dans un mois
     function getNbJoursMois(mois, annee) {
@@ -59,8 +59,8 @@ $(document).ready(function () {
     var nbDaysInCurrentMonth = getNbJoursMois(m, y);
     var nbDaysInNextMonth = getNbJoursMois(m + 1, y);
 
-    console.log(nbDaysInCurrentMonth);
-    console.log(nbDaysInNextMonth);
+    //console.log(nbDaysInCurrentMonth);
+    //console.log(nbDaysInNextMonth);
 
     /* CRÉATION DES CARTES DE DATES DANS LES SLIDER */
 
@@ -98,7 +98,7 @@ $(document).ready(function () {
                 <div class="railClose" id="railCloseMidi`+ id + `"></div>
                 <button class="btn btnmidi buttonParam btnOpen" id="buttonMidi`+ id + `" data-miDay="Midi` + mois + id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeMidi` + id + `"></i></button>
                 <div class="railOpen" id="railOpenMidi`+ id + `"></div>
-                <input type="text" name="` + idDate + `" class="midiInput hidden" id="inputMidi-` + idDate + `">
+                <input type="text" class="midiInput hidden" id="midi-` + idDate + `" data-creneau="midi" data-date-Input="` + idDate + `">
             </div>
 
         </div>
@@ -125,7 +125,7 @@ $(document).ready(function () {
                 <div class="railClose" id="railCloseSoir`+ id + `"></div>
                 <button class="btn btnsoir buttonParam btnOpen" id="buttonSoir`+ id + `"data-miDay="Soir` + mois + id + `"><i class="fas fa-bars defaultActive iconBtn" id="iconeSoir` + id + `"></i></button>               
                 <div class="railOpen" id="railOpenSoir`+ id + `"></div>
-                <input type="text" name="` + idDate + `" class="soirInput hidden" id="inputSoir-` + idDate + `">
+                <input type="text" class="soirInput hidden" id="soir-` + idDate + `" data-creneau="soir" data-date-Input="` + idDate + `">
             </div>
 
         </div>
@@ -156,8 +156,8 @@ $(document).ready(function () {
     var whatMonth = new Date()
     var tab_month = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
     var next_month = new Array("Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre", "Janvier");
-    console.log(tab_month[whatMonth.getMonth()]);
-    console.log(next_month[whatMonth.getMonth()]);
+    //console.log(tab_month[whatMonth.getMonth()]);
+    //console.log(next_month[whatMonth.getMonth()]);
 
     //MOIS ACTUEL PAR DEFAUT SUR LE PREMIER SLIDE
     $('.topControls').children('h3').text(tab_month[whatMonth.getMonth()]);
@@ -188,7 +188,7 @@ $(document).ready(function () {
     $('.buttonParam').click(function () {
 
         var miDay = $(this).attr('data-miDay');
-        console.log(miDay);
+        //console.log(miDay);
 
         var nbRailOpen = $(this).next('.railOpen');
 
@@ -198,11 +198,11 @@ $(document).ready(function () {
 
         var nbLabelClose = $(this).closest(".generalParam");/*.children('.closeLabel');*/
 
-        console.log(nbLabelClose);
+        //console.log(nbLabelClose);
 
         var nbLabelOpen = $(this).closest(".generalParam");/*.children('.openLabel');*/
 
-        console.log(nbLabelOpen);
+        //console.log(nbLabelOpen);
 
         if ($(this).hasClass('btnOpen')) {
 
@@ -213,7 +213,7 @@ $(document).ready(function () {
             var inputOpenID = $(this).parent().find("input").attr('id');
             $('#' + inputOpenID).val("close");
 
-            console.log('inputOpenID', inputOpenID);
+            //console.log('inputOpenID', inputOpenID);
 
             //MODIFICATION DES CLASSES POUR DECLENCHER L'ANIMATION DES RAILS
             $(nbRailOpen).removeClass('openStatutRight').addClass('closeStatutRight');
@@ -233,7 +233,7 @@ $(document).ready(function () {
 
             // ATTRIBUTION AUTOMATIQUE D'UNE VALEUR AUX INPUT MASQUÉS EN FONCTION DE LA POSITION DES BOUTONS (OUVERT / FERMÉ)
             var inputCloseID = $(this).parent().find("input").attr('id');
-            $('#' + inputCloseID).val("close");
+            $('#' + inputCloseID).val("open");
 
             //MODIFICATION DES CLASSES POUR DECLENCHER L'ANIMATION DES RAILS
             $(nbRailOpen).removeClass('closeStatutRight').addClass('openStatutRight');
@@ -289,10 +289,8 @@ $(document).ready(function () {
             if ($(listDateCont[i]).attr('id') == $(listDateBDD[a]).attr("id")) {
 
                 var statutmidi = $(listDateBDD[a]).attr("data-midi");
-                var statutsoir = $(listDateBDD[a]).attr("data-soir");
 
                 var btnmidi = $(listDateCont[i]).find(".btnmidi");
-                var btnsoir = $(listDateCont[i]).find(".btnsoir");
 
                 // En fonction du contenu de la base, on simule le clic sur le bouton pour le passer dans la position correspondante
                 if ($(btnmidi).hasClass("btnOpen")) {
@@ -305,7 +303,31 @@ $(document).ready(function () {
                         $(btnmidi).addClass("openBDD").trigger('click');
                     } else {
                     }
-                } else if ($(btnsoir).hasClass("btnOpen")) {
+
+                } else {
+
+                }
+
+            }
+
+        }
+    }
+
+
+
+
+    for (i = 0; i < listDateCont.length; i++) {
+        for (a = 0; a < listDateBDD.length; a++) {
+
+            if ($(listDateCont[i]).attr('id') == $(listDateBDD[a]).attr("id")) {
+
+                var statutsoir = $(listDateBDD[a]).attr("data-soir");
+
+                var btnsoir = $(listDateCont[i]).find(".btnsoir");
+
+                // En fonction du contenu de la base, on simule le clic sur le bouton pour le passer dans la position correspondante
+
+                if ($(btnsoir).hasClass("btnOpen")) {
                     if (statutsoir == "close") {
                         $(btnsoir).addClass('closeBDD').trigger('click');
                     } else {
@@ -319,7 +341,6 @@ $(document).ready(function () {
 
             }
 
-
         }
     }
 
@@ -327,12 +348,17 @@ $(document).ready(function () {
 
     $(".buttonParam").click(function () {
 
-        var inputID = $(this).parent().find("input").attr('id');
+        var inputID = $(this).parent().find("input").attr('data-date-Input');
+        var statutCreneau = $(this).parent().find("input").val();
+        var dataCreneau = $(this).parent().find("input").attr('data-creneau');
+        /*   console.log("statutCreneau: ", statutCreneau);
+           console.log("dataCreneau: ", dataCreneau);
+           console.log("inputID: ", inputID);*/
 
         $.ajax({
-            url: 'creneau/edit.html.twig',
+            url: routeAjax,
             type: "POST",
-            data: `` + inputID + `=` + statutCreneau,
+            data: `monInput=` + inputID + `&creneau=` + dataCreneau + `&monstatut=` + statutCreneau,
             dataType: "HTML",
             success: function (code_html, statut) {
 
