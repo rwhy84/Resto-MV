@@ -275,9 +275,9 @@ form {
     width: 100%;
     height: 30%;
     background: rgba(255, 255, 255, 0.03);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.7);
-    
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    padding-left: 2%;
 }
 
 textarea {
@@ -294,11 +294,15 @@ textarea {
 }
 
 abbr {
-    color: red;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none !important;
     font-size: 1.5rem;
     margin-left: 1%;
     display: none;
+}
+
+#abbrTitle {
+    display: inline;
 }
 
 #resaForm {
@@ -312,6 +316,8 @@ abbr {
 
 #resaForm p {
     color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    text-align: center;
 }
 
 #leftInputsContainer, #rightInputsContainer {
@@ -349,6 +355,7 @@ label {
     border-radius: 30px;
     background-color: #FF6107;
     color: white;
+    width: 40%;
 }
 
 ::selection {
