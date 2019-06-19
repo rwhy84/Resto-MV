@@ -1,21 +1,21 @@
 {% extends 'base-admin.html.twig' %}
-{% block stylesheets %}<link rel="stylesheet" href="{{ asset('asset/css/uploadAdmin.css') }}" type="text/css">
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('asset/css/templatesAdmin-large.css') }}" type="text/css">
 {% endblock %}
 
 {% block title %}Menu index{% endblock %}
 
 {% block body %}
-    <h1>Menu index</h1>
+    <h4>LES PLATS A LA CARTE</h4>
 
-    <div class="container-fluid row">
-    <table class="table col-sm-12 col-xs-12 col-md-4">
+   <div class="carteCont">
+    <table class="CarteTab">
   <thead>
     <tr>
  
-                <th scope="col">Titre</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Catégorie</th>
-                <th scope="col">actions</th>
+                <th scope="col">NOM</th>
+                <th scope="col">PRIX</th>
+                <th scope="col">CATÉGORIE</th>
+                <th scope="col">ACTIONS</th>
     </tr>
   </thead>
   <tbody>
@@ -25,14 +25,14 @@
                 <td>{{ menu.titre }}</td>
                 <td>{{ menu.prix }}</td>
                 <td>{{ menu.categorie }}</td>
-                <td>
-                    <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a>
-                    <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a>
+                <td class="tdAction">
+                    <a href="{{ path('menu_show', {'id': menu.id}) }}"><span>show</span></a>
+                    <a href="{{ path('menu_edit', {'id': menu.id}) }}"><i class="far fa-edit"><span>Modifier</span></i></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun plat trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

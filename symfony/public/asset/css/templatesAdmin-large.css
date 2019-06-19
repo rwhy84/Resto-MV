@@ -408,3 +408,39 @@ input:focus {
 .hidden {
     display: none;
 }
+
+h4, thead, td, tr {
+    color: white;
+    text-align: center;
+}
+
+h4 {
+    margin-bottom: 5%;
+}
+
+td {
+    border: 1px solid grey;
+}
+
+.carteCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.tdAction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tdAction .far {
+    font-size: 1rem;
+    margin-right: 2%;
+}
+
+.tdAction i span {
+    color: white;
+}
