@@ -329,12 +329,6 @@ header .container {
     padding-right: 1.5em;
 }
 
-@media screen and (max-width: 768px) {
-    .about-desc {
-        padding-right: 0;
-    }
-}
-
 .about-img {
     height: 450px;
     background-size: cover;
@@ -373,7 +367,7 @@ header .container {
 
 #about {
     padding: 50px 0px 50px 0px;
-    height: 100%;
+    height: 100vh;
 }
 
 .headerCave {
@@ -467,4 +461,53 @@ iframe {
 .footer-margin {
     padding-left: 0px;
     padding-right: 0px;
+}
+
+.text-about {
+    padding-top: 10%;
+    font-family: Lora, sans-serif;
+    font-style: italic;
+}
+
+.text-about p {
+    padding: 0 10% 0 10%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* PAGE ACCUEIL */
+    #about {
+        padding: 50px 0px 50px 0px;
+        height: 100%;
+    }
+    .about-desc {
+        padding-right: 0;
+    }
+    .title_header {
+        font-size: 4em;
+    }
+    .paragraphHeader {
+        font-size: 0.8rem;
+        vertical-align: top;
+    }
+    .bandeau {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+    /* PAGE RESERVATION */
+    .globalInputsCont {
+        margin-right: 0;
+        flex-direction: column;
+    }
+    .bandeau-footer {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+    .about-img-2 {
+        display: none;
+    }
+    .navbar-light .navbar-toggler {
+        border-color: transparent;
+    }
 }

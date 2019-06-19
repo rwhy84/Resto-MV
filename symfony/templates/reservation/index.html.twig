@@ -1,17 +1,20 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 {% block stylesheets %}
     <link rel="stylesheet" media="screen and (max-width: 991px)" href="{{ asset('asset/css/reservations-medium.css') }}" type="text/css">
     <link rel="stylesheet" media="screen and (min-width: 992px)" href="{{ asset('asset/css/reservations-large.css') }}" type="text/css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="{{ asset('asset/css/reservations-small.css') }}" type="text/css">
 {% endblock %}
 
 {% block title %}Réservations
 {% endblock %}
 
+{% block h2 %}TEST{% endblock %}
+
 {% block body %}
     <div class="headerCave carousel-inner">
         <img class="d-block w-100" src="asset/img/reservation.jpg">
         <div class="overlay"></div>
-        <div class="titrePage">
+        <div class="titrePage" id="title_header">
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
                     <h1 class="display-3 title_header">Réservation</h1>
