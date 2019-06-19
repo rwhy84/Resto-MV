@@ -18,7 +18,7 @@
 </header>
 <main>
 <div class="colorlib-menu">
-	<div class="container">
+	<div class="container containerCarte">
 
 		<nav class="navCarte">		
 		 <ul class="nav nav-tabs text-center" role="tablist">
@@ -28,7 +28,7 @@
 		</ul>
 		</nav>
 							 
-		<div class="contrainer ">				
+		<div class="container containerMenu ">				
 		{% for menu in menus %}	
 			<div class="{{menu.categorie  }} hidden container">					
 				<figure class="dish-entry">
@@ -36,7 +36,7 @@
 					<img class="image-menu" src="{{asset(menu.image) }}" alt="{{ menu.titre }}">
 					</a>
 				</figure>
-				<div class="text">
+				<div class="textMenu">
 				<h3>{{ menu.titre }}</h3>
 				<p class="cat text">{{ menu.description }}</p>
 				<span class="price text">{{ menu.prix }}€</span>

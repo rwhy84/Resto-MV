@@ -104,7 +104,7 @@ li:hover,  li:focus, .menu-dish .active {
 	.dish-entry,   .text {
 	display: table-cell;
 	vertical-align: top; }
-   .image-menu {
+	.image-menu {
 	height: 170px;
 	width: 170px;
 	-webkit-border-radius: 50%;
@@ -116,10 +116,10 @@ li:hover,  li:focus, .menu-dish .active {
 	 .image-menu:hover {
 	 	box-shadow:2px 0 20px #222;
 	 }
-	.text {
+	.textMenu {
 	padding-left: 33px; 
 	font-size:14px;}
-	 .text h3 {
+	 .textMenu h3 {
 	  margin: 10px 0 10px 0;
 	  font-size: 17px;
 	  font-weight: 700; }
@@ -130,142 +130,75 @@ li:hover,  li:focus, .menu-dish .active {
 .hidden{
 display: none;}
 
-.contrainer{
+.containerMenu{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content:space-between;
 	align-items:space-around;
 }
+.containerCarte{
+	margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
 .entree, .plat, .dessert{
 	width:45%;
 	padding:15px;	
 }
 
-.follow  {
-	/* display: inline-block; */
-	cursor: default;
-	margin: 2em;
-	position: relative;
+.navCarte {
+	width: 80%;
+	margin: 0 auto;
+	background: #fff;
+	padding: 50px 0;
+	display:flex;
+	justify-content:center;
+  }
+  
+  .navCarte .nav-tabs {
+	list-style: none;
 	text-align: center;
-	width:100%;
-}
-.follow:hover .label {
-	  opacity: 0;
-	  transition: opacity .5s 0.125s ease-out;
-	}
-.follow:hover .icon {
-		border-radius: 1em;
-		margin: 0 0;
-		opacity:1;
-	  }
-	  .icon{
-    background-color: lightgray;
-    box-shadow: 2px 0 10px #222;
-   	line-height: 2rem;
-   	opacity:0;}
-  	.icon:hover{
-  		box-shadow:2px 0 20px #222;
-  		}
-	  
-	  .label {
-  border-radius: 1rem;
-  position: absolute;
-  text-align:center;
-  font-size: 1em;
-  font-weight: 900;
-  letter-spacing: .0816em;
-  top: 0;
-  left: 0;
-  right: 0;
-  opacity: 1;
-  pointer-events: none;
-  text-transform: uppercase;
-  transition: opacity .5s .75s ease-out;
-  height:3em;
-    background-color: lightgray;
-    box-shadow: 2px 0 10px #222;
-   	line-height: 2rem;
-}
-	  .icon {
-		border-radius: 1em;
-		cursor: pointer;
-		display: inline-block;
-		height: 2em;
-		margin: 0 -.5em;
-		padding: 1px;
-		width: 30%;
-		height:3em;
-		transition: opacity .5s .125s ease-out;
-	  }
-	  .icon .first {
-		border-bottom-left-radius: 1em;
-		border-top-left-radius: 1em;
-		margin-left: 0;
-	  }
-	  
-	  .icon .last {
-		border-bottom-right-radius: 1em;
-		border-top-right-radius: 1em;
-		margin-right: 0;
-	
-	  }
-	  
-	
-	
-
-	
-		
-	
-	
-/* .image-menu {
-	height: 200px;
-	width: 200px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	border-radius: 50%; }
-
-.text {
-		display: table-cell;
-		vertical-align: top; 
-		padding-left: 33px; }
-.text h3 {
-		margin: 10px 0 10px 0;
-		font-size: 35px;
-		font-weight: 700; }
- @media screen and (max-width: 850px) {
-.text h3 {
-	margin-top: 0px; } }
-	.text .cat {
-		color: #7d7d7d;
-		font-size: 30px; }
-	.text .price {
-		position: absolute;
-		top: 20px;
-		right: 10px;
-		font-size: 24px;
-		color: #404044;
-		font-family: "Lora", Georgia, serif; }
-		@media screen and (max-width: 850px) {
-	.text .price {
-		right: 0;
-		top: 0px;
-		position: relative;
-		display: block;
-		margin-bottom: 0px; } }
-	li {
-		padding: 0;
-		margin: 0;
-		list-style: none;
-		display: block;
-		position: relative;
-		padding: 10px;
-		-webkit-transition: 0.3s;
-		-o-transition: 0.3s;
-		transition: 0.3s; }
- */
-
+  }
+  .navCarte .nav-tabs .liMenu {
+	display: inline-block;
+  }
+  .navCarte .nav-tabs .liMenu .linkMenu {
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	color: #aaa;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin: 0 10px;
+  }
+ 
+  .navCarte .nav-tabs .liMenu .linkMenu:hover {
+	color: #555;
+  }
+  
+  .navCarte .nav-tabs .liMenu .linkMenu {
+	position: relative;
+  }
+  .navCarte .nav-tabs .liMenu .linkMenu:after{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 0%;
+	content: '.';
+	color: transparent;
+	background: orange;
+	height: 1px;
+  }
+  .navCarte .nav-tabs .liMenu .linkMenu:hover:after {
+	width: 100%;
+  }
+  
+  
+  
 
 @media only screen and (max-width: 1024px) {
 
