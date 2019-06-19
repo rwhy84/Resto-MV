@@ -9,22 +9,19 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Image</th>
+
                 <th>Titre</th>
                 <th>Prix</th>
-                <th>Description</th>
+                <th>Couleurs</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
             {% for cave_vin in cave_vins %}
                 <tr>
-                    <td>{{ cave_vin.id }}</td>
-                    <td>{{ cave_vin.image }}</td>
                     <td>{{ cave_vin.titre }}</td>
                     <td>{{ cave_vin.prix }}</td>
-                    <td>{{ cave_vin.description }}</td>
+                    <td>{{ cave_vin.couleur }}</td>
                     <td>
                         <a href="{{ path('cave_vin_show', {'id': cave_vin.id}) }}">show</a>
                         <a href="{{ path('cave_vin_edit', {'id': cave_vin.id}) }}">edit</a>
