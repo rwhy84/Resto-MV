@@ -20,18 +20,14 @@
 <div class="colorlib-menu">
 	<div class="container">
 
-				<div class="follow">
-  					<a href="#" class="linkMenu" id="entree" role="tab" data-toggle="tab"><div class="icon first">Entrée</div></a>
-  					<a href="#" class="linkMenu" id="plat" role="tab" data-toggle="tab"><div class="icon">Plat</div></a>
- 					<a href="#" class="linkMenu" id="dessert" role="tab" data-toggle="tab"><div class="icon">Dessert</div></a>
-  					<div class="label">Menu</div>
-				</div>
-		{# <ul class="nav nav-tabs text-center" role="tablist">
-			<li role="presentation" class="active" id="defaultLink"><a href="#" class="linkMenu" id="entree" role="tab" data-toggle="tab">Entrée</a></li>
-			<li role="presentation"><a href="#" class="linkMenu" id="plat" role="tab" data-toggle="tab">Plat</a></li>
-			<li role="presentation"><a href="#" class="linkMenu" id="dessert" role="tab" data-toggle="tab">Dessert</a></li>
+		<nav>		
+		 <ul class="nav nav-tabs text-center" role="tablist">
+			<li class="active" id="defaultLink"><a href="#" class="linkMenu" id="entree" role="tab" data-toggle="tab">Entrée</a></li>
+			<li ><a href="#" class="linkMenu" id="plat" role="tab" data-toggle="tab">Plat</a></li>
+			<li ><a href="#" class="linkMenu" id="dessert" role="tab" data-toggle="tab">Dessert</a></li>
 		</ul>
-							 #}
+		</nav>
+							 
 		<div class="contrainer ">				
 		{% for menu in menus %}	
 			<div class="{{menu.categorie}} hidden">					
