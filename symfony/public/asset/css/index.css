@@ -205,7 +205,7 @@
     width: 100%;
 }
 
-ul li a {
+ul .navMenu .headerMenu {
     font-family: Lora, sans-serif;
     color: white!important;
     font-size: 1.2em;
@@ -273,7 +273,7 @@ video {
     transform: translateX(-50%) translateY(-50%);
 }
 
-header .container {
+header .containerHeader {
     position: relative;
     z-index: 2;
 }
