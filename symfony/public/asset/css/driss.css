@@ -117,18 +117,24 @@ li:hover,  li:focus, .menu-dish .active {
 	 	box-shadow:2px 0 20px #222;
 	 }
 	.textMenu {
-	padding-left: 33px; 
-	font-size:14px;}
+	padding-left: 33px;
+	font-size:14px;
+	display:  flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
+	font-family: Lora, sans-serif;
+	}
 	 .textMenu h3 {
 	  margin: 10px 0 10px 0;
-	  font-size: 17px;
+	  font-size: 20px;
 	  font-weight: 700; }
 	  @media screen and (max-width: 768px) {
 		 li .text h3 {
 		  margin-top: 0px; } }
 
 .hidden{
-display: none;}
+display: none !important;}
 
 .containerMenu{
 	display: flex;
@@ -145,7 +151,10 @@ display: none;}
 }
 .entree, .plat, .dessert{
 	width:45%;
-	padding:15px;	
+	padding:15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
 }
 
 .navCarte {

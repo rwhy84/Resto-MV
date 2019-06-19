@@ -30,7 +30,7 @@
 							 
 		<div class="container containerMenu ">				
 		{% for menu in menus %}	
-			<div class="{{menu.categorie  }} hidden container">					
+			<div class="{{menu.categorie  }} hidden">					
 				<figure class="dish-entry">
 					<a href="{{ menu.image }}"  data-fancybox>
 					<img class="image-menu" src="{{asset(menu.image) }}" alt="{{ menu.titre }}">
