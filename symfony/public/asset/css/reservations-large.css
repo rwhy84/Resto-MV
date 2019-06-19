@@ -116,7 +116,7 @@ section {
     margin-top: 1%;
     font-size: 0.8rem;
     padding-right: 1%;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.9);
 }
@@ -139,8 +139,8 @@ section {
     align-items: center;
     margin-top: 1%;
     cursor: not-allowed;
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0);
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -217,7 +217,7 @@ abbr {
     margin-left: 5%;
 }
 
-#remarques {
+#resa_message {
     width: 100%;
     margin: 4% 0 4% 0;
 }
@@ -246,8 +246,6 @@ label {
     display: none !important;
 }
 
-.hiddenSmall {}
-
 .topControls {
     display: flex;
     flex-direction: row;
@@ -268,14 +266,11 @@ label {
     width: 100%;
 }
 
-.passed {
-    cursor: not-allowed;
-    background: rgba(255, 255, 255, 0.4);
-}
-
-.forbidden {
+.forbidden, .passed {
     cursor: not-allowed !important;
-    background: rgba(255, 255, 255, 0.4) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .redBg {
