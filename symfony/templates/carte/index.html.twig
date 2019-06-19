@@ -20,26 +20,26 @@
 <div class="colorlib-menu">
 	<div class="container">
 
-		<nav>		
+		<nav class="navCarte">		
 		 <ul class="nav nav-tabs text-center" role="tablist">
-			<li class="active" id="defaultLink"><a href="#" class="linkMenu" id="entree" role="tab" data-toggle="tab">Entrée</a></li>
-			<li ><a href="#" class="linkMenu" id="plat" role="tab" data-toggle="tab">Plat</a></li>
-			<li ><a href="#" class="linkMenu" id="dessert" role="tab" data-toggle="tab">Dessert</a></li>
+			<li class="active liMenu" id="defaultLink"><a href="#" class="linkMenu" id="entree" role="tab" data-toggle="tab">Entrée</a></li>
+			<li class="liMenu" ><a href="#" class="linkMenu" id="plat" role="tab" data-toggle="tab">Plat</a></li>
+			<li class="liMenu" ><a href="#" class="linkMenu" id="dessert" role="tab" data-toggle="tab">Dessert</a></li>
 		</ul>
 		</nav>
 							 
 		<div class="contrainer ">				
 		{% for menu in menus %}	
-			<div class="{{menu.categorie}} hidden">					
+			<div class="{{menu.categorie  }} hidden container">					
 				<figure class="dish-entry">
 					<a href="{{ menu.image }}"  data-fancybox>
 					<img class="image-menu" src="{{asset(menu.image) }}" alt="{{ menu.titre }}">
 					</a>
 				</figure>
 				<div class="text">
-					<span class="price">{{ menu.prix }}€</span>
-					<h3>{{ menu.titre }}</h3>
-					<p class="cat">{{ menu.description }}</p>
+				<h3>{{ menu.titre }}</h3>
+				<p class="cat text">{{ menu.description }}</p>
+				<span class="price text">{{ menu.prix }}€</span>
 				</div>
 			</div>
 							             
