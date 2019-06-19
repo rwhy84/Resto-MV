@@ -13,9 +13,9 @@ section {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 50%;
+    width: 40%;
     height: 40%;
-    left: 25%;
+    left: 30%;
     top: 30%;
     background-color: rgb(39, 39, 39);
     box-shadow: 5px 0px 8px rgb(0, 0, 0), -5px 0px 8px rgb(0, 0, 0); 
@@ -29,9 +29,9 @@ section h3 {
 
 .sectionHeader {
     position: absolute;
-    width: 50%;
+    width: 40%;
     height: 10%;
-    left: 25%;
+    left: 30%;
     top: 25%;
     display: flex;
     flex-direction: row;
@@ -99,6 +99,7 @@ form {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+    border-radius: 40px;
 }
 
 .btn .far {
@@ -222,6 +223,7 @@ input:focus {
 
     .btn {
         width: 50%;
+        border-radius: 40px;
     }
 
     .inputContainer {
