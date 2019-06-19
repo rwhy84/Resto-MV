@@ -9,8 +9,8 @@ header {
     width: 100%;
     height: 50vh;
     display: flex;
-    flex-direction: column;    
-    color: white; 
+    flex-direction: column;
+    color: white;
     background-image: url("../img/imagesAdmin/bgblue.jpg");
     background-size: cover;
 }
@@ -46,7 +46,7 @@ header h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-inline-start: 0; 
+    padding-inline-start: 0;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -63,7 +63,7 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 14.2%;
+    width: 20%;
     height: 100%;
     margin-left: 2px;
     list-style-type: none;
@@ -75,12 +75,12 @@ header h1 {
 }
 
 .fas, .far {
-    font-size: 1.8rem;   
-    color: rgb(1, 170, 192); 
+    font-size: 1.8rem;
+    color: rgb(1, 170, 192);
 }
 
 .fas:hover, .far:hover {
-    color: rgb(1, 170, 192);    
+    color: rgb(1, 170, 192);
     font-size: 2.2rem;
 }
 
@@ -101,14 +101,14 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration : none;
+    text-decoration: none;
     color: white;
-    text-transform: uppercase;    
+    text-transform: uppercase;
 }
 
 .activeLink {
     background-color: rgb(1, 170, 192) !important;
-   /* border: 2px solid rgb(1, 170, 192);
+    /* border: 2px solid rgb(1, 170, 192);
     border-image: 
     linear-gradient(
       to bottom, 
@@ -123,11 +123,11 @@ header h1 {
     box-shadow: none !important;
 }
 
-.activeLink a .fas, .activeLink a .far {    
+.activeLink a .fas, .activeLink a .far {
     color: white;
 }
 
-.activeLink a .fas:hover, .activeLink a .far:hover { 
+.activeLink a .fas:hover, .activeLink a .far:hover {
     text-shadow: none !important;
     box-shadow: none !important;
     font-size: 1.8rem !important;
@@ -136,7 +136,7 @@ header h1 {
 .viewerCont {
     width: 100%;
     height: 34%;
-    background: linear-gradient(rgba(0, 0, 0, 0), black); 
+    background: linear-gradient(rgba(0, 0, 0, 0), black);
 }
 
 .pageViewer {
@@ -174,7 +174,8 @@ header h1 {
 }
 
 .pageViewer a:hover {
-    border-bottom: 2px solid rgb(1, 170, 192);;
+    border-bottom: 2px solid rgb(1, 170, 192);
+    ;
 }
 
 .middleCont {
@@ -189,8 +190,8 @@ header h1 {
 #picContainer {
     display: flex;
     flex-direction: row;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
@@ -203,7 +204,7 @@ header h1 {
 
 #leftPic {
     background-image: url("../img/imagesAdmin/deco.png");
-    transform:scaleX(-1);
+    transform: scaleX(-1);
     background-size: cover;
     margin-left: 3%;
 }
@@ -257,7 +258,6 @@ footer {
 .bgFooter {
     height: 50%;
     width: 100%;
-
 }
 
 .linearGFooter {
@@ -281,59 +281,43 @@ footer {
 }
 
 /* Breakpoint XS */
-@media (max-width: 575px)
-{
-    .hidden-xs-down, .hidden-sm-down, .hidden-md-down, .hidden-lg-down, .hidden-xl-down, 
-    .hidden-xs-up, 
-    .hidden-unless-sm, .hidden-unless-md, .hidden-unless-lg, .hidden-unless-xl
-    {
+
+@media (max-width: 575px) {
+    .hidden-xs-down, .hidden-sm-down, .hidden-md-down, .hidden-lg-down, .hidden-xl-down, .hidden-xs-up, .hidden-unless-sm, .hidden-unless-md, .hidden-unless-lg, .hidden-unless-xl {
         display: none !important;
     }
-
 }
 
 /* Breakpoint SM */
-@media (min-width: 576px) and (max-width: 767px)
-{
-    .hidden-sm-down, .hidden-md-down, .hidden-lg-down, .hidden-xl-down, 
-    .hidden-xs-up, .hidden-sm-up, 
-    .hidden-unless-xs, .hidden-unless-md, .hidden-unless-lg, .hidden-unless-xl
-    {
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .hidden-sm-down, .hidden-md-down, .hidden-lg-down, .hidden-xl-down, .hidden-xs-up, .hidden-sm-up, .hidden-unless-xs, .hidden-unless-md, .hidden-unless-lg, .hidden-unless-xl {
         display: none !important;
-    } 
+    }
 }
 
 /* Breakpoint MD */
-@media (min-width: 768px) and (max-width: 991px)
-{
-    .hidden-md-down, .hidden-lg-down, .hidden-xl-down, 
-    .hidden-xs-up, .hidden-sm-up, .hidden-md-up, 
-    .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-lg, .hidden-unless-xl
-    {
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .hidden-md-down, .hidden-lg-down, .hidden-xl-down, .hidden-xs-up, .hidden-sm-up, .hidden-md-up, .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-lg, .hidden-unless-xl {
         display: none !important;
-    } 
+    }
 }
 
 /* Breakpoint LG */
-@media (min-width: 992px) and (max-width: 1199px)
-{
-    .hidden-lg-down, .hidden-xl-down, 
-    .hidden-xs-up, .hidden-sm-up, .hidden-md-up, .hidden-lg-up, 
-    .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-md, .hidden-unless-xl
-    {
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hidden-lg-down, .hidden-xl-down, .hidden-xs-up, .hidden-sm-up, .hidden-md-up, .hidden-lg-up, .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-md, .hidden-unless-xl {
         display: none !important;
-    } 
+    }
 }
 
 /* Breakpoint XL */
-@media (min-width: 1200px)
-{
-    .hidden-xl-down, 
-    .hidden-xs-up, .hidden-sm-up, .hidden-md-up, .hidden-lg-up, .hidden-xl-up, 
-    .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-md, .hidden-unless-lg
-    {
+
+@media (min-width: 1200px) {
+    .hidden-xl-down, .hidden-xs-up, .hidden-sm-up, .hidden-md-up, .hidden-lg-up, .hidden-xl-up, .hidden-unless-xs, .hidden-unless-sm, .hidden-unless-md, .hidden-unless-lg {
         display: none !important;
-    } 
+    }
 }
 
 .hidden {
