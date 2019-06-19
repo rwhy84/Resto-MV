@@ -1,13 +1,20 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Edit Menu{% endblock %}
+{% block title %}Carte-Edit{% endblock %}
+{% block h2 %}Gestion de la carte{% endblock %}
+{% block link %}{% endblock %}
+{% block h3 %}Carte{% endblock %}
 
 {% block body %}
-    <h1>Edit Menu</h1>
+    <h4>MODIFIER UN PLAT</h4>
 
-    {{ include('menu/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="editCont">
 
-    <a href="{{ path('menu_index') }}">back to list</a>
+    {{ include('menu/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    {{ include('menu/_delete_form.html.twig') }}
+    {{ include('menu/_delete_form.html.twig') }}    
+
+      <a href="{{ path('menu_index') }}"><i class="fas fa-chevron-circle-left"></i>Retour à la liste des plats</a>
+</div>
+
 {% endblock %}
