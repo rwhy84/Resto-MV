@@ -342,6 +342,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         var dateSelect = $(this).children().attr('id');
+        var thD = formatDate(new Date(y, m, d));
 
         //$("#calendar").addClass('hiddenSmall');
 
@@ -362,6 +363,112 @@ $(document).ready(function () {
 
             $("#diner").addClass('hidden');
         }
+
+        if ($(this).attr('data-date') == (thD)) {
+
+            if (currentHour >= 22) {
+                if (currentMinutes >= 15) {
+
+                    $("#22h15, #22h00, #21h45, #21h30, #21h15, #21h00, #20h45, #20h30, #20h15, #20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else {
+
+                    $("#22h00, #21h45, #21h30, #21h15, #21h00, #20h45, #20h30, #20h15, #20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                }
+
+            } else if (currentHour >= 21) {
+                if (currentMinutes > 45) {
+
+                    $("#21h45, #21h30, #21h15, #21h00, #20h45, #20h30, #20h15, #20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else if (currentMinutes >= 30) {
+
+                    $("#21h30, #21h15, #21h00, #20h45, #20h30, #20h15, #20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else if (currentMinutes >= 15) {
+
+                    $("#21h15, #21h00, #20h45, #20h30, #20h15, #20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else {
+
+                    $("#21h00, #20h45, #20h30, #20h15, #20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                }
+
+            } else if (currentHour >= 20) {
+                if (currentMinutes > 45) {
+
+                    $("#20h45, #20h30, #20h15, #20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else if (currentMinutes >= 30) {
+
+                    $("#20h30, #20h15, #20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else if (currentMinutes >= 15) {
+
+                    $("#20h15, #20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else {
+
+                    $("#20h00, #14h30, #14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                }
+
+            } else if (currentHour >= 14) {
+                if (currentMinutes >= 15) {
+
+                    $("#14h15, #14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else {
+
+                    $("#14h00, #13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                }
+
+            } else if (currentHour >= 13) {
+                if (currentMinutes > 45) {
+
+                    $("#13h45, #13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else if (currentMinutes >= 30) {
+
+                    $("#13h30, #13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else if (currentMinutes >= 15) {
+
+                    $("#13h15, #13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else {
+
+                    $("#13h00, #12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                }
+
+            } else if (currentHour >= 12) {
+                if (currentMinutes > 45) {
+
+                    $("#12h45, #12h30, #12h15, #12h00").addClass("hidden");
+
+                } else if (currentMinutes >= 30) {
+
+                    $("#12h30, #12h15, #12h00").addClass("hidden");
+
+                } else if (currentMinutes >= 15) {
+
+                    $("#12h15, #12h00").addClass("hidden");
+
+                } else {
+
+                    $("#12h00").addClass("hidden");
+
+                }
+            } else {
+
+            }
+
+        }
+
     })
 
     // On désactive les dates qui ont les classes "midi-close" et"soir-close"
@@ -374,54 +481,20 @@ $(document).ready(function () {
         }
     }
 
-
     var hDate = new Date();
     var currentHour = hDate.getHours();
     var currentMinutes = hDate.getMinutes();
 
-    console.log(currentHour);
-    console.log(currentMinutes);
+    var thisD = formatDate(new Date(y, m, d));
+    var thisDay = "." + thisD;
 
-    for (h = 12; h < 14; h++) {
+    if (currentHour >= 22) {
+        if (currentMinutes > 30) {
+            // On désactive la date du jour si heure > 22h30
+            $(thisDay).addClass('passed');
+            $(thisDay).attr('onclick', "return false");
 
-        if ((currentHour >= h) && (currentHour < h + 1)) {
-            if (currentMinutes > 45) {
-                $("#" + h + "h45", "#" + h + "h30", "#" + h + "h15", "#" + h + "h00").addClass("hidden");
-                console.log("sup a 45!")
-            } else if (currentMinutes >= 30) {
-                $("#" + h + "h30", "#" + h + "h15", "#" + h + "h00").addClass("hidden");
-                console.log("sup a 30!")
-            } else if (currentMinutes >= 15) {
-                $("#" + h + "h15", "#" + h + "h00").addClass("hidden");
-                console.log("sup a 15!")
-            } else {
-                $("#" + h + "h00").addClass("hidden");
-                console.log('sup a ', h, '00!');
-            }
-        } else {
-
-        };
-    }
-
-    for (h = 20; h < 23; h++) {
-
-        if ((currentHour >= h) && (currentHour < h + 1)) {
-            if (currentMinutes > 45) {
-                $("#" + h + "h45", "#" + h + "h30", "#" + h + "h15", "#" + h + "h00").addClass("hidden");
-                console.log("sup a 45!")
-            } else if (currentMinutes >= 30) {
-                $("#" + h + "h30", "#" + h + "h15", "#" + h + "h00").addClass("hidden");
-                console.log("sup a 30!")
-            } else if (currentMinutes >= 15) {
-                $("#" + h + "h15", "#" + h + "h00").addClass("hidden");
-                console.log("sup a 15!")
-            } else {
-                $("#" + h + "h00").addClass("hidden");
-                console.log('sup a ', h, '00!');
-            }
-        } else {
-
-        };
-    }
+        }
+    };
 
 })

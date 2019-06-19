@@ -334,6 +334,16 @@ $(document).ready(function () {
         }
     }
 
+    // Suppression des cases de dates passées
+    var thisD = formatDate(new Date(y, m, d));
+    var midD = new Date();
+    var delD = midD.getDate();
+    var dateC = $(".dayParam");
+
+    for (i = 0; i < delD - 1; i++) {
+        $(dateC[i]).addClass("hidden");
+    }
+
     // REQUETE AJAX UPDATE
 
     $(".buttonParam").click(function () {
