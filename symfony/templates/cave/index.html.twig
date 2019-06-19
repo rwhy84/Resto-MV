@@ -18,27 +18,36 @@
     </div>
 </header>
 
-<div class="container-fluid">
-    <div class="row" style="width: 50%">
-        {%for cave_vin in bouteilles %}
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-4 text-center"><img src="{{asset(cave_vin.image) }}" alt="{{ cave_vin.titre }}">
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-md-12 text-center">{{ cave_vin.titre }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 text-center">{{ cave_vin.description }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center">{{ cave_vin.prix }}
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-</div>{% endblock %}
+<main>
+<div class="colorlib-menu">
+	<div class="container containerCarte">
+
+		<nav class="navCarte">		
+		 <ul class="nav nav-tabs text-center" role="tablist">
+			<li class="active liMenu" id="defaultLink"><a href="#" class="linkMenu" id="rouge" role="tab" data-toggle="tab">Rouge</a></li>
+			<li class="liMenu" ><a href="#" class="linkMenu" id="blanc" role="tab" data-toggle="tab">Blanc</a></li>
+			<li class="liMenu" ><a href="#" class="linkMenu" id="rose" role="tab" data-toggle="tab">Rosé</a></li>
+		</ul>
+		</nav>
+							 
+		<div class="container containerMenu ">				
+		{% for cave_vin in bouteilles %}	
+			<div class="{{cave_vin.couleur }} hidden ">					
+				<figure class="dish-entry">
+					<a href="{{ cave_vin.image }}"  data-fancybox>
+					<img class="image-menu" src="{{asset(cave_vin.image) }}" alt="{{ cave_vin.titre }}">
+					</a>
+				</figure>
+				<div class="textMenu">
+				<h3>{{ cave_vin.titre }}</h3>
+				<p class="cat text">{{ cave_vin.description }}</p>
+				<span class="price text">{{ cave_vin.prix }}€</span>
+				</div>
+			</div>
+							             
+		{% endfor %}
+		</div>	
+	</div>
+</div>	
+{% endblock %}
+{% block scriptThisPage %}<script src="{{ asset('asset/js/driss.js') }}"></script>{% endblock %}
