@@ -1,15 +1,16 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block stylesheets %}<link rel="stylesheet" media="screen and (max-width: 991px)" href="{{ asset('asset/css/parametresAdmin-medium.css') }}">
-    <link rel="stylesheet" media="screen and (min-width: 992px)" href="{{ asset('asset/css/parametresAdmin-large.css') }}">
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('asset/css/parametresAdmin.css') }}">
 {% endblock %}
 
-{% block title %}Parametres Creneau{% endblock %}
+{% block title %}Parametres Creneau
+{% endblock %}
 
 {% block body %}
 
     <!--  <form>
-                 CAROUSEL DES MOIS -->
+                         CAROUSEL DES MOIS -->
 
     <div class="carousel slide" data-interval="false" data-ride="pause" id="carouselExampleControls">
         <div class="carousel-inner">

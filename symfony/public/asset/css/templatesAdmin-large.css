@@ -47,10 +47,7 @@ header h1 {
     flex-direction: row;
     justify-content: center;
     padding-inline-start: 0;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 25px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) inset, 0 -2px 10px rgba(0, 0, 0, 0.5) inset;
     box-shadow: 0 1px 4px rgb(0, 0, 0), 0 -1px 4px rgb(0, 0, 0), 0 10px 10px 0 black;
 }
@@ -85,14 +82,14 @@ header h1 {
 }
 
 .menuList .linkFirst {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
     margin-left: 0 !important;
 }
 
 .menuList .linkLast {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .menuList .link a {
