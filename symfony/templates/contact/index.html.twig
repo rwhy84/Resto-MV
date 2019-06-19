@@ -41,11 +41,11 @@
                 
     <label for"name">Nom</label><abbr title="(obligatoire)">*</abbr>   
                                            
-    <input class="form-resa" type="text" id="name" name="nom" placeholder="Nom" required>                                   
+    <input class="form-resa" type="text" id="name" name="nom" placeholder="Nom *" required>                                   
 
     <label for"name">Prenom</label><abbr title="(obligatoire)">*</abbr>   
                                            
-    <input class="form-resa" type="text" id="name" name="prenom" placeholder="Prenom" required>                                   
+    <input class="form-resa" type="text" id="name" name="prenom" placeholder="Prenom *" required>                                   
 
 </div>
 
@@ -53,12 +53,12 @@
 
     <label for"email">Email</label>
                     
-        <input class="form-resa" type="email" name="email" id="email" placeholder="email">  
+        <input class="form-resa" type="email" name="email" id="email" placeholder="email *">  
 
         <label for"tel">Téléphone</label>
             <abbr title="(obligatoire)">*</abbr> 
                                              
-        <input class="form-resa" type="tel" id="tel" name="tel" placeholder="N° de téléphone" required>                         
+        <input class="form-resa" type="tel" id="tel" name="tel" placeholder="N° de téléphone *" required>                         
 </div>                         
                         
                     </div>  
@@ -73,20 +73,23 @@
         </form>
 -->        
 {{ form_start(form1, {'attr': {'id': 'resaForm'}}) }}
-          <p>Les champs marqués d'un <abbr title="(obligatoire)" aria-hidden="true">*</abbr> sont obligatoires.</p>
+          <p>
+           <span>Les champs marqués d'un</span>
+            <abbr aria-hidden="true" id="abbrTitle" title="(obligatoire)">*</abbr>
+            <span>obligatoires.</span>
+          </p>
 
 <div class="globalInputsCont">
 
-    <div id="leftInputsContainer">
-                    
+    <div id="leftInputsContainer"> 
         <label for"name">Nom</label><abbr title="(obligatoire)">*</abbr>   
                                             
         <!--<input class="form-resa" type="text" id="name" name="nom" placeholder="Nom" required>-->                                   
-        {{ form_widget(form1.nom, {'attr': {'class': 'form-resa', 'placeholder': 'Nom'}}) }}
+        {{ form_widget(form1.nom, {'attr': {'class': 'form-resa', 'placeholder': 'Nom *'}}) }}
         <label for"name">Prenom</label><abbr title="(obligatoire)">*</abbr>   
                                             
         <!--<input class="form-resa" type="text" id="name" name="prenom" placeholder="Prenom" required>-->                                   
-        {{ form_widget(form1.prenom, {'attr': {'class': 'form-resa', 'placeholder': 'Prenom'}}) }}
+        {{ form_widget(form1.prenom, {'attr': {'class': 'form-resa', 'placeholder': 'Prenom *'}}) }}
 
     </div>
 
@@ -99,7 +102,7 @@
         <label for"tel">Téléphone</label>
         <abbr title="(obligatoire)">*</abbr>                                          
         <!--<input class="form-resa" type="tel" id="tel" name="tel" placeholder="N° de téléphone" required>-->                         
-        {{ form_widget(form1.tel, {'attr': {'class': 'form-resa', 'placeholder': 'N° de téléphone'}}) }}
+        {{ form_widget(form1.tel, {'attr': {'class': 'form-resa', 'placeholder': 'N° de téléphone *'}}) }}
     </div>                         
 </div>                         
                         
@@ -108,7 +111,7 @@
     <!--<textarea class="form-resa" id="message" name="message" placeholder="Message"></textarea>--> 
     {{ form_widget(form1.message, {'attr': {'class': 'form-resa', 'placeholder': 'Message'}}) }}
 
-    <input type="submit" name="submit" id="submit" value="Envoyer" class="btn">               
+    <input type="submit" name="submit" id="submit" value="ENVOYER" class="btn">               
 {{ form_end(form1) }}
 
 
