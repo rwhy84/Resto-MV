@@ -187,9 +187,12 @@ display: none !important;}
 	font-weight: 800;
 	text-transform: uppercase;
 	margin: 0 10px;
+  }
+  .active{
+	color:black !important;
 }
-
-.navCarte .nav-tabs .liMenu .linkMenu:hover {
+ 
+  .navCarte .nav-tabs .liMenu .linkMenu:hover, .active {
 	color: #555;
 }
 
