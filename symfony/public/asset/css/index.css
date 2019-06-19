@@ -33,9 +33,10 @@
     padding: 0.5em 0.8em;
     margin: 0.2em 0;
     display: block;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
     position: relative;
     text-decoration: none;
+    text-shadow: 2px 1px 1px black;
 }
 
 .snip1189 a:before, .snip1189 a:after {
@@ -75,6 +76,8 @@
     transform: translate(0%, 0%);
     opacity: 1;
 }
+
+
 
 #footer {
     display: block;
@@ -187,7 +190,7 @@
 .bandeau-footer {
     width: 100%;
     background-color: #303030;
-    height: 20vh;
+    height: 15vh;
     display: block;
     display: flex;
     flex-direction: row;
@@ -196,6 +199,7 @@
     font-family: Lora, sans-serif;
     color: white;
     opacity: 0.8;
+    padding-top: 1rem;
 }
 
 .navbar {
@@ -234,6 +238,13 @@ ul .navMenu .headerMenu {
     font-size: 8em;
     font-weight: 400;
     text-align: center;
+    text-shadow: 2px 1px 1px black;
+    z-index: 999;
+}
+
+.central {
+
+    z-index: 999;;
 }
 
 .logo {
@@ -484,6 +495,8 @@ iframe {
     }
     .title_header {
         font-size: 4em;
+        text-shadow: 2px 1px 1px black;
+        z-index: 999;
     }
     .paragraphHeader {
         font-size: 0.8rem;
@@ -492,7 +505,7 @@ iframe {
     .bandeau {
         display: flex;
         align-items: flex-start;
-        padding-top: 2rem;
+        padding-top: 0.5rem;
     }
     /* PAGE RESERVATION */
     .globalInputsCont {
@@ -502,12 +515,17 @@ iframe {
     .bandeau-footer {
         display: flex;
         align-items: flex-start;
-        padding-top: 2rem;
+        padding-top: 0.5rem;
     }
     .about-img-2 {
         display: none;
     }
     .navbar-light .navbar-toggler {
         border-color: transparent;
+    }
+
+    .mobile_menu {
+
+        display: none;
     }
 }
