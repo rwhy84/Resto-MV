@@ -164,7 +164,7 @@ header h1 {
     margin-top: 3%;
 }
 
-.pageViewer .fas {
+.pageViewer .fas, .bottomSection .fas {
     color: rgb(1, 170, 192);
     margin-right: 3%;
 }
@@ -173,7 +173,7 @@ header h1 {
     font-size: 1.8rem !important;
 }
 
-.pageViewer a:hover {
+.pageViewer a:hover, .bottomSection a:hover {
     border-bottom: 2px solid rgb(1, 170, 192);;
 }
 
@@ -268,16 +268,27 @@ footer {
 
 .bottomSection {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     width: 60%;
     height: 100%;
     margin-left: 20%;
     background-color: rgba(39, 39, 39, 0.7);
     padding-top: 2%;
+    padding-bottom: 2%;
     border-radius: 0 0 10px 10px;
     box-shadow: 5px 0px 8px rgb(0, 0, 0), -5px 0px 8px rgb(0, 0, 0);
+}
+.bottomSection a {    
+    color: rgb(1, 170, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding-bottom: 1%;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
 .inputContainer {

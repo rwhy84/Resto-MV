@@ -406,9 +406,9 @@ input:focus {
 }
 
 #mystery {
-    width: 30%;
+    width: 17%;
     height: 20%;
-    background-color: rgb(255, 45, 80);
+    background-color: #ffe100;
     border-radius: 30px;
     color: white;
     border: none;    
@@ -416,6 +416,10 @@ input:focus {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-image: url("../img/imagesAdmin/danger-zone-.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .newThemeColor {
