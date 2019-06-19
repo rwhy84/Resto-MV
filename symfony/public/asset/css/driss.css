@@ -156,6 +156,13 @@ display: none !important;}
 	flex-direction: row;
 	justify-content: flex-start;
 }
+.rouge, .blanc, .rose{
+	width:45%;
+	padding:15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
 
 .navCarte {
 	width: 80%;
@@ -243,11 +250,28 @@ display: none !important;}
 
 }
 @media only screen and (max-width: 850px) {
-.single-portfolio {
-	width: 100%;  
-}
-
-.single-portfolio.sm-wide {
-		width: 100%;
+	.single-portfolio {
+		width: 100%;  
 	}
-}
+	
+	.single-portfolio.sm-wide {
+			width: 100%;
+		}
+	.image-menu {
+		height: 100px;
+		width: 100px;
+		 }
+	
+		.containerMenu{
+		display:flex;
+		flex-direction:column;
+		align-items: center;}
+		
+		.rouge, .blanc, .rose{
+		width:100%;}
+		.entree, .plat, .dessert{
+		width: 100%;}
+		.navCarte .nav-tabs .liMenu .linkMenu {
+			font-size: 14px;
+		}
+	}
