@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190618172834 extends AbstractMigration
+final class Version20190619091318 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -24,7 +24,6 @@ final class Version20190618172834 extends AbstractMigration
 
         $this->addSql('CREATE TABLE categorie (id INT AUTO_INCREMENT NOT NULL, entree TINYINT(1) NOT NULL, plat TINYINT(1) NOT NULL, dessert TINYINT(1) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
         $this->addSql('ALTER TABLE contact_client CHANGE tel tel VARCHAR(255) NOT NULL');
-        $this->addSql('ALTER TABLE creneau CHANGE datecreneau datecreneau VARCHAR(255) NOT NULL, CHANGE midi midi VARCHAR(255) NOT NULL, CHANGE soir soir VARCHAR(255) NOT NULL');
         $this->addSql('ALTER TABLE menu ADD categorie VARCHAR(255) NOT NULL, ADD menuspecial TINYINT(1) NOT NULL');
         $this->addSql('ALTER TABLE resa CHANGE tel tel VARCHAR(255) NOT NULL');
     }
@@ -36,7 +35,6 @@ final class Version20190618172834 extends AbstractMigration
 
         $this->addSql('DROP TABLE categorie');
         $this->addSql('ALTER TABLE contact_client CHANGE tel tel INT NOT NULL');
-        $this->addSql('ALTER TABLE creneau CHANGE datecreneau datecreneau VARCHAR(19) DEFAULT NULL COLLATE utf8mb4_unicode_ci, CHANGE midi midi VARCHAR(160) DEFAULT \'open\' NOT NULL COLLATE utf8mb4_general_ci, CHANGE soir soir VARCHAR(160) DEFAULT \'open\' NOT NULL COLLATE utf8mb4_general_ci');
         $this->addSql('ALTER TABLE menu DROP categorie, DROP menuspecial');
         $this->addSql('ALTER TABLE resa CHANGE tel tel INT NOT NULL');
     }

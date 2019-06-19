@@ -213,9 +213,10 @@ ul li a {
 
 .fas {
     color: white!important;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     width: 20px;
     height: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .logo-slider {
@@ -467,4 +468,3 @@ iframe {
     padding-left: 0px;
     padding-right: 0px;
 }
-
