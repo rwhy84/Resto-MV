@@ -313,9 +313,6 @@ $(document).ready(function () {
         }
     }
 
-
-
-
     for (i = 0; i < listDateCont.length; i++) {
         for (a = 0; a < listDateBDD.length; a++) {
 
