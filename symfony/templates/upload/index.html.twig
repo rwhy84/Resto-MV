@@ -1,8 +1,5 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block stylesheets %}<link rel="stylesheet" href="{{ asset('asset/css/uploadAdmin.css') }}" type="text/css">
-{% endblock %}
-
 {% block title %}Upload index
 {% endblock %}
 {% block h2 %}Gestion de la galerie
@@ -30,8 +27,6 @@
                         <td>{{ upload.titre }}</td>
 
                         <td>
-                            <a href="{{ path('upload_show', {'id': upload.id}) }}">
-                                <i class="far fa-edit"></i>Voir la galerie</a>
                             <a href="{{ path('upload_edit', {'id': upload.id}) }}">
                                 <i class="far fa-edit"></i>Modifier une photo</a>
                         </td>

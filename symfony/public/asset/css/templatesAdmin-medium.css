@@ -417,10 +417,6 @@ thead {
     border-bottom: 2px solid white;
 }
 
-h4 {
-    margin-bottom: 5%;
-}
-
 td {
     border-bottom: 1px solid white;
     padding: 1% 0 1% 0;
@@ -547,6 +543,16 @@ td form .btn:hover {
     font-weight: normal;
 }
 
-.btn .fa-trash-alt {
+.fa-trash-alt {
     color: rgb(1, 170, 192);
+}
+
+.btnDel {
+    color: white;
+    width: 25%;
+    height: 42px;
+}
+
+.btnDel .fa-trash-alt {
+    margin: 0;
 }

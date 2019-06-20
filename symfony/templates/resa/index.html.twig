@@ -1,37 +1,41 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Gestion des réservations{% endblock %}
-{% block h2 %} Gestion Reservations {% endblock %}
-{% block link %}"{{ path('reservation') }}"{% endblock %}
-{% block h3 %}réservations{% endblock %}
-{% block body %}
-    
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Heure</th>
-                <th>Nbclient</th>
-                <th>Nom</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for resa in resas %}
-            <tr>
-                <td>{{ resa.date }}</td>
-                <td>{{ resa.heure }}</td>
-                <td>{{ resa.nbclient }}</td>
-                <td>{{ resa.nom }}</td>
-
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('resa_new') }}">Create new</a>
+{% block title %}Gestion des réservations
 {% endblock %}
+{% block h2 %}
+    Gestion Reservations
+{% endblock %}
+{% block link %}"{{ path('reservation') }}"
+{% endblock %}
+{% block h3 %}réservations
+{% endblock %}
+{% block body %}
+
+    <div class="showCont">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Nbclient</th>
+                    <th>Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for resa in resas %}
+                    <tr>
+                        <td>{{ resa.date }}</td>
+                        <td>{{ resa.heure }}</td>
+                        <td>{{ resa.nbclient }}</td>
+                        <td>{{ resa.nom }}</td>
+
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="9">Aucune réservation</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% endblock %}

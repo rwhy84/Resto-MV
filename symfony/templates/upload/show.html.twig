@@ -3,16 +3,16 @@
 
 {% block body %}
 
-            {% for upload in image %}
-			<div class="mix single-portfolio set-bg photo" data-setbg="{{ upload.image }}">
-                <img src="{{ upload.image }}" alt="img-1">
-				<a href="{{ upload.image }}" class="portfolio-info" data-fancybox>
-					<div class="pfbg set-bg" data-setbg="{{ upload.image }}">
-					<img src="{{ upload.image }}" alt="img-1"></div>
-					
-					<h5>{{ upload.titre }}</h5>
-					<p>{{ upload.description }}</p>
-				</a>
-			</div>
-            {% endfor %}
+    {% for upload in image %}
+        <div class="mix single-portfolio set-bg photo" data-setbg="{{ upload.image }}">
+            <img src="{{ upload.image }}" alt="img-1">
+            <a href="{{ upload.image }}" class="portfolio-info" data-fancybox>
+                <div class="pfbg set-bg" data-setbg="{{ upload.image }}">
+                    <img src="{{ upload.image }}" alt="img-1"></div>
+
+                <h5>{{ upload.titre }}</h5>
+                <p>{{ upload.description }}</p>
+            </a>
+        </div>
+    {% endfor %}
 {% endblock %}

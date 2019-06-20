@@ -1,50 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Resa{% endblock %}
+{% block title %}Resa
+{% endblock %}
 
 {% block body %}
-    <h1>Resa</h1>
+    <h4>Resa</h4>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ resa.id }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ resa.date }}</td>
-            </tr>
-            <tr>
-                <th>Heure</th>
-                <td>{{ resa.heure }}</td>
-            </tr>
-            <tr>
-                <th>Nbclient</th>
-                <td>{{ resa.nbclient }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ resa.nom }}</td>
-            </tr>
-            <tr>
-                <th>Tel</th>
-                <td>{{ resa.tel }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ resa.email }}</td>
-            </tr>
-            <tr>
-                <th>Message</th>
-                <td>{{ resa.message }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="showCont">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ resa.id }}</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td>{{ resa.date }}</td>
+                </tr>
+                <tr>
+                    <th>Heure</th>
+                    <td>{{ resa.heure }}</td>
+                </tr>
+                <tr>
+                    <th>Nbclient</th>
+                    <td>{{ resa.nbclient }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ resa.nom }}</td>
+                </tr>
+                <tr>
+                    <th>Tel</th>
+                    <td>{{ resa.tel }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ resa.email }}</td>
+                </tr>
+                <tr>
+                    <th>Message</th>
+                    <td>{{ resa.message }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('resa_index') }}">back to list</a>
+        <a href="{{ path('resa_index') }}">back to list</a>
 
-    <a href="{{ path('resa_edit', {'id': resa.id}) }}">edit</a>
+        <a href="{{ path('resa_edit', {'id': resa.id}) }}">edit</a>
 
-    {{ include('resa/_delete_form.html.twig') }}
+        {{ include('resa/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
