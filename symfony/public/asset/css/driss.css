@@ -108,50 +108,61 @@
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	border-radius: 50%;
-	box-shadow:2px 0 10px #222;
+	box-shadow: 2px 0 10px #222;
 	background-size: cover;
-	background-repeat:no-repeat;
+	background-repeat: no-repeat;
 	background-position: center center;
-	 }
-	 .image-menu:hover {
-		 box-shadow:2px 0 20px #222;
-	 }
-	.image-cave {
+}
+
+.image-menu:hover {
+	box-shadow: 2px 0 20px #222;
+}
+
+.image-cave {
 	height: 170px;
 	width: 170px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	border-radius: 50%;
-	box-shadow:2px 0 10px #222;
+	box-shadow: 2px 0 10px #222;
 	background-size: contain;
-	background-repeat:no-repeat;
+	background-repeat: no-repeat;
 	background-position: center center;
-	 }
-	 .image-cave:hover {
-		 box-shadow:2px 0 20px #222;
-	 }
-	.textMenu {
+}
+
+.image-cave:hover {
+	box-shadow: 2px 0 20px #222;
+}
+
+.textMenu {
 	padding-left: 33px;
-	font-size:14px;
-	display:  flex;
+	font-size: 14px;
+	display: flex;
 	flex-direction: column;
 	/* justify-content: center; */
 	align-items: center;
 	font-family: Lora, sans-serif;
+}
+
+.textMenu h3 {
+	margin: 10px 0 10px 0;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	li .text h3 {
+		margin-top: 0px;
 	}
-	 .textMenu h3 {
-	  margin: 10px 0 10px 0;
-	  font-size: 20px;
-	  font-weight: 700; }
-	  @media screen and (max-width: 768px) {
-		 li .text h3 {
-		  margin-top: 0px; } }
+}
 
-.hidden{
-display: none !important;}
+.hidden {
+	display: none !important;
+}
 
-.containerMenu{
+.containerMenu {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -164,16 +175,18 @@ display: none !important;}
 	display: flex;
 	flex-direction: column;
 }
-.entree, .plat, .dessert{
-	width:45%;
-	padding:15px;
+
+.entree, .plat, .dessert {
+	width: 45%;
+	padding: 15px;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 }
-.rouge, .blanc, .rose{
-	width:45%;
-	padding:15px;
+
+.rouge, .blanc, .rose {
+	width: 45%;
+	padding: 15px;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -198,20 +211,21 @@ display: none !important;}
 }
 
 .navCarte .nav-tabs .liMenu .linkMenu {
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-    color: #aaa;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0 10px;
-    font-size: 25px;
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	color: #aaa;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin: 0 10px;
+	font-size: 20px;
 }
-  .active{
-	color:black !important;
+
+.active {
+	color: black !important;
 }
- 
-  .navCarte .nav-tabs .liMenu .linkMenu:hover, .active {
+
+.navCarte .nav-tabs .liMenu .linkMenu:hover, .active {
 	color: #555;
 }
 
@@ -236,24 +250,25 @@ display: none !important;}
 	width: 100%;
 }
 
-#ct{
-	 text-align: center;
-	 margin: 2% 20% ;
+#ct {
+	text-align: center;
+	margin: 2% 20%;
 }
-.formuleMenu{
-  background:white;
-  color:black;
-  font-size:25px;
-  font-family: Lora, sans-serif;
-  font-weight: 700;
- 
+
+.formuleMenu {
+	background: white;
+	color: black;
+	font-size: 25px;
+	font-family: Lora, sans-serif;
+	font-weight: 700;
+	margin-top: 2%;
 }
-.formule{
+
+.formule {
 	/* padding-top:13px; */
 	font-size: 21px;
-	color:black;
-	}
-
+	color: black;
+}
 
 @media only screen and (max-width: 1024px) {
 	.single-portfolio {
@@ -279,102 +294,106 @@ display: none !important;}
 	.portfolio-info {
 		opacity: 1;
 	}
-		.image-menu {
+	.image-menu {
 		height: 200px;
 		width: 200px;
-		 }
-		 .image-cave {
-		height: 200px;
-		width: 200px;
-		 }
-	
-		.containerMenu{
-		display:flex;
-		flex-direction:column;
-		align-items: center;}
-		
-		.rouge, .blanc, .rose{
-		width:50%;}
-		.entree, .plat, .dessert{
-		width: 50%;}
-		.navCarte .nav-tabs .liMenu .linkMenu {
-			font-size: 20px;
-		}
-		
-		#ct{
-	 text-align: center;
-	 margin: 2% 10% ;
-}
-.formuleMenu{
-  background:white;
-  color:black;
-  font-size:30px;
-  font-family: Lora, sans-serif;
-  font-weight: 700;
- 
-}
-.formule{
-	/* padding-top:13px; */
-	font-size: 25px;
-	color:black;
 	}
-
-	
-
-
+	.image-cave {
+		height: 200px;
+		width: 200px;
+	}
+	.containerMenu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.rouge, .blanc, .rose {
+		width: 50%;
+	}
+	.entree, .plat, .dessert {
+		width: 50%;
+	}
+	.navCarte .nav-tabs .liMenu .linkMenu {
+		font-size: 20px;
+	}
+	#ct {
+		text-align: center;
+		margin: 2% 10%;
+	}
+	.formuleMenu {
+		background: white;
+		color: black;
+		font-size: 30px;
+		font-family: Lora, sans-serif;
+		font-weight: 700;
+	}
+	.formule {
+		/* padding-top:13px; */
+		font-size: 25px;
+		color: black;
+	}
 }
+
 @media only screen and (max-width: 767px) {
 	.single-portfolio {
-		width: 100%;  
+		width: 100%;
 	}
-	
 	.single-portfolio.sm-wide {
-			width: 100%;
-		}
+		width: 100%;
+	}
 	.image-menu {
 		height: 100px;
 		width: 100px;
-		 }
-		 .image-cave {
+	}
+	.image-cave {
 		height: 100px;
 		width: 100px;
-		 }
-	
-		.containerMenu{
-		display:flex;
-		flex-direction:column;
-		align-items: center;}
-		
-		.rouge, .blanc, .rose{
-		width:100%;}
-		.entree, .plat, .dessert{
-		width: 100%;}
-		.navCarte .nav-tabs .liMenu .linkMenu {
-			font-size: 13px;
-			padding: 10px;
-		}
-		#ct{
-	 text-align: center;
-	 margin: 2% 5% ;
-}
-.formuleMenu{
-  background:white;
-  color:black;
-  font-size:20px;
-  font-family: Lora, sans-serif;
-  font-weight: 700;
- 
-}
-.formule{
-	/* padding-top:13px; */
-	font-size: 18px;
-	color:black;
+	}
+	.containerMenu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.rouge, .blanc, .rose {
+		width: 100%;
+	}
+	.entree, .plat, .dessert {
+		width: 100%;
 	}
 	.navCarte .nav-tabs .liMenu .linkMenu {
-    font-size: 13px;
-    padding: 10px;
+		font-size: 13px;
+		padding: 10px;
 	}
-
+	#ct {
+		text-align: center;
+		margin: 2% 5%;
 	}
+	.formuleMenu {
+		background: white;
+		color: black;
+		font-size: 20px;
+		font-family: Lora, sans-serif;
+		font-weight: 700;
+	}
+	.formule {
+		/* padding-top:13px; */
+		font-size: 18px;
+		color: black;
+	}
+	.navCarte .nav-tabs .liMenu .linkMenu {
+		font-size: 13px;
+		padding: 10px;
+	}
+}
 
+.cat {
+	text-align: center;
+}
 
+blockquote {
+	margin: 2% 0;
+}
+
+.separationCarte {
+	width: 80%;
+}
