@@ -5,10 +5,10 @@
 
 {% block body %}
     <h4>Ajouter un vin</h4>
-
+    <div class="editCont">
     {{ include('cave_vin/_form.html.twig') }}
 
     <a href="{{ path('cave_vin_index') }}">
         <i class="fas fa-chevron-circle-left"></i>Retour à la liste des vins</a>
-
+</div>
 </div>{% endblock %}
