@@ -33,7 +33,8 @@
 			<div class="{{menu.categorie  }} hidden ">					
 				<figure class="dish-entry">
 					<a href="{{ menu.image }}"  data-fancybox>
-					<img class="image-menu" src="{{asset(menu.image) }}" alt="{{ menu.titre }}">
+					{# <img class="image-menu" src="{{asset(menu.image) }}" alt="{{ menu.titre }}"> #}
+					<div class="image-menu" style="background-image:url({{asset(menu.image)}})"></div>
 					</a>
 				</figure>
 				<div class="textMenu">
