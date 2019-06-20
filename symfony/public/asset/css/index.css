@@ -531,5 +531,11 @@ iframe {
         padding-left: 0px;
     }
 
+    #container-bandeau {
+
+        padding-left: 0px!important; 
+        padding-right: 0px!important; 
+    }
+
 
 }
