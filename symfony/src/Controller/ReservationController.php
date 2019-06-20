@@ -42,14 +42,14 @@ class ReservationController extends AbstractController
 
         } elseif ($formResa->isSubmitted() && $formResa->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            dump($resa);
+            // dump($resa);
             $entityManager->persist($resa);
             $entityManager->flush();
 
             $bodyMessage = 'Nom de réservation: ' . $resa->getNom() . "\n " . 'Heure de Réservation: ' . $resa->getheure() . "\n" . "Nombres de couverts: " . $resa->getnbclient()  . "\n" . 'Numéro de téléphone: ' . $resa->getTel() . "\n" . "Message envoyé de: " . $resa->getEmail() . "\n" . $resa->getMessage();
 
             $message = (new \Swift_Message('Réservation de Table'))
-                ->setFrom($resa->getEmail())
+                ->setFrom('rbordet84@gmail.com')
                 ->setTo('rbordet84@gmail.com')
                 ->setBody(
                     $bodyMessage,

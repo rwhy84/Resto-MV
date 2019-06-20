@@ -149,14 +149,12 @@
 
                         </div>
 
-                        <div id="rightInputsContainer">
-
-                           
+                        <div id="rightInputsContainer">                           
 
                             {{ form_widget(formResa.date, {'id':'date','attr': {'class': 'form-resa', 'placeholder': 'Date*'}}) }}
                             {# <input class="form-resa" id="date" name="date" placeholder="Date *" required type="texte"> #}
 
-                             {{ form_widget(formResa.heure, {'attr': {'id':'resa_heure','class': 'form-resa', 'placeholder': 'Heures*'}}) }}
+                             {{ form_widget(formResa.heure, {'attr': {'id':'resa_heure','class': 'form-resa', 'placeholder': 'Heures*', 'disabled': 'disabled'}}) }}
 
                             {{ form_widget(formResa.nbclient, {'id':'resa_nbclient','attr': {'class': 'form-resa', 'placeholder': 'Nombres de Couverts*'}}) }}
                             {# <select class="form-resa" id="eatersSelect" required>

@@ -339,6 +339,8 @@ header .containerHeader {
     padding-right: 1.5em;
 }
 
+
+
 .about-img {
     height: 450px;
     background-size: cover;
@@ -356,7 +358,7 @@ header .containerHeader {
 }
 
 .intro-heading h2 {
-    font-size: 44px;
+    font-size: 30px;
     font-weight: 400;
     line-height: 1.4;
     position: relative;
@@ -474,7 +476,7 @@ iframe {
 }
 
 .text-about {
-    padding-top: 10%;
+    padding-top: 5%;
     font-family: Lora, sans-serif;
     font-style: italic;
 }
@@ -505,6 +507,7 @@ iframe {
         display: flex;
         align-items: flex-start;
         padding-top: 0.5rem;
+
     }
     /* PAGE RESERVATION */
     .globalInputsCont {
@@ -514,7 +517,6 @@ iframe {
     .bandeau-footer {
         display: flex;
         align-items: flex-start;
-        padding-top: 0.5rem;
     }
     .about-img-2 {
         display: none;
@@ -522,4 +524,18 @@ iframe {
     .navbar-light .navbar-toggler {
         border-color: transparent;
     }
+
+    .marginCol {
+
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    #container-bandeau {
+
+        padding-left: 0px!important; 
+        padding-right: 0px!important; 
+    }
+
+
 }

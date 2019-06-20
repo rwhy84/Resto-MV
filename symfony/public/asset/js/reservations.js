@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    console.log("Salut à toi petit curieux !");
+
     /* CRÉATIONS DES DATES */
 
     function formatDate(date) {
@@ -58,7 +60,6 @@ $(document).ready(function () {
 
     //Nombre de jours mois actuel et mois suivant
     var nbDaysInCurrentMonth = getNbJoursMois(m, y);
-    console.log("nbcurrent", nbDaysInCurrentMonth);
     var nbDaysInNextMonth = getNbJoursMois(m + 1, y);
     var nbDaysInPreviousMonth = getNbJoursMois(m - 1, y);
 
@@ -116,8 +117,6 @@ $(document).ready(function () {
     var whatMonth = new Date()
     var tab_month = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
     var next_month = new Array("Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre", "Janvier");
-    console.log(tab_month[whatMonth.getMonth()]);
-    console.log(next_month[whatMonth.getMonth()]);
 
     //MOIS ACTUEL PAR DEFAUT SUR LE PREMIER SLIDE
     $('.calHeadSlider').children('h3').text(tab_month[whatMonth.getMonth()]);
@@ -152,8 +151,6 @@ $(document).ready(function () {
     var dateCalendar = new Date(y, m, 1);
     var firstDay = dateCalendar.getDay();
     var lastDay = dateCalendar.getDate();
-
-    console.log("firstDay", firstDay)
 
     // Idem pour mois +1
     var dateCalendarNextMonth = new Date(y, m + 1, 1);
@@ -229,9 +226,6 @@ $(document).ready(function () {
 
     function insertEmptyBefore(selector, jour, element) {
 
-        //var dateCalendar = new Date(y, m, 1);
-        //jour = date.getDay();
-
         if (jour === 1) {
 
             dateVide = 0;
@@ -257,9 +251,6 @@ $(document).ready(function () {
 
     insertEmptyBefore(currentMonthSelector, firstDay, emptyDate);
     insertEmptyBefore(nextMonthSelector, firstDayNextMonth, emptyDate);
-
-    console.log("dateVide", dateVide);
-    console.log("firstDayNextMont: ", firstDayNextMonth);
 
     var totalCases;
 
@@ -344,13 +335,14 @@ $(document).ready(function () {
         var dateSelect = $(this).children().attr('id');
         var thD = formatDate(new Date(y, m, d));
 
-        //$("#calendar").addClass('hiddenSmall');
+        var testOpt = $("optgroup");
 
         if (($(this).hasClass('passed')) || ($(this).hasClass('forbidden'))) {
 
         } else {
             $('#date').val(dateSelect);
             $("#calendar").addClass('hiddenSmall');
+            $('#resa_heure').removeAttr('disabled');
         }
 
         if (($(this).hasClass('Lundi')) || ($(this).hasClass('Mardi')) || ($(this).hasClass('Mercredi')) || ($(this).hasClass('Jeudi'))) {
@@ -361,7 +353,7 @@ $(document).ready(function () {
 
         } else if ($(this).hasClass('Dimanche')) {
 
-            $("#diner").addClass('hidden');
+            $(testOpt[1]).addClass('hidden');
         }
 
         if ($(this).attr('data-date') == (thD)) {
