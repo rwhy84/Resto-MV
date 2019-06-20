@@ -1,13 +1,19 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Edit Upload{% endblock %}
+{% block title %}Edit Upload
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Upload</h1>
+    <h4>Modifier la galerie</h4>
 
-    {{ include('upload/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="editCont">
 
-    <a href="{{ path('upload_index') }}">back to list</a>
+        {{ include('upload/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('upload/_delete_form.html.twig') }}
+        <a href="{{ path('upload_index') }}">
+            <i class="fas fa-chevron-circle-left"></i>Retour à la liste des photos</a>
+
+        {{ include('upload/_delete_form.html.twig') }}
+
+    </div>
 {% endblock %}

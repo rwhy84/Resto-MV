@@ -1,5 +1,30 @@
+{# {{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn subscribe">{{ button_label|default("S'inscrire'") }}</button>
+{{ form_end(form) }} #}
 
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn subscribe">{{ button_label|default('Souscrire') }}</button>
+{{ form_start(form, {'attr': {'id': 'resaForm'}}) }}
+
+<div class="inputContainer">
+    <div class="backInput">
+        <label for"name">Photo</label>
+        {{ form_widget(form.imageUpload, {'attr': {'class': 'form-resa'}}) }}
+    </div>
+</div>
+
+<div class="inputContainer">
+    <div class="backInput">
+        <label for"name">Titre</label>
+        {{ form_widget(form.titre, {'attr': {'class': 'form-resa'}}) }}
+    </div>
+</div>
+
+<div class="inputContainer">
+    <div class="backInput">
+        <label for"name">Description</label>
+        {{ form_widget(form.description, {'attr': {'class': 'form-resa'}}) }}
+    </div>
+</div>
+
+<button class="btn">{{ button_label|default('Valider') }}</button>
 {{ form_end(form) }}

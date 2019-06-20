@@ -4,11 +4,16 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Edit CaveVin</h1>
+    <h4>Modifier la carte des vins</h4>
 
-    {{ include('cave_vin/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="editCont">
 
-    <a href="{{ path('cave_vin_index') }}">back to list</a>
+        {{ include('cave_vin/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('cave_vin/_delete_form.html.twig') }}
+        <a href="{{ path('cave_vin_index') }}">
+            <i class="fas fa-chevron-circle-left"></i>Retour à la liste des vins</a>
+
+        {{ include('cave_vin/_delete_form.html.twig') }}
+
+    </div>
 {% endblock %}
