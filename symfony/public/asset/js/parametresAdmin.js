@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    console.log("Salut à toi petit curieux !");
+
     /* CRÉATIONS DES DATES */
 
     function formatDate(date) {
