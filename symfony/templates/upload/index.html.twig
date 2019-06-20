@@ -3,41 +3,48 @@
 {% block stylesheets %}<link rel="stylesheet" href="{{ asset('asset/css/uploadAdmin.css') }}" type="text/css">
 {% endblock %}
 
-{% block title %}Upload index{% endblock %}
-{% block h2 %}Gestion des images{% endblock %}
+{% block title %}Upload index
+{% endblock %}
+{% block h2 %}Gestion de la galerie
+{% endblock %}
 
 {% block body %}
-    <h1>Upload index</h1>
+    <h4>Votre galerie</h4>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Image</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for upload in uploads %}
-            <tr>
-                <td>{{ upload.id }}</td>
-                <td>{{ upload.image }}</td>
-                <td>{{ upload.titre }}</td>
-                <td>{{ upload.description }}</td>
-                <td>
-                    <a href="{{ path('upload_show', {'id': upload.id}) }}">show</a>
-                    <a href="{{ path('upload_edit', {'id': upload.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="showCont">
+        <table class="CarteTab">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Image</th>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for upload in uploads %}
+                    <tr>
+                        <td>{{ upload.id }}</td>
+                        <td>{{ upload.image }}</td>
+                        <td>{{ upload.titre }}</td>
+                        <td>{{ upload.description }}</td>
+                        <td>
+                            <a href="{{ path('upload_show', {'id': upload.id}) }}">
+                                <i class="far fa-edit"></i>Voir la galerie</a>
+                            <a href="{{ path('upload_edit', {'id': upload.id}) }}">
+                                <i class="far fa-edit"></i>Modifier une photo</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Aucune photo trouvée</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('upload_new') }}">Create new</a>
+        <a href="{{ path('upload_new') }}">
+            <i class="fas fa-plus-circle"></i>Ajouter une photo</a>
+    </div>
 {% endblock %}

@@ -1,43 +1,45 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}ContactClient index{% endblock %}
-{% block h2 %}Gestion des messages{% endblock %}
+{% block title %}ContactClient index
+{% endblock %}
+{% block h2 %}Gestion des messages
+{% endblock %}
 {% block body %}
-    <h1>ContactClient index</h1>
+    <h4>VOS MESSAGES</h4>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Email</th>
-                <th>Tel</th>
-                <th>Message</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for contact_client in contact_clients %}
-            <tr>
-                <td>{{ contact_client.id }}</td>
-                <td>{{ contact_client.nom }}</td>
-                <td>{{ contact_client.prenom }}</td>
-                <td>{{ contact_client.email }}</td>
-                <td>{{ contact_client.tel }}</td>
-                <td>{{ contact_client.message }}</td>
-                <td>
-                    <a href="{{ path('contact_client_show', {'id': contact_client.id}) }}">show</a>
-                    <a href="{{ path('contact_client_edit', {'id': contact_client.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="showCont">
+        <table class="CarteTab">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
+                    <th>Tel</th>
+                    <th>Message</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact_client in contact_clients %}
+                    <tr>
+                        <td>{{ contact_client.id }}</td>
+                        <td>{{ contact_client.nom }}</td>
+                        <td>{{ contact_client.prenom }}</td>
+                        <td>{{ contact_client.email }}</td>
+                        <td>{{ contact_client.tel }}</td>
+                        <td>{{ contact_client.message }}</td>
+                        <td>
+                            {{ include('contact_client/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">Aucun message</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-    <a href="{{ path('contact_client_new') }}">Create new</a>
 {% endblock %}

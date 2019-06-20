@@ -5,47 +5,47 @@
 
 {{ form_start(form, {'attr': {'id': 'resaForm'}}) }}
 
-                   <div class="inputContainer">
-                    <div class="backInput"> 
-                    <label for"name">Photo</label>              
-        {{ form_widget(form.imageUpload, {'attr': {'class': 'form-resa', 'placeholder': 'Nom *'}}) }}
-                                 </div>
-                    </div>
-
-                                 <div class="inputContainer">
-                    <div class="backInput">
-                    <label for"name">Titre</label>
-        {{ form_widget(form.titre, {'attr': {'class': 'form-resa', 'placeholder': 'Prenom *'}}) }}
+<div class="inputContainer">
+    <div class="backInput">
+        <label for"name">Photo</label>
+        {{ form_widget(form.imageUpload, {'attr': {'class': 'form-resa'}}) }}
+    </div>
 </div>
-                    </div>
 
 <div class="inputContainer">
-                    <div class="backInput">
-                    <label for"name">Prix</label>
-        {{ form_widget(form.prix, {'attr': {'class': 'form-resa', 'placeholder': 'Email'}}) }}
+    <div class="backInput">
+        <label for"name">Titre</label>
+        {{ form_widget(form.titre, {'attr': {'class': 'form-resa'}}) }}
+    </div>
 </div>
-                    </div>
-                    
-                         <div class="inputContainer">
-                    <div class="backInput">
-                    <label for"name">Description</label>
-        {{ form_widget(form.description, {'attr': {'class': 'form-resa', 'placeholder': 'N° de téléphone *'}}) }}
-                       </div>
-                    </div>
-                    
-                        <div class="inputContainer">
-                    <div class="backInput">
-                    <label for"name">Catégorie</label>
-    {{ form_widget(form.categorie, {'attr': {'class': 'form-resa', 'placeholder': 'Message'}}) }}
-</div>
-                    </div>
-                    
+
 <div class="inputContainer">
-                    <div class="backInput">
-                    <label for"name">Type de menu</label>
-    {{ form_widget(form.menuspecial, {'attr': {'class': 'form-resa', 'placeholder': 'Message'}}) }}
+    <div class="backInput">
+        <label for"name">Prix</label>
+        {{ form_widget(form.prix, {'attr': {'class': 'form-resa'}}) }}
+    </div>
 </div>
-                    </div>
-                    
+
+<div class="inputContainer">
+    <div class="backInput">
+        <label for"name">Description</label>
+        {{ form_widget(form.description, {'attr': {'class': 'form-resa'}}) }}
+    </div>
+</div>
+
+<div class="inputContainer">
+    <div class="backInput">
+        <label for"name">Catégorie</label>
+        {{ form_widget(form.categorie, {'attr': {'class': 'form-resa'}}) }}
+    </div>
+</div>
+
+<div class="inputContainer">
+    <div class="backInput">
+        <label for"name">Type de menu</label>
+        {{ form_widget(form.menuspecial, {'attr': {'class': 'form-resa'}}) }}
+    </div>
+</div>
+
 <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

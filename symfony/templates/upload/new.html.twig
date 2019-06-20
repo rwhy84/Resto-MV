@@ -3,13 +3,15 @@
 {% block stylesheets %}<link rel="stylesheet" href="{{ asset('asset/css/uploadAdmin.css') }}" type="text/css">
 {% endblock %}
 
-{% block title %}New Upload{% endblock %}
+{% block title %}New Upload
+{% endblock %}
 
 {% block body %}
-    
-    
+    <div class="editCont">
 
-    {{ include('upload/_form.html.twig') }}
+        {{ include('upload/_form.html.twig') }}
 
-    <a href="{{ path('upload_index') }}">back to list</a>
+        <a href="{{ path('upload_index') }}">
+            <i class="fas fa-chevron-circle-left"></i>Retour à la liste des photos</a>
+    </div>
 {% endblock %}

@@ -1,12 +1,15 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}New ContactClient{% endblock %}
+{% block title %}New ContactClient
+{% endblock %}
 
 {% block body %}
     <h1>Create new ContactClient</h1>
 
-    {{ include('contact_client/_form.html.twig') }}
+    <div class="editCont">
+        {{ include('contact_client/_form.html.twig') }}
 
-    <a href="{{ path('contact_client_index') }}">back to list</a>
+        <a href="{{ path('contact_client_index') }}">back to list</a>
+    </div>
 {% endblock %}
