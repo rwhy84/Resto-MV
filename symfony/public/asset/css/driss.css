@@ -10,7 +10,7 @@
 
 .single-portfolio {
 	height: 580px;
-	width: 33.33%;
+	width: 25%;
 	position: relative;
 	float: left;
 	display: block;
@@ -112,9 +112,27 @@ li:hover,  li:focus, .menu-dish .active {
 	-ms-border-radius: 50%;
 	border-radius: 50%;
 	box-shadow:2px 0 10px #222;
+	background-size: cover;
+	background-repeat:no-repeat;
+	background-position: center center;
 	 }
 	 .image-menu:hover {
-	 	box-shadow:2px 0 20px #222;
+		 box-shadow:2px 0 20px #222;
+	 }
+	.image-cave {
+	height: 170px;
+	width: 170px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	box-shadow:2px 0 10px #222;
+	background-size: contain;
+	background-repeat:no-repeat;
+	background-position: center center;
+	 }
+	 .image-cave:hover {
+		 box-shadow:2px 0 20px #222;
 	 }
 	.textMenu {
 	padding-left: 33px;

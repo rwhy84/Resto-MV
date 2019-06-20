@@ -35,7 +35,8 @@
 			<div class="{{cave_vin.couleur }} hidden ">					
 				<figure class="dish-entry">
 					<a href="{{ cave_vin.image }}"  data-fancybox>
-					<img class="image-menu" src="{{asset(cave_vin.image) }}" alt="{{ cave_vin.titre }}">
+					{# <img class="image-menu" src="{{asset(cave_vin.image) }}" alt="{{ cave_vin.titre }}"> #}
+					<div class="image-cave" style="background-image:url({{asset(cave_vin.image)}})"></div>
 					</a>
 				</figure>
 				<div class="textMenu">
