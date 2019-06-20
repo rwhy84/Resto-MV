@@ -15,12 +15,12 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 80%;
+    height: 40rem;
 }
 
 .mainChild {
     width: 100%;
-    height: 100%;  
+    height: 40rem; 
     /*background: linear-gradient(to top, rgb(255, 255, 255) 5%, rgba(255, 255, 255, 0)50%, rgb(255, 255, 255) 95%);*/
 }
 
@@ -306,7 +306,7 @@ abbr {
 }
 
 #resaForm {
-    height: 100%;
+    height: 35rem;
     width: 100%;
     display: flex;
     flex-direction: column;
