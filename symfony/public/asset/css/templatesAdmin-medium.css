@@ -547,6 +547,6 @@ td form .btn:hover {
     font-weight: normal;
 }
 
-td form .btn i {
+.btn .fa-trash-alt {
     color: rgb(1, 170, 192);
 }

@@ -1,13 +1,13 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Edit Resa{% endblock %}
+{% block title %}Edit Resa
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Resa</h1>
+    <h4>Modifier réservation</h4>
 
-    {{ include('resa/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('resa/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('resa_index') }}">back to list</a>
+    <a href="{{ path('resa_index') }}"></i>Retour à la liste des photos</a>
 
-    {{ include('resa/_delete_form.html.twig') }}
-{% endblock %}
+{{ include('resa/_delete_form.html.twig') }}{% endblock %}
