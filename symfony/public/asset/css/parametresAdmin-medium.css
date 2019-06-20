@@ -1,6 +1,4 @@
-/* skins divers */
-
-.inputContainer {
+skins divers .inputContainer {
     display: flex;
     flex-direction: row;
     width: 100%;
