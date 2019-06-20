@@ -11,7 +11,7 @@
 
 .single-portfolio {
 	height: 580px;
-	width: 25%;
+	width: 33.3333%;
 	position: relative;
 	float: left;
 	display: block;
@@ -268,6 +268,7 @@
 	/* padding-top:13px; */
 	font-size: 21px;
 	color: black;
+	font-style: italic;
 }
 
 @media only screen and (max-width: 1024px) {
