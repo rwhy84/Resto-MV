@@ -235,6 +235,67 @@ display: none !important;}
 	width: 100%;
 }
 
+#ct{
+	height:150px;
+	width: 80%;
+	border:3px solid lightgrey;
+	margin: 20px auto 5px auto;
+	text-align:center;
+	position:relative;
+	color:#fff;
+	padding: 7px 1px 0 5px;
+	}
+.formuleMenu{
+  background:white;
+  color:black;
+  padding:0 10px;
+  font-size:20px;
+  position:relative; 
+  top:-27px;
+  font-family: Lora, sans-serif;
+  font-weight: 700;
+}
+.corner{height:30px;
+  width:30px;
+  border-radius:50%;
+  border:1px solid #fff;
+  transform:rotate(-45deg);  
+  position:absolute;
+  background:white;
+  font-family: Lora, sans-serif;
+}
+
+#left_top{
+  top:-18px;
+  left:-18px;
+  border: 3px solid;
+  border-color:transparent transparent lightgrey transparent;
+}
+#right_top{
+  top:-18px;
+  right:-18px;
+  border: 3px solid;
+  border-color:transparent transparent transparent lightgrey;
+}
+#left_bottom{
+  bottom:-18px;
+  left:-18px;
+  border: 3px solid;
+  border-color:transparent lightgrey transparent transparent ;
+}
+#right_bottom{
+  bottom:-18px;
+  right:-18px;
+  border: 3px solid;
+  border-color:lightgrey transparent transparent transparent;
+}
+.formule{
+	/* padding-top:13px; */
+	font-size: 17px;
+	color:black;
+	}
+
+
 @media only screen and (max-width: 1024px) {
 	.single-portfolio {
 		height: 320px;
@@ -259,9 +320,32 @@ display: none !important;}
 	.portfolio-info {
 		opacity: 1;
 	}
+		.image-menu {
+		height: 200px;
+		width: 200px;
+		 }
+		 .image-cave {
+		height: 200px;
+		width: 200px;
+		 }
+	
+		.containerMenu{
+		display:flex;
+		flex-direction:column;
+		align-items: center;}
+		
+		.rouge, .blanc, .rose{
+		width:50%;}
+		.entree, .plat, .dessert{
+		width: 50%;}
+		.navCarte .nav-tabs .liMenu .linkMenu {
+			font-size: 20px;
+		}
+	
+
 
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 767px) {
 	.single-portfolio {
 		width: 100%;  
 	}
@@ -270,6 +354,10 @@ display: none !important;}
 			width: 100%;
 		}
 	.image-menu {
+		height: 100px;
+		width: 100px;
+		 }
+		 .image-cave {
 		height: 100px;
 		width: 100px;
 		 }
@@ -284,6 +372,10 @@ display: none !important;}
 		.entree, .plat, .dessert{
 		width: 100%;}
 		.navCarte .nav-tabs .liMenu .linkMenu {
-			font-size: 14px;
+			font-size: 10px;
 		}
+		.formule{
+		font-size: 10px;}
 	}
+
+
