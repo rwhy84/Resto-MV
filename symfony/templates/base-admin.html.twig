@@ -90,10 +90,11 @@
                                 {% block h2 %}{% endblock %}
                             </h2>
 
-                         
+                            <a href={% block linkPerso %} {% endblock %}>
+                                <i class="fas fa-external-link-alt"></i>Voir la page
+                                {% block h3 %}{% endblock %}
+                            </a>
 
-                    <a href={% block linkPerso %}  {% endblock %}><i class="fas fa-external-link-alt"></i>Voir la page {% block h3 %}{% endblock %}</a>
-                        
 
                             <div class="hidden" id="rightPic"></div>
 

@@ -1,5 +1,6 @@
 {% extends 'base-admin.html.twig' %}
-{% block title %}New Menu{% endblock %}
+{% block title %}New Menu
+{% endblock %}
 
 {% block body %}
 
@@ -9,46 +10,46 @@
         class="editCont">
 
         {# 
-                    {{ form_start(form, {'attr': {'id': 'resaForm'}}) }}
-                    
-                                       <div class="inputContainer">
-                                        <div class="backInput">               
-                            {{ form_widget(form.imageUpload, {'attr': {'class': 'form-resa', 'placeholder': 'Nom *'}}) }}
-                                                     </div>
-                                        </div>
-                    
-                                                     <div class="inputContainer">
-                                        <div class="backInput">
-                            {{ form_widget(form.titre, {'attr': {'class': 'form-resa', 'placeholder': 'Prenom *'}}) }}
-                    </div>
-                                        </div>
-                    
-                    <div class="inputContainer">
-                                        <div class="backInput">
-                            {{ form_widget(form.prix, {'attr': {'class': 'form-resa', 'placeholder': 'Email'}}) }}
-                    </div>
-                                        </div>
-                                        
-                                             <div class="inputContainer">
-                                        <div class="backInput">
-                            {{ form_widget(form.description, {'attr': {'class': 'form-resa', 'placeholder': 'N° de téléphone *'}}) }}
-                                           </div>
-                                        </div>
-                                        
-                                            <div class="inputContainer">
-                                        <div class="backInput">
-                        {{ form_widget(form.categorie, {'attr': {'class': 'form-resa', 'placeholder': 'Message'}}) }}
-                    </div>
-                                        </div>
-                                        
-                    <div class="inputContainer">
-                                        <div class="backInput">
-                        {{ form_widget(form.menuspecial, {'attr': {'class': 'form-resa', 'placeholder': 'Message'}}) }}
-                    </div>
-                                        </div>
-                                        
-                    
-                    {{ form_end(form) }} #}
+        {{ form_start(form, {'attr': {'id': 'resaForm'}}) }}
+        
+                           <div class="inputContainer">
+                            <div class="backInput">               
+                {{ form_widget(form.imageUpload, {'attr': {'class': 'form-resa', 'placeholder': 'Nom *'}}) }}
+                                         </div>
+                            </div>
+        
+                                         <div class="inputContainer">
+                            <div class="backInput">
+                {{ form_widget(form.titre, {'attr': {'class': 'form-resa', 'placeholder': 'Prenom *'}}) }}
+        </div>
+                            </div>
+        
+        <div class="inputContainer">
+                            <div class="backInput">
+                {{ form_widget(form.prix, {'attr': {'class': 'form-resa', 'placeholder': 'Email'}}) }}
+        </div>
+                            </div>
+                            
+                                 <div class="inputContainer">
+                            <div class="backInput">
+                {{ form_widget(form.description, {'attr': {'class': 'form-resa', 'placeholder': 'N° de téléphone *'}}) }}
+                               </div>
+                            </div>
+                            
+                                <div class="inputContainer">
+                            <div class="backInput">
+            {{ form_widget(form.categorie, {'attr': {'class': 'form-resa', 'placeholder': 'Message'}}) }}
+        </div>
+                            </div>
+                            
+        <div class="inputContainer">
+                            <div class="backInput">
+            {{ form_widget(form.menuspecial, {'attr': {'class': 'form-resa', 'placeholder': 'Message'}}) }}
+        </div>
+                            </div>
+                            
+        
+        {{ form_end(form) }} #}
 
 
         {{ include('menu/_form.html.twig') }}
