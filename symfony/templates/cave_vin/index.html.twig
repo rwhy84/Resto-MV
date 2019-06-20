@@ -1,41 +1,45 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Gestion de la Cave{% endblock %}
-{% block h2 %}Gestion de la Cave{% endblock %}
+{% block title %}Gestion de la Cave
+{% endblock %}
+{% block h2 %}Gestion de la Cave
+{% endblock %}
 {% block link %}{% endblock %}
-{% block h3 %}Cave{% endblock %}
+{% block h3 %}Cave
+{% endblock %}
 
 {% block body %}
 
-
-    <table class="table">
-        <thead>
-            <tr>
-
-                <th>Titre</th>
-                <th>Prix</th>
-                <th>Couleurs</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for cave_vin in cave_vins %}
+    <div class="showCont">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>{{ cave_vin.titre }}</td>
-                    <td>{{ cave_vin.prix }}</td>
-                    <td>{{ cave_vin.couleur }}</td>
-                    <td>
-                        <a href="{{ path('cave_vin_show', {'id': cave_vin.id}) }}">show</a>
-                        <a href="{{ path('cave_vin_edit', {'id': cave_vin.id}) }}">edit</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="6">no records found</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 
-<a href="{{ path('cave_vin_new') }}">Create new</a>
+                    <th>Titre</th>
+                    <th>Prix</th>
+                    <th>Couleurs</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cave_vin in cave_vins %}
+                    <tr>
+                        <td>{{ cave_vin.titre }}</td>
+                        <td>{{ cave_vin.prix }}</td>
+                        <td>{{ cave_vin.couleur }}</td>
+                        <td>
+                            <a href="{{ path('cave_vin_show', {'id': cave_vin.id}) }}">show</a>
+                            <a href="{{ path('cave_vin_edit', {'id': cave_vin.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('cave_vin_new') }}">Create new</a>
+    </div>
 {% endblock %}

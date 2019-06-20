@@ -424,3 +424,107 @@ input:focus {
 .hidden {
     display: none;
 }
+
+h4, thead, td, tr {
+    color: white;
+    text-align: center;
+}
+
+thead {
+    border-bottom: 2px solid white;
+}
+
+h4 {
+    margin-bottom: 5%;
+}
+
+td {
+    border-bottom: 1px solid white;
+    padding: 1% 0 1% 0;
+}
+
+.showCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.editCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.editCont form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.editCont form .inputContainer {
+    margin-bottom: 2%;
+}
+
+.editCont #menu {
+    width: 100%;
+}
+
+.tdAction .far {
+    font-size: 1.5rem;
+    margin-right: 2%;
+    color: rgb(1, 170, 192);
+}
+
+.showCont .fas, .editCont .fas {
+    font-size: 1.8rem;
+    margin-right: 2%;
+}
+
+table {
+    margin-bottom: 5%;
+}
+
+table a, .showCont a, .editCont a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+table a:hover, .showCont a:hover, .editCont a:hover {
+    text-decoration: none;
+    color: rgb(1, 170, 192);
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+.btn {
+    background-color: rgb(1, 170, 192); 
+    box-shadow: 0 2px 4px rgb(19, 19, 19), 0 -2px 4px rgb(19, 19, 19);
+    color: white;
+    width: 25%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    border-radius: 40px;
+    font-size: 1.2rem;
+}
+
+.showCont .btn .far, .showCont .btn .fas, .editCont .btn .fas, .editCont .btn .far {
+    margin-right: 10px;
+    color: white;
+    font-size: 1.2rem;
+}
+.btn:hover {
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+}
