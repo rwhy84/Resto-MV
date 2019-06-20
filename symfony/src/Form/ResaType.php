@@ -15,8 +15,9 @@ class ResaType extends AbstractType
         $builder
             ->add('date')
             ->add('heure', ChoiceType::class, [
+                'placeholder' => "Choisir l'heure *",
                 'choices'  => [
-                    'Déjeuner' => 'Déjeuner',
+                    'Déjeuner' => [
                     '12h00' => '12h00',
                     '12h15' => '12h15',
                     '12h30' => '12h30',
@@ -28,7 +29,8 @@ class ResaType extends AbstractType
                     '14h00' => '14h00',
                     '14h15' => '14h15',
                     '14h30' => '14h30',
-                    'Diner' => 'Diner',
+                    ],
+                    'Diner' => [
                     '20h00' => '20h00',
                     '20h15' => '20h15',
                     '20h30' => '20h30',
@@ -38,12 +40,21 @@ class ResaType extends AbstractType
                     '21h30' => '21h30',
                     '21h45' => '21h45',
                     '22h00' => '22h00',
+                    '22h15' => '22h15',
+                    '22h30' => '22h30',
+                    '22h45' => '22h45',
+                    '23h00' => '23h00',
+                    ],
                 ],
+                'choice_attr' => function($choice, $key, $value) {
+                    // adds a class like attending_yes, attending_no, etc
+                    return ['id' => $key];                  
+                },
             ])
 
             ->add('nbclient', ChoiceType::class, [
-                'choices'  => [
-                    'Nombre de couvert *' => 'Nombre de couvert *',
+                'placeholder' => "Nombre de couverts *",
+                'choices'  => [                    
                     '1' => '1',
                     '2' => '2',
                     '3' => '3',

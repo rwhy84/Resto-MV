@@ -10,7 +10,7 @@ header {
 
 body {
     width: 100%;
-    height: 100%; 
+    height: 100%;
 }
 
 main {
@@ -21,27 +21,28 @@ main {
 
 .title_header {
     font-size: 6rem;
+    border: 0px;
 }
 
 .mainChild {
     width: 100%;
-    height: 100%;  
+    height: 100%;
     background-color: #303030;
     background-image: URL("../img/reservations/salleMV.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;    
+    background-position: center;
 }
 
 .overlayResa {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
     width: 100%;
     height: 100%;
     background: #303030;
-    opacity: .8;    
+    opacity: .8;
 }
 
 .linearG {
@@ -52,11 +53,12 @@ main {
 
 section {
     width: 90%;
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin: 0 auto;
 }
 
 #calendar {
@@ -73,24 +75,24 @@ section {
 }
 
 .calHeadSlider h3 {
-    color: rgba(255, 255, 255, 0.7); 
+    color: rgba(255, 255, 255, 0.7);
     text-align: center;
 }
 
-#currentMonth, #nextMonth {    
+#currentMonth, #nextMonth {
     height: 70%;
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
-    flex: 14%;   
+    flex: 14%;
 }
 
 .daysHeader {
     width: 100%;
     height: 10%;
-    color: rgba(255, 255, 255, 0.7); 
+    color: rgba(255, 255, 255, 0.7);
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
     margin-bottom: 1%;
 }
@@ -120,11 +122,11 @@ section {
     justify-content: flex-end;
     align-items: top;
     margin-top: 1%;
-    font-size: 0.8rem;  
-    padding-right: 1%; 
+    font-size: 0.8rem;
+    padding-right: 1%;
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.5);
-    color: rgba(255, 255, 255, 0.9); 
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .dateContainer:hover {
@@ -147,7 +149,7 @@ section {
     cursor: not-allowed;
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0);
-    color: rgba(255, 255, 255, 0.7); 
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .flexForm {
@@ -168,12 +170,13 @@ section {
 
 .form-resa {
     width: 100%;
-    height: 20%;
+    height: 35%;
     background: rgba(255, 255, 255, 0.03);
     border: 2px solid rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.9);
     padding-left: 2%;
     font-size: 0.8rem;
+    margin-top: 10px;
 }
 
 .form-resa:focus {
@@ -204,6 +207,7 @@ abbr {
     color: rgba(255, 255, 255, 0.7);
     width: 100%;
     text-align: center;
+    padding-top: 2rem;
 }
 
 #leftInputsContainer, #rightInputsContainer {
@@ -292,6 +296,21 @@ option {
 }
 
 optgroup {
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(27, 27, 27);
 }
 
+.globalInputsCont {
+    flex-direction: column;
+}
+
+#leftInputsContainer, #rightInputsContainer {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+}
+
+.overlaySnd {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}

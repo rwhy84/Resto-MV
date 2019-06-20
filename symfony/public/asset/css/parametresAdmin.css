@@ -1,6 +1,5 @@
 /* skins divers */
 
-
 .inputContainer {
     display: flex;
     flex-direction: row;
@@ -405,9 +404,8 @@ input:focus {
 }
 
 #mystery {
-    width: 30%;
-    height: 20%;
-    background-color: rgb(255, 45, 80);
+    width: 17%;
+    height: 50%;
     border-radius: 30px;
     color: white;
     border: none;    
@@ -415,6 +413,10 @@ input:focus {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-image: url("../img/imagesAdmin/glove.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .newThemeColor {
@@ -465,4 +467,51 @@ box-shadow: none;
 
 .resetLinear {
     background: none; 
+}
+
+@media screen and (max-width: 850px) {
+
+    .inputContainer {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .backInput {
+        width: 100%;
+    }
+    
+    .formTrue, .formFalse {
+        width: 10%;
+    }
+
+    .formTrue .far {
+        font-size: 1.5rem; 
+    }
+    
+    .formFalse .fas {
+        font-size: 1.5rem;   
+    }
+
+    .dayParam {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .active {
+        font-size: 0.8rem;
+        color: rgb(1, 170, 192) !important;
+    }
+
+    .buttonParam {
+        border: none;
+    }
+
+    #mystery {
+        width: 30%;
+    }
+
+    .firstLabelCont h5 {
+        color: rgb(7, 7, 7);
+    }
+
 }

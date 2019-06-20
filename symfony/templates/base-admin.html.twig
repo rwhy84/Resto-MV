@@ -3,118 +3,146 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{% block title %}{% endblock %}</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/css/bootstrap-select.min.css">
-        <link rel="stylesheet" media="screen and (max-width: 991px)" href="{{ asset('asset/css/templatesAdmin-medium.css') }}">
+        <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/css/bootstrap-select.min.css" rel="stylesheet">
+        <link rel="stylesheet" media="screen and (max-width: 813px)" href="{{ asset('asset/css/templatesAdmin-small.css') }}">
+        <link rel="stylesheet" media="(min-width: 814px) and (max-width: 991px)" href="{{ asset('asset/css/templatesAdmin-medium.css') }}">
         <link rel="stylesheet" media="screen and (min-width: 992px)" href="{{ asset('asset/css/templatesAdmin-large.css') }}">
         <script src="https://kit.fontawesome.com/7830cdc0d6.js"></script>
 
-    {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}{% endblock %}
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <header id="misterySpot">
+        <header id="misterySpot">
 
-        <div class="topContainer">
+            <div class="topContainer">
 
-            <h1>Administration</h1>
+                <h1>Administration</h1>
 
-        </div>
+            </div>
 
             <div class="menuContainer">
 
                 <ul class="menuList">
                     <li class="spaceMenu"></li>
-                    <li class="linkFirst link"><a href="{{ path('menu_index') }}"><i class="fas fa-utensils"></i></a></li>
+                    <li class="linkFirst link">
+                        <a href="{{ path('menu_index') }}">
+                            <i class="fas fa-utensils"></i>
+                        </a>
+                    </li>
+                     <li class="spaceMenu"></li>
+                    <li class="link">
+                        <a href="{{ path('cave_vin_index') }}">
+                           <i class="fas fa-wine-bottle"></i>
+                        </a>
+                    </li>
                     <li class="spaceMenu"></li>
-                    <li class="link"><a href="{{ path('resa_index') }}"><i class="far fa-calendar-check"></i></a></li>
+                    <li class="link">
+                        <a href="{{ path('resa_index') }}">
+                            <i class="far fa-calendar-check"></i>
+                        </a>
+                    </li>
                     <li class="spaceMenu"></li>
-                    <li class="link"><a href="{{ path('contact_client_index') }}"><i class="far fa-envelope"></i></a></li>
+                    <li class="link">
+                        <a href="{{ path('contact_client_index') }}">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
                     <li class="spaceMenu"></li>
-                    <li class="link"><a href="{{ path('upload_index') }}"><i class="fas fa-photo-video"></i></a></li>
+                    <li class="link">
+                        <a href="{{ path('upload_index') }}">
+                            <i class="fas fa-photo-video"></i>
+                        </a>
+                    </li>
+                    {# <li class="spaceMenu"></li>
+                                        <li class="link"><a href="#"><i class="far fa-chart-bar"></i></a></li> #}
                     <li class="spaceMenu"></li>
-                    <li class="link"><a href="#"><i class="far fa-chart-bar"></i></a></li>
+                    <li class="link linkLast">
+                        <a href="{{ path('admin_parametre') }}">
+                            <i class="fas fa-cog"></i>
+                        </a>
+                    </li>
                     <li class="spaceMenu"></li>
-                    <li class="link activeLink"><a href="{{ path('creneau_index') }}"><i class="fas fa-cog"></i></a></li>
-                    <li class="spaceMenu"></li>
-                    <li class="linkLast link"><a href="#"><i class="fas fa-calculator"></i></a></li>
-                    <li class="spaceMenu"></li>
+                    {# <li class="linkLast link"><a href="#"><i class="fas fa-calculator"></i></a></li>
+                                        <li class="spaceMenu"></li> #}
                 </ul>
 
             </div>
 
-            
 
-        <div class="viewerCont">
+            <div class="viewerCont">
 
-            <div class="pageViewer">
+                <div class="pageViewer">
 
-                <div id="picContainer">
+                    <div id="picContainer">
 
-                    <div id="leftPic" class="hidden"></div>
+                        <div class="hidden" id="leftPic"></div>
 
-                    <div class="middleCont">
-                        <h2>PARAMETRES ADMIN</h2>
+                        <div class="middleCont">
+                            <h2>{% block h2 %}{% endblock %}</h2>
 
-                        <a href="#"><i class="fas fa-external-link-alt"></i>Voir la page Réservations</a>
+                    <a href="{% block link %}{% endblock %}"><i class="fas fa-external-link-alt"></i>Voir la page {% block h3 %}{% endblock %}</a>
+                        
+
+                        <div class="hidden" id="rightPic"></div>
+
                     </div>
 
-                    <div id="rightPic" class="hidden"></div>
-
                 </div>
 
             </div>
 
-        </div>
+        </header>
 
-    </header>
+        <main>
 
-    <main>
+            <section>
 
-        <section>
+                <section id="sectionHight"> {% block body %}{% endblock %}
 
-            <section id="sectionHight">
+                    {% block footer %}
 
-                {% block body %} {% endblock %}
+                    </section>
 
-                {% block footer %}
+                </section>
 
-            </section>
+            </main>
 
-        </section>
+            <footer>
 
-    </main>
+                <div class="bgFooter">
+                    <div class="linearGFooter">
+                        <div class="bottomSection">
 
-    <footer>
+                            <a href="#misterySpot">
+                                <i class="fas fa-chevron-circle-up"></i>Haut de page
+                            </a>
 
-        <div class="bgFooter">
-            <div class="linearGFooter">
-                <div class="bottomSection">
+                            <a href="#misterySpot " id="mystery"></a>
 
-                    <a href="#misterySpot " id="mystery">?</a>
-
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-    </footer>
+            </footer>
 
-    <!-- Chargement jQuery -->
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- Chargement Bootstrap -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/js/bootstrap-select.min.js"></script>
+            <!-- Chargement jQuery -->
+            <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <!-- Chargement Bootstrap -->
+            <script crossorigin="anonymous" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/js/bootstrap-select.min.js"></script>
 
-    {% block scriptThisPage %} {% endblock %}
+            {% block scriptThisPage %}{% endblock %}
 
-</body>
+        </body>
 
-</html>
+    </html>
 {% endblock %}

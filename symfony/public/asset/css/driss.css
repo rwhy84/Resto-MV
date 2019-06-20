@@ -1,11 +1,12 @@
-.row{
-	margin:auto;
+.row {
+	margin: auto;
 }
+
 .portfolio-warp {
 	position: relative;
 	display: block;
-    overflow: hidden;
-    margin :1em 1% 1em 1%;
+	overflow: hidden;
+	margin: 1em 1% 1em 1%;
 }
 
 .single-portfolio {
@@ -14,25 +15,22 @@
 	position: relative;
 	float: left;
 	display: block;
-    background-position: center center;
-    padding: 5px;
-    -webkit-filter: grayscale(1);
-    
+	background-position: center center;
+	padding: 5px;
+	-webkit-filter: grayscale(1);
 }
 
 .single-portfolio.sm-wide {
 	width: 22.22%;
 }
 
-.single-portfolio:hover  {	
+.single-portfolio:hover {
 	-webkit-filter: grayscale(0);
 }
-
 
 .single-portfolio:hover .portfolio-info {
 	opacity: 1;
 	text-decoration: none;
-
 }
 
 .portfolio-info {
@@ -58,9 +56,9 @@
 	left: -5%;
 	top: -5%;
 	-webkit-transform: scale(1.12);
-	    -ms-transform: scale(1.12);
-			transform: scale(1.12);
-			-webkit-filter: brightness(50%);
+	-ms-transform: scale(1.12);
+	transform: scale(1.12);
+	-webkit-filter: brightness(50%);
 	background-position: center center;
 }
 
@@ -98,13 +96,12 @@
 	color: #111;
 }
 
-
-li:hover,  li:focus, .menu-dish .active {
-	background: rgba(255, 255, 255, 0.1); }
-	.dish-entry,   .text {
+.dish-entry, .text {
 	display: table-cell;
-	vertical-align: top; }
-	.image-menu {
+	vertical-align: top;
+}
+
+.image-menu {
 	height: 170px;
 	width: 170px;
 	-webkit-border-radius: 50%;
@@ -158,14 +155,14 @@ display: none !important;}
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content:space-between;
-	align-items:space-around;
+	justify-content: space-between;
+	align-items: space-around;
 }
-.containerCarte{
-	margin: 0 auto;
-    display: flex;
-    flex-direction: column;
 
+.containerCarte {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
 }
 .entree, .plat, .dessert{
 	width:45%;
@@ -187,18 +184,20 @@ display: none !important;}
 	margin: 0 auto;
 	background: #fff;
 	padding: 50px 0;
-	display:flex;
-	justify-content:center;
-  }
-  
-  .navCarte .nav-tabs {
+	display: flex;
+	justify-content: center;
+}
+
+.navCarte .nav-tabs {
 	list-style: none;
 	text-align: center;
-  }
-  .navCarte .nav-tabs .liMenu {
+}
+
+.navCarte .nav-tabs .liMenu {
 	display: inline-block;
-  }
-  .navCarte .nav-tabs .liMenu .linkMenu {
+}
+
+.navCarte .nav-tabs .liMenu .linkMenu {
 	display: block;
 	padding: 15px;
 	text-decoration: none;
@@ -213,12 +212,13 @@ display: none !important;}
  
   .navCarte .nav-tabs .liMenu .linkMenu:hover, .active {
 	color: #555;
-  }
-  
-  .navCarte .nav-tabs .liMenu .linkMenu {
+}
+
+.navCarte .nav-tabs .liMenu .linkMenu {
 	position: relative;
-  }
-  .navCarte .nav-tabs .liMenu .linkMenu:after{
+}
+
+.navCarte .nav-tabs .liMenu .linkMenu:after {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -229,44 +229,35 @@ display: none !important;}
 	color: transparent;
 	background: orange;
 	height: 1px;
-  }
-  .navCarte .nav-tabs .liMenu .linkMenu:hover:after {
+}
+
+.navCarte .nav-tabs .liMenu .linkMenu:hover:after {
 	width: 100%;
-  }
-  
-  
-  
+}
 
 @media only screen and (max-width: 1024px) {
-
 	.single-portfolio {
 		height: 320px;
-		width: 50%; 
-		-webkit-filter: grayscale(0); 
+		width: 50%;
+		-webkit-filter: grayscale(0);
 	}
-	
 	.single-portfolio.sm-wide {
 		width: 50%;
 	}
-	
 	.portfolio-info h5 {
 		margin-bottom: 3px;
 		letter-spacing: 0.5px;
 	}
-	
 	.portfolio-info {
-	width: calc(100% - 110px);
+		width: calc(100% - 110px);
 		height: calc(100% - 110px);
 		left: 55px;
 		top: 55px;
 		text-align: center;
 		padding-top: 90px;
 	}
-	
 	.portfolio-info {
 		opacity: 1;
-		
-	
 	}
 
 }

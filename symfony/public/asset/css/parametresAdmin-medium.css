@@ -47,12 +47,12 @@
 }
 
 .formTrue .far {
-    font-size: 1.5rem;   
-    color: white; 
+    font-size: 1.5rem;
+    color: white;
 }
 
 .formFalse .fas {
-    font-size: 1.5rem;   
+    font-size: 1.5rem;
     color: white;
 }
 
@@ -140,7 +140,7 @@ input:focus {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;    
+    align-items: center;
     padding-left: 4%;
     padding-right: 2%;
 }
@@ -193,7 +193,7 @@ input:focus {
     box-shadow: 0 1px 4px rgb(49, 49, 49), 0 -1px 4px rgb(49, 49, 49);
 }
 
-.railOpen{
+.railOpen {
     width: 45%;
     margin-right: 5%;
     margin-left: 0;
@@ -274,60 +274,56 @@ input:focus {
     0% {
         width: 45%;
         margin-left: 5%;
-        }
-    99%{
+    }
+    99% {
         margin-left: 5%;
     }
-    100%
-        {
+    100% {
         width: 0%;
         margin-left: 0%;
-        }       
     }
+}
 
 @keyframes animateOpenLeft {
-0% {
-    width: 0%;
-    margin-left: 0%;
+    0% {
+        width: 0%;
+        margin-left: 0%;
     }
     1% {
         margin-left: 5%;
     }
-100%
-    {
-    width: 45%;
-    margin-left: 5%;
-    }       
+    100% {
+        width: 45%;
+        margin-left: 5%;
+    }
 }
 
 @keyframes animateCloseRight {
     0% {
         width: 45%;
         margin-right: 5%;
-        }
-        99%{
-            margin-right: 5%;
-        }
-    100%
-        {
+    }
+    99% {
+        margin-right: 5%;
+    }
+    100% {
         width: 0%;
         margin-right: 0%;
-        }       
     }
+}
 
 @keyframes animateOpenRight {
-0% {
-    width: 0%;
-    margin-right: 0%;
+    0% {
+        width: 0%;
+        margin-right: 0%;
     }
     1% {
         margin-right: 5%;
     }
-100%
-    {
-    width: 45%;
-    margin-right: 5%;
-    }       
+    100% {
+        width: 45%;
+        margin-right: 5%;
+    }
 }
 
 /* FIN ANIMATION BOUTONS GLISSANTS */
@@ -355,49 +351,45 @@ input:focus {
 
 .orangeIcon {
     animation: animateIconOrange 1s linear forwards;
-    animation-delay: 0.5s; 
+    animation-delay: 0.5s;
 }
 
 .blueIcon {
     animation: animateIconBlue 1s linear forwards;
-    animation-delay: 0.5s; 
+    animation-delay: 0.5s;
 }
 
 @keyframes animateLabelBlue {
-0% {   
-    color: rgb(19, 19, 19); 
+    0% {
+        color: rgb(19, 19, 19);
     }
-100% {    
-    color: rgb(1, 170, 192);
+    100% {
+        color: rgb(1, 170, 192);
     }
 }
 
 @keyframes animateLabelOrange {
-0% {    
-    color: rgb(19, 19, 19); 
+    0% {
+        color: rgb(19, 19, 19);
     }
-100% {    
-    color: rgb(255, 94, 0);
+    100% {
+        color: rgb(255, 94, 0);
     }
 }
 
 @keyframes animateIconBlue {
-    0% {
-        
-        }
-    100% {        
+    0% {}
+    100% {
         color: rgb(1, 170, 192);
-        }
     }
+}
 
 @keyframes animateIconOrange {
-    0% {
-          
-        }
-    100% {            
+    0% {}
+    100% {
         color: rgb(255, 94, 0);
-        }
     }
+}
 
 /* FIN ANIMATIONS CHANGEMENTS COULEURS */
 
@@ -411,7 +403,7 @@ input:focus {
     background-color: rgb(255, 45, 80);
     border-radius: 30px;
     color: white;
-    border: none;    
+    border: none;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -456,14 +448,37 @@ input:focus {
 }
 
 .headerBgSurprise {
-background-color: white;
-background-image: url("../img/imagesAdmin/unicorn.png");
-background-size: contain;
-background-repeat: no-repeat;
-background-position: center center;
-box-shadow: none;
+    background-color: white;
+    background-image: url("../img/imagesAdmin/unicorn.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: none;
 }
 
 .resetLinear {
-    background: none; 
+    background: none;
+}
+
+.title_header {
+    font-size: 4em;
+    border: 1px solid white;
+}
+
+.paragraphHeader {
+    font-size: 0.8rem;
+    vertical-align: top;
+}
+
+.bandeau-footer {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2rem;
+}
+
+/* PAGE RESERVATION */
+
+.globalInputsCont {
+    margin-right: 0;
+    flex-direction: column;
 }

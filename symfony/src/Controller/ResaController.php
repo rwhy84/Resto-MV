@@ -22,7 +22,7 @@ class ResaController extends AbstractController
     public function index(ResaRepository $resaRepository, CreneauRepository $creneauRepository): Response
     {
         return $this->render('resa/index.html.twig', [
-            'resas' => $resaRepository->findAll(),
+            'resas' => $resaRepository->findAll([],["id" => "DESC"]),
             'creneaux' => $creneauRepository->findAll([], ["id" => "ASC"]),
         ]);
     }

@@ -14,7 +14,8 @@
 
         <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('asset/css/index.css') }}">
-     <link rel="stylesheet" href="{{ asset('asset/css/driss.css') }}">
+        <link rel="stylesheet" href="{{ asset('asset/css/driss.css') }}">
+         <script src="{{ asset('asset/js/header.js') }}"></script>
 
         <link href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet"/>
         <script src="https://kit.fontawesome.com/7830cdc0d6.js"></script>
@@ -27,8 +28,8 @@
         <header>
 
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent mt-3">
-                <div class="container containerHeader">
-                    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+                <div class="container">
+                    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button" onclick="hideTitle()">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -37,10 +38,10 @@
                             <a class="headerMenu" href="{{ path('accueil') }}">Accueil</a>
                         </li>
                         <li class="nav-item navMenu">
-                            <a class="headerMenu" href="{{ path('carte') }}">Notre Carte</a>
+                            <a class="headerMenu" href="{{ path('carte') }}"><span class="mobile_menu">Notre</span> Carte</a>
                         </li>
                         <li class="nav-item navMenu">
-                            <a class="headerMenu" href="{{ path('cave') }}">Notre Cave</a>
+                            <a class="headerMenu" href="{{ path('cave') }}"><span class="mobile_menu">Notre</span> Cave</a>
                         </li>
                         <li class="nav-item navMenu">
                             <a class="headerMenu" href="{{ path('galerie') }}">Galerie</a>
@@ -68,22 +69,24 @@
     class="page-footer font-small indigo" id="footer">
 
     <!-- Footer Links -->
-    <div class="container-fluid footer-margin">
-        <div class=" row bandeau-footer mx-auto">
-            <div class="col-md-4 col-sm-4">
-                <i class="far fa-map"></i>
-                <p>Text Test ADRESSE</p>
+    <div class="container-fluid">
+		<div class="bandeau-footer">
+			<div class="col-md-4 col-sm-4">
+                <i class="fas fa-map"></i>
+                <p class="paragraphHeader">21 Place aux Huiles <br/>13001 Marseille</p>
+            </div>
+			<div class="col-md-4 col-sm-4">
+                <i class="fas fa-mobile-alt"></i>
+                <p class="paragraphHeader">04 88 04 66 20</p>
             </div>
             <div class="col-md-4 col-sm-4">
                 <i class="fas fa-clock"></i>
-                <p>Text Test OUVERTURE</p>
+                <p class="paragraphHeader">de 12h à 14h30 et<br/> de 20h à 23h00 (sauf lundi)</p>
             </div>
-            <div class="col-md-4 col-sm-4">
-                <i class="fas fa-mobile-alt"></i>
-                <p>Text Test TELEPHONE</p>
-            </div>
-        </div>
-    </div>
+
+		</div>
+
+	</div>
 
 
     <!-- Grid row-->
@@ -99,7 +102,7 @@
 
 
         <!-- Grid column -->
-        <div class="col-md-8 col-12 mt-5">
+        <div class="col-md-8 col-12 mt-2">
             <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                           accusantium doloremque laudantium, totam rem
                           aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt

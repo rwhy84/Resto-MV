@@ -38,13 +38,6 @@ $(document).ready(function () {
         return monthsBack[dateBack.getMonth()];
     }
 
-    // Si on veut la date du jour : frenchDate(new Date(y, m, d));
-
-    // Définition d'une date de départ fixe(le 1 Janvier 2019)
-    var beginningDate = frenchDate(new Date(2019, 00, 1));
-
-    //console.log(beginningDate);
-
     //Création d'une fonction calculant le nombre de jours dans un mois
     function getNbJoursMois(mois, annee) {
         var lgMois = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -313,9 +306,6 @@ $(document).ready(function () {
         }
     }
 
-
-
-
     for (i = 0; i < listDateCont.length; i++) {
         for (a = 0; a < listDateBDD.length; a++) {
 
@@ -342,6 +332,16 @@ $(document).ready(function () {
             }
 
         }
+    }
+
+    // Suppression des cases de dates passées
+    var thisD = formatDate(new Date(y, m, d));
+    var midD = new Date();
+    var delD = midD.getDate();
+    var dateC = $(".dayParam");
+
+    for (i = 0; i < delD - 1; i++) {
+        $(dateC[i]).addClass("hidden");
     }
 
     // REQUETE AJAX UPDATE
@@ -375,6 +375,5 @@ $(document).ready(function () {
         });
 
     })
-
 
 })

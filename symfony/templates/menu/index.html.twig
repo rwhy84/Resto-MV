@@ -1,44 +1,46 @@
 {% extends 'base-admin.html.twig' %}
-{% block stylesheets %}<link rel="stylesheet" href="{{ asset('asset/css/uploadAdmin.css') }}" type="text/css">
-{% endblock %}
+{# {% block stylesheets %}<link rel="stylesheet" href="{{ asset('asset/css/templatesAdmin-small.css') }}" type="text/css"> #}
+{# {% endblock %} #}
 
-{% block title %}Menu index{% endblock %}
+{% block title %}Carte-Show{% endblock %}
+{% block h2 %}Gestion de la carte{% endblock %}
+{% block link %}{% endblock %}
+{% block h3 %}Carte{% endblock %}
 
 {% block body %}
-    <h1>Menu index</h1>
+    <h4>LES PLATS A LA CARTE</h4>
 
-    <table class="table">
-        <thead>
+   <div class="showCont">
+    <table class="CarteTab">
+  <thead>
+    <tr>
+ 
+                <th scope="col">NOM</th>
+                <th scope="col">PRIX</th>
+                <th scope="col">CATÉGORIE</th>
+                <th scope="col">ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for menu in menus %}
             <tr>
-                <th>Id</th>
-                <th>Image</th>
-                <th>Titre</th>
-                <th>Prix</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for menu in menus %}
-            <tr>
-                <td>{{ menu.id }}</td>
-                <td>{{ menu.image }}</td>
+
                 <td>{{ menu.titre }}</td>
                 <td>{{ menu.prix }}</td>
-                <td>{{ menu.description }}</td>
                 <td>{{ menu.categorie }}</td>
-                <td>
-                    <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a>
-                    <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a>
+                <td class="tdAction">
+                    <a href="{{ path('menu_edit', {'id': menu.id}) }}"><i class="far fa-edit"></i>Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun plat trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+</table>
 
-    <a href="{{ path('menu_new') }}">Create new</a>
+ <a href="{{ path('menu_new') }}"><i class="fas fa-plus-circle"></i>Ajouter un plat</a>
+</div>
+   
 {% endblock %}

@@ -25,9 +25,9 @@ class ContactController extends AbstractController
         $contact = new ContactClient();
 
         $form = $this->createForm(NewsletterType::class, $newsletter);
-        $form1 = $this->createForm(ContactClientType::class, $contact);
+        $form_contact = $this->createForm(ContactClientType::class, $contact);
         $form->handleRequest($request);
-        $form1->handleRequest($request);
+        $form_contact->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -37,7 +37,7 @@ class ContactController extends AbstractController
             $entityManager->flush();
 
             //return $this->redirectToRoute('contact');
-        } elseif ($form1->isSubmitted() && $form1->isValid()) {
+        } elseif ($form_contact->isSubmitted() && $form_contact->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             dump($contact);
             $entityManager->persist($contact);
@@ -72,7 +72,7 @@ class ContactController extends AbstractController
             'contact' => $contact,
             'newsletter' => $newsletter,
             'form' => $form->createView(),
-            'form1' => $form1->createView(),
+            'form1' => $form_contact->createView(),
         ]);
     }
 }
