@@ -1,31 +1,27 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block stylesheets %}<link rel="stylesheet" href="{{ asset('asset/css/uploadAdmin.css') }}" type="text/css">
-{% endblock %}
-
-{% block title %}Upload index{% endblock %}
+{% block title %}Gestions des images{% endblock %}
 {% block h2 %}Gestion des images{% endblock %}
+{% block link %}"{{ path('galerie') }}"{% endblock %}
+{% block h3 %}galerie{% endblock %}
 
 {% block body %}
-    <h1>Upload index</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+
                 <th>Image</th>
                 <th>Titre</th>
-                <th>Description</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for upload in uploads %}
             <tr>
-                <td>{{ upload.id }}</td>
+
                 <td>{{ upload.image }}</td>
                 <td>{{ upload.titre }}</td>
-                <td>{{ upload.description }}</td>
                 <td>
                     <a href="{{ path('upload_show', {'id': upload.id}) }}">show</a>
                     <a href="{{ path('upload_edit', {'id': upload.id}) }}">edit</a>

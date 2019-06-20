@@ -1,7 +1,9 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Resa index{% endblock %}
-{% block h2 %} Gestion des réservations {% endblock %}
+{% block title %}Gestion des réservations{% endblock %}
+{% block h2 %} Gestion Reservations {% endblock %}
+{% block link %}"{{ path('reservation') }}"{% endblock %}
+{% block h3 %}réservations{% endblock %}
 {% block body %}
     
 
@@ -12,7 +14,6 @@
                 <th>Heure</th>
                 <th>Nbclient</th>
                 <th>Nom</th>
-                <th>actions</th>
             </tr>
         </thead>
         <tbody>
@@ -22,10 +23,7 @@
                 <td>{{ resa.heure }}</td>
                 <td>{{ resa.nbclient }}</td>
                 <td>{{ resa.nom }}</td>
-                <td>
-                    <a href="{{ path('resa_show', {'id': resa.id}) }}">show</a>
-                    <a href="{{ path('resa_edit', {'id': resa.id}) }}">edit</a>
-                </td>
+
             </tr>
         {% else %}
             <tr>

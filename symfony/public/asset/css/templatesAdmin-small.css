@@ -171,7 +171,8 @@ header h1 {
 }
 
 .pageViewer a:hover, .bottomSection a:hover {
-    border-bottom: 2px solid rgb(1, 170, 192);;
+    border-bottom: 2px solid rgb(1, 170, 192);
+    ;
 }
 
 .middleCont {
@@ -183,8 +184,7 @@ header h1 {
     align-items: center;
 }
 
-.middleCont a{
-
+.middleCont a {
     width: 100%;
 }
 
@@ -225,7 +225,8 @@ header h1 {
 }
 
 section {
-    width: 100%;;
+    width: 100%;
+    ;
     min-height: 20%;
     margin-left: 0;
     background-color: rgb(39, 39, 39);
@@ -281,7 +282,8 @@ footer {
     border-radius: 0 0 10px 10px;
     box-shadow: 5px 0px 8px rgb(0, 0, 0), -5px 0px 8px rgb(0, 0, 0);
 }
-.bottomSection a {    
+
+.bottomSection a {
     color: rgb(1, 170, 192);
     display: flex;
     justify-content: center;
@@ -355,12 +357,12 @@ footer {
 }
 
 .formTrue .far {
-    font-size: 1.2rem !important;   
-    color: white; 
+    font-size: 1.2rem !important;
+    color: white;
 }
 
 .formFalse .fas {
-    font-size: 1.2rem !important;   
+    font-size: 1.2rem !important;
     color: white;
 }
 
@@ -456,15 +458,13 @@ td {
 }
 
 .showCont table thead tr th {
-
     font-size: 0.8em;
 }
 
 .showCont table tbody tr td {
-
     font-size: 0.8em;
-
 }
+
 .editCont {
     display: flex;
     flex-direction: column;
@@ -519,10 +519,11 @@ h2 {
     text-transform: uppercase;
     text-align: center;
     padding-top: 1rem;
+    font-size: 1.5rem;
 }
 
 .btn {
-    background-color: rgb(1, 170, 192); 
+    background-color: rgb(1, 170, 192);
     box-shadow: 0 2px 4px rgb(19, 19, 19), 0 -2px 4px rgb(19, 19, 19);
     color: white;
     width: 25%;
