@@ -37,6 +37,7 @@
     position: relative;
     text-decoration: none;
     text-shadow: 2px 1px 1px black;
+    font-size: 1.2em;
 }
 
 .snip1189 a:before, .snip1189 a:after {
@@ -76,8 +77,6 @@
     transform: translate(0%, 0%);
     opacity: 1;
 }
-
-
 
 #footer {
     display: block;
@@ -243,8 +242,8 @@ ul .navMenu .headerMenu {
 }
 
 .central {
-
-    z-index: 999;;
+    z-index: 999;
+    ;
 }
 
 .logo {
@@ -523,9 +522,7 @@ iframe {
     .navbar-light .navbar-toggler {
         border-color: transparent;
     }
-
     .mobile_menu {
-
         display: none;
     }
 }
