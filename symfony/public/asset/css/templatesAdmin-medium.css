@@ -556,3 +556,18 @@ td form .btn:hover {
 .btnDel .fa-trash-alt {
     margin: 0;
 }
+
+.hoverNot:hover {
+    font-size: 1.8rem;
+}
+
+.imageUploadGalerie {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin: 1rem 0rem;
+}
+
+.hoverNot {
+    margin-right: 2%;
+}

@@ -8,7 +8,7 @@
 {% block body %}
     <h4>Votre galerie</h4>
 
-    <div class="showCont">
+    <div class="editCont">
         <table class="CarteTab">
             <thead>
                 <tr>
@@ -23,12 +23,12 @@
                 {% for upload in uploads %}
                     <tr>
 
-                        <td>{{ upload.image }}</td>
+                        <td><img class="imageUploadGalerie" src="{{asset(upload.image)}}"></td>
                         <td>{{ upload.titre }}</td>
 
                         <td>
                             <a href="{{ path('upload_edit', {'id': upload.id}) }}">
-                                <i class="far fa-edit"></i>Modifier une photo</a>
+                                <i class="far fa-edit hoverNot"></i>Modifier</a>
                         </td>
                     </tr>
                 {% else %}

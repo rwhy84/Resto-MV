@@ -52,6 +52,11 @@
 
                             {{ form_widget(formResa.nom, {'attr': {'id':'resa_nom', 'class': 'form-resa', 'placeholder': 'Nom*'}}) }}
 
+                             <label for"email">Email</label>
+
+                            {{ form_widget(formResa.email, {'attr': {'id':'resa_email','class': 'form-resa', 'placeholder': 'Email*'}}) }}
+                            {# <input class="form-resa" id="email" name="email" placeholder="Adresse email" type="email"> #}
+
 
                             <label for"tel">Téléphone</label>
                             <abbr title="(obligatoire)">*</abbr>
@@ -59,7 +64,7 @@
                             {{ form_widget(formResa.tel, {'attr': {'id':'resa_tel','class': 'form-resa', 'placeholder': 'Telephone'}}) }}
 
 
-                            {{ form_widget(formResa.heure, {'attr': {'id':'resa_heure','class': 'form-resa', 'placeholder': 'Heures*'}}) }}
+                           
 
                             {# <select class="form-resa" id="heureRepas" required>
                                                                                         <option disabled selected>Heure *</option>
@@ -146,13 +151,12 @@
 
                         <div id="rightInputsContainer">
 
-                            <label for"email">Email</label>
-
-                            {{ form_widget(formResa.email, {'attr': {'id':'resa_email','class': 'form-resa', 'placeholder': 'Email*'}}) }}
-                            {# <input class="form-resa" id="email" name="email" placeholder="Adresse email" type="email"> #}
+                           
 
                             {{ form_widget(formResa.date, {'id':'date','attr': {'class': 'form-resa', 'placeholder': 'Date*'}}) }}
                             {# <input class="form-resa" id="date" name="date" placeholder="Date *" required type="texte"> #}
+
+                             {{ form_widget(formResa.heure, {'attr': {'id':'resa_heure','class': 'form-resa', 'placeholder': 'Heures*'}}) }}
 
                             {{ form_widget(formResa.nbclient, {'id':'resa_nbclient','attr': {'class': 'form-resa', 'placeholder': 'Nombres de Couverts*'}}) }}
                             {# <select class="form-resa" id="eatersSelect" required>

@@ -171,7 +171,8 @@ header h1 {
 }
 
 .pageViewer a:hover, .bottomSection a:hover {
-    border-bottom: 2px solid rgb(1, 170, 192);;
+    border-bottom: 2px solid rgb(1, 170, 192);
+    ;
 }
 
 .middleCont {
@@ -276,7 +277,8 @@ footer {
     border-radius: 0 0 10px 10px;
     box-shadow: 5px 0px 8px rgb(0, 0, 0), -5px 0px 8px rgb(0, 0, 0);
 }
-.bottomSection a {    
+
+.bottomSection a {
     color: rgb(1, 170, 192);
     display: flex;
     justify-content: center;
@@ -309,7 +311,7 @@ footer {
     padding-top: 4px;
     padding-bottom: 4px;
     box-shadow: 1px 1px 1px rgb(51, 51, 51) inset, -1px -1px 1px rgb(51, 51, 51) inset;
-    border-radius: 2px;   
+    border-radius: 2px;
 }
 
 .formTrue, .formFalse {
@@ -335,12 +337,12 @@ footer {
 }
 
 .formTrue .far {
-    font-size: 1.2rem !important;   
-    color: white; 
+    font-size: 1.2rem !important;
+    color: white;
 }
 
 .formFalse .fas {
-    font-size: 1.2rem !important;   
+    font-size: 1.2rem !important;
     color: white;
 }
 
@@ -429,14 +431,12 @@ td {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-   
 }
 
 .editCont {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
 }
 
 .editCont form {
@@ -449,7 +449,7 @@ td {
 }
 
 .showCont form {
-margin-top: 5%;
+    margin-top: 5%;
 }
 
 .editCont form .inputContainer {
@@ -493,7 +493,7 @@ h2 {
 }
 
 .btn {
-    background-color: rgb(1, 170, 192); 
+    background-color: rgb(1, 170, 192);
     box-shadow: 0 2px 4px rgb(19, 19, 19), 0 -2px 4px rgb(19, 19, 19);
     color: white;
     width: 25%;
@@ -564,4 +564,18 @@ td form .btn:hover {
 
 .btnDel .fa-trash-alt {
     margin: 0;
+}
+
+.hoverNot:hover {
+    font-size: 1.8rem;
+}
+
+.hoverNot {
+    margin-right: 2%;
+}
+
+.imageUploadGalerie {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
