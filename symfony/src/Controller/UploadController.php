@@ -38,7 +38,7 @@ class UploadController extends AbstractController
             $fichierUploade = $upload->getImageUpload();
 
             // COOL POUR LE DEBUG
-            dump($fichierUploade);
+            
             if ($fichierUploade != null) {
                 // IL FAUT DEPLACER LE FICHIER DE LA QUARANTAINE VERS LE DOSSIER FINAL
                 $fileName = $fichierUploade->getClientOriginalName();

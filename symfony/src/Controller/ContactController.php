@@ -39,14 +39,14 @@ class ContactController extends AbstractController
             //return $this->redirectToRoute('contact');
         } elseif ($form_contact->isSubmitted() && $form_contact->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            dump($contact);
+            
             $entityManager->persist($contact);
             $entityManager->flush();
 
             $bodyMessage = $contact->getNom() . "\n " . $contact->getPrenom() . "\n" . $contact->getTel() . "\n" . $contact->getMessage() . "\n" . "Message envoyé de: " . $contact->getEmail();
 
             $message = (new \Swift_Message('Contact Restaurant MV'))
-                ->setFrom($contact->getEmail())
+                ->setFrom('rbordet84@gmail.com')
                 ->setTo('rbordet84@gmail.com')
                 ->setBody(
 

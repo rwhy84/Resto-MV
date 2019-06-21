@@ -267,7 +267,7 @@ form {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 60%;
+    height: 15rem;
 }
 
 .form-resa {
@@ -306,8 +306,8 @@ abbr {
 }
 
 #resaForm {
-    height: 35rem;
-    width: 100%;
+    height: 45rem;
+    width: 45rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -327,7 +327,7 @@ abbr {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 6.7%;
+    
 }
 
 #leftInputsContainer {
@@ -385,6 +385,7 @@ label {
     .globalInputsCont {
         display: flex;
         flex-direction: column;
+        height: 15rem;
     }
 
     #leftInputsContainer, #rightInputsContainer {
@@ -397,5 +398,11 @@ label {
 
     .overlayResa {
         background: #303030ab;
+    }
+
+    #resaForm {
+
+        width: 95%;
+
     }
   }
