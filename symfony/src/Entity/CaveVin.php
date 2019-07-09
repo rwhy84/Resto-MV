@@ -49,7 +49,7 @@ class CaveVin
 
     public function __construct()
     {
-        dump($this);
+        
         $this->imageUpload       = null;
         $this->image              = "";
     }

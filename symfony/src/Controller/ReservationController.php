@@ -61,13 +61,10 @@ class ReservationController extends AbstractController
             $mailer->send($message);
 
 
-
-
-
-
-
             //return $this->redirectToRoute('contact');
         }
+
+ 
 
         return $this->render('reservation/index.html.twig', [
             'controller_name' => 'ReservationController',

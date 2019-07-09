@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3efcc8ae5eec86a45b6099c58907229",
+    "content-hash": "a91438c7daba9ccfa398609832b3169c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -3198,7 +3198,7 @@
         },
         {
             "name": "symfony/google-mailer",
-            "version": "v4.3.1",
+            "version": "v4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/google-mailer.git",
@@ -3712,16 +3712,16 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v4.3.0",
+            "version": "v4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "0b166aee243364cd9de05755d2e9651876090abb"
+                "reference": "ec2c5565de60e03f33d4296a655e3273f0ad1f8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/0b166aee243364cd9de05755d2e9651876090abb",
-                "reference": "0b166aee243364cd9de05755d2e9651876090abb",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/ec2c5565de60e03f33d4296a655e3273f0ad1f8b",
+                "reference": "ec2c5565de60e03f33d4296a655e3273f0ad1f8b",
                 "shasum": ""
             },
             "require": {
@@ -3767,7 +3767,7 @@
                 "mime",
                 "mime-type"
             ],
-            "time": "2019-05-22T13:16:28+00:00"
+            "time": "2019-06-04T09:22:54+00:00"
         },
         {
             "name": "symfony/monolog-bridge",
