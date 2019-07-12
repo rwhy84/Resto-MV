@@ -11,6 +11,9 @@ use App\Form\NewsletterType;
 use App\Repository\CreneauRepository;
 use App\Entity\Resa;
 use App\Form\ResaType;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+
 
 
 class ReservationController extends AbstractController
@@ -18,7 +21,7 @@ class ReservationController extends AbstractController
     /**
      * @Route("/reservation", name="reservation")
      */
-    public function index(Request $request, CreneauRepository $creneauRepository, \Swift_Mailer $mailer): Response
+    public function index(Request $request, CreneauRepository $creneauRepository, \MailerInterface $mailer): Response
     {
 
         $newsletter = new Newsletter();
@@ -48,17 +51,17 @@ class ReservationController extends AbstractController
 
             $bodyMessage = 'Nom de réservation: ' . $resa->getNom() . "\n " . 'Heure de Réservation: ' . $resa->getheure() . "\n" . "Nombres de couverts: " . $resa->getnbclient()  . "\n" . 'Numéro de téléphone: ' . $resa->getTel() . "\n" . "Message envoyé de: " . $resa->getEmail() . "\n" . $resa->getMessage();
 
-            $message = (new \Swift_Message('Réservation de Table'))
-                ->setFrom('rbordet84@gmail.com')
-                ->setTo('rbordet84@gmail.com')
-                ->setBody(
+            $message = (new Email())
+                ->from('rbordet84@gmail.com')
+                ->to('rbordet84@gmail.com')
+                ->text(
                     $bodyMessage,
 
 
                     'text/plain'
                 );
 
-            $mailer->send($message);
+                $mailer->send($message);
 
 
             //return $this->redirectToRoute('contact');

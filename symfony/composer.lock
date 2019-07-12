@@ -3650,16 +3650,16 @@
         },
         {
             "name": "symfony/mailer",
-            "version": "v4.3.1",
+            "version": "v4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "20542d3cda3c2bd214e0dd967d8b2590fae71ba3"
+                "reference": "623c5e5a8303a936a1a265dc08b488ac43977dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/20542d3cda3c2bd214e0dd967d8b2590fae71ba3",
-                "reference": "20542d3cda3c2bd214e0dd967d8b2590fae71ba3",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/623c5e5a8303a936a1a265dc08b488ac43977dce",
+                "reference": "623c5e5a8303a936a1a265dc08b488ac43977dce",
                 "shasum": ""
             },
             "require": {
@@ -3674,7 +3674,7 @@
                 "symfony/google-mailer": "^4.3",
                 "symfony/http-client-contracts": "^1.1",
                 "symfony/mailchimp-mailer": "^4.3",
-                "symfony/mailgun-mailer": "^4.3",
+                "symfony/mailgun-mailer": "^4.3.2",
                 "symfony/postmark-mailer": "^4.3",
                 "symfony/sendgrid-mailer": "^4.3"
             },
@@ -3708,7 +3708,7 @@
             ],
             "description": "Symfony Mailer Component",
             "homepage": "https://symfony.com",
-            "time": "2019-06-04T13:59:49+00:00"
+            "time": "2019-06-26T08:48:20+00:00"
         },
         {
             "name": "symfony/mime",
